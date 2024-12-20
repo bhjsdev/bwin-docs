@@ -1,5 +1,4 @@
 import SideNav from '@/components/side-nav';
-import styles from './layout.module.css';
 import './globals.css';
 
 export const metadata = {
@@ -11,9 +10,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className={styles.layout}>
+        <div className="layout">
           <SideNav />
           <main>{children}</main>
+          <footer>Build Date: {process.env.BUILD_DATE}</footer>
         </div>
       </body>
     </html>

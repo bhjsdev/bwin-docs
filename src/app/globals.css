@@ -1,3 +1,13 @@
 body {
   margin: 0;
 }
+
+.layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: minmax(calc(100vh - 50px), 1fr) 50px;
+}
+
+footer {
+  grid-column: 2;
+}
