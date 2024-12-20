@@ -3,7 +3,7 @@ import createMDX from '@next/mdx';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  distDir: 'docs',
+  reactStrictMode: false,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
 };
 

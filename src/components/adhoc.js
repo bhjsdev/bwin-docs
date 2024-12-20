@@ -7,8 +7,7 @@ export default function Adhoc() {
 
   return (
     <>
-      <p>Counter: {count}</p>
-      <button onClick={() => setCount((prev) => prev + 1)}>Add +1</button>
+      <button onClick={() => setCount((prev) => prev + 1)}>count is: {count}</button>
     </>
   );
 }
