@@ -4,7 +4,6 @@ import createMDX from '@next/mdx';
 const nextConfig = {
   output: 'export',
   reactStrictMode: false,
-  basePath: '/bwin-docs',
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
 };
 
