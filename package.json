@@ -12,9 +12,9 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.2",
-    "next": "15.1.1",
+    "next": "^15.1.2",
     "react": "^19.0.0",
-    "react-bwin": "^0.3.0",
+    "react-bwin": "^0.3.1",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
