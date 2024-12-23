@@ -25,13 +25,13 @@ export default function Example() {
           children: [
             {
               position: 'top',
-              size: '30%',
+              size: '40%',
               title: <i>No action buttons</i>,
               actions: null,
             },
             {
               position: 'bottom',
-              size: '70%',
+              size: '60%',
               children: [
                 {
                   position: 'left',
@@ -53,5 +53,5 @@ export default function Example() {
     />
   );
 
-  return <div style={{ width: '90%', height: 444 }}>{windowNode}</div>;
+  return <div style={{ width: '100%', height: '90%' }}>{windowNode}</div>;
 }

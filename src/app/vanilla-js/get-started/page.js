@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Vanilla JS Get started</h1>;
+  return <h1>Get started - Vanilla JS</h1>;
 }
