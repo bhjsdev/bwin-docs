@@ -1,0 +1,16 @@
+.sidenav {
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 20px;
+    padding-block-end: 20px;
+  }
+
+  li {
+    padding-block: 4px;
+  }
+}

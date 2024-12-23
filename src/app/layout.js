@@ -1,5 +1,6 @@
-import Sidebar from '@/components/sidebar';
-import styles from './layout.module.css';
+import Sidenav from '@/components/sidenav';
+import Link from 'next/link';
+import './layout.css';
 import './globals.css';
 
 export const metadata = {
@@ -11,10 +12,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className={styles.container}>
-          <Sidebar />
-          <main className={styles.main}>{children}</main>
-          <footer className={styles.footer}>Build Date: {process.env.BUILD_DATE}</footer>
+        <div className="layout">
+          <aside className="layout__sidebar">
+            <Link className="logo" href="/">
+              Binary Window
+            </Link>
+            <Sidenav />
+          </aside>
+          <main className="layout__main">{children}</main>
+          <footer className="layout__footer">Build Date: {process.env.BUILD_DATE}</footer>
         </div>
       </body>
     </html>

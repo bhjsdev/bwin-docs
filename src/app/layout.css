@@ -1,0 +1,35 @@
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: minmax(calc(100vh - var(--footer-height)), 1fr) var(--footer-height);
+}
+
+.layout__sidebar {
+  grid-row: span 2;
+  padding: 30px 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1;
+  display: block;
+  margin-block-end: 40px;
+  color: var(--font-color);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.layout__main {
+  padding: 30px;
+}
+
+.layout__footer {
+  padding: 0 30px;
+  grid-column: 2;
+  font-size: 14px;
+  text-align: right;
+}
