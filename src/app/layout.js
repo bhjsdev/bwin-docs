@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <Sidenav />
           </aside>
           <main className="layout__main">{children}</main>
-          <footer className="layout__footer">Build Date: {process.env.BUILD_DATE}</footer>
+          <footer className="layout__footer">Updated at: {process.env.BUILD_DATE}</footer>
         </div>
       </body>
     </html>

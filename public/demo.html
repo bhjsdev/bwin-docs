@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <script type="module">
+      import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      const element = document.createElement('em');
+      element.innerHTML = 'Hello, World!';
+
+      const bwin = new BinaryWindow({
+        children: [
+          { position: 'left', size: 150, content: element },
+          {
+            position: 'right',
+            children: [
+              { position: 'top', size: '40%' },
+              { position: 'bottom', size: '60%' },
+            ],
+          },
+        ],
+      });
+
+      bwin.mount(document.getElementById('container'));
+    </script>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>

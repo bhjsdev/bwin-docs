@@ -6,6 +6,7 @@ export default function Sidenav() {
     <nav className="sidenav">
       <SidenavList
         heading="Vanilla JS"
+        iconClassName="devicon-javascript-plain"
         links={[
           { href: '/vanilla-js/get-started', title: 'Get started' },
           { href: '/vanilla-js/apis', title: 'APIs' },
@@ -13,6 +14,7 @@ export default function Sidenav() {
       />
       <SidenavList
         heading="React"
+        iconClassName={'devicon-react-original'}
         links={[
           { href: '/react/get-started', title: 'Get started' },
           { href: '/react/apis', title: 'APIs' },

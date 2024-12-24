@@ -15,11 +15,17 @@
   text-decoration: none;
   line-height: 1;
   display: block;
-  margin-block-end: 40px;
+  margin-bottom: 40px;
   color: var(--font-color);
 
   &:hover {
-    text-decoration: none;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+  &:active {
+    opacity: 0.7;
+    transform: translateY(0);
   }
 }
 

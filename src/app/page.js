@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Example from '../features/frontpage-example';
+import Example from '../features/homepage-example';
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -12,7 +12,7 @@ export default function Page() {
 
   return (
     <>
-      <h1>Binary Window Documentation</h1>
+      <h1>Documentation</h1>
       {isClient && <Example />}
     </>
   );

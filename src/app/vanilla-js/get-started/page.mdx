@@ -1,0 +1,51 @@
+import Link from 'next/link';
+
+export const demoPath = process.env.LOCAL_BUILD === 'true' ? '/demo.html' : '/bwin-docs/demo.html';
+
+# Vanilla JS
+
+You don't need any build tools to use Bwin. You can include the CSS and JS files directly in your HTML file.
+
+## Get started
+
+Basic example in a HTML file. <a href={demoPath}>Demo</a>
+
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <script type="module">
+      import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      const element = document.createElement('em');
+      element.innerHTML = 'Hello, World!';
+
+      const bwin = new BinaryWindow({
+        children: [
+          { position: 'left', size: 150, content: element },
+          {
+            position: 'right',
+            children: [
+              { position: 'top', size: '40%' },
+              { position: 'bottom', size: '60%' },
+            ],
+          },
+        ],
+      });
+
+      bwin.mount(document.getElementById('container'));
+    </script>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+```
+
+## Install with npm
+
+You can choose to install Binary Window with npm and use a bundler like Vite or Webpack.
+
+```bash
+npm install bwin
+```
