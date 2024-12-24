@@ -1,4 +1,5 @@
-import Example from '@/features/basic-example-client';
+import Client from '@/components/client';
+import Example from '@/features/basic-example';
 
 # React
 
@@ -14,12 +15,11 @@ npm install react-bwin
 
 ## Basic example
 
-<Example />
+<Client>
+  <Example />
+</Client>
 
-```jsx
-import { Window } from 'react-bwin';
-import 'react-bwin/react-bwin.css';
-
+```jsx import {Window} from 'react-bwin'; import 'react-bwin/react-bwin.css';
 function Example() {
   return (
     <div style={{ width: 400, height: 300 }}>
@@ -49,4 +49,8 @@ function Example() {
     </div>
   );
 }
+```
+
+```
+
 ```

@@ -1,26 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Example from '@/features/home-example';
+import Content from './page.mdx';
+import Client from '@/components/client';
 import './page.css';
 
 export default function Page() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <div className="home">
       <div className="home__intro">
-        <h1>Documentation</h1>
-        <p>
-          Binary Window is a lightweight JavaScript library for creating window tiling layouts with
-          features like drag, drop, and resizable panes.
-        </p>
+        <Content />
       </div>
-      <div className="home__example">{isClient && <Example />}</div>
+      <div className="home__example">
+        <Client>
+          <Example />
+        </Client>
+      </div>
     </div>
   );
 }
