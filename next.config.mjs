@@ -7,7 +7,14 @@ const nextConfig = {
   basePath: process.env.LOCAL_BUILD === 'true' ? '' : '/bwin-docs',
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   env: {
-    BUILD_DATE: new Date().toLocaleString('en-GB'),
+    BUILD_DATE: new Date().toLocaleString('en-GB', { timeZoneName: 'short' }),
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
   },
 };
 
