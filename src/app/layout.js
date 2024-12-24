@@ -4,8 +4,9 @@ import './layout.css';
 import './globals.css';
 
 export const metadata = {
-  title: 'Binary Window Docs',
-  description: 'Documentation for Binary Window library',
+  title: 'Binary Window - Drag Drop Resize and More',
+  description:
+    'A lightweight JavaScript library for creating window tiling layouts with drag, drop, and resizable features.',
 };
 
 export default function RootLayout({ children }) {
