@@ -1,5 +1,5 @@
-import Sidenav from '@/components/sidenav';
-import Link from 'next/link';
+import Sidenav from '@/components/sidebar';
+import Footer from '@/components/footer';
 import './layout.css';
 import './globals.css';
 
@@ -13,14 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="layout">
-          <aside className="layout__sidebar">
-            <Link className="logo" href="/">
-              Binary Window
-            </Link>
-            <Sidenav />
-          </aside>
+          <Sidenav />
           <main className="layout__main">{children}</main>
-          <footer className="layout__footer">Updated at: {process.env.BUILD_DATE}</footer>
+          <Footer />
         </div>
       </body>
     </html>

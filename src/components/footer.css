@@ -1,0 +1,6 @@
+.layout__footer {
+  padding: 0 30px;
+  grid-column: 2;
+  font-size: 14px;
+  text-align: right;
+}
