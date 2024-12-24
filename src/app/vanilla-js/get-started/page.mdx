@@ -21,8 +21,10 @@ Basic example in a HTML file. <a href={demoPath}>Demo</a>
       element.innerHTML = 'Hello, World!';
 
       const bwin = new BinaryWindow({
+        width: 600,
+        height: 400,
         children: [
-          { position: 'left', size: 150, content: element },
+          { position: 'left', size: 300, content: element },
           {
             position: 'right',
             children: [
