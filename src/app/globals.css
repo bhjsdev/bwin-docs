@@ -20,6 +20,10 @@ body {
   background-color: var(--bg-color);
 }
 
+p {
+  line-height: 1.5;
+}
+
 a {
   color: var(--font-color);
   text-underline-offset: 3px;
