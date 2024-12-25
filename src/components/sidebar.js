@@ -24,6 +24,7 @@ export default function Sidebar() {
           links={[
             { href: '/react/get-started', title: 'Get started' },
             { href: '/react/apis', title: 'APIs' },
+            { href: '/react/troubleshooting', title: 'Troubleshooting' },
           ]}
         />
       </nav>
