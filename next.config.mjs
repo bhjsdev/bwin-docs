@@ -26,7 +26,7 @@ const withMDX = createMDX({
       [
         rehypeShiki,
         {
-          theme: 'plastic',
+          theme: 'light-plus',
         },
       ],
     ],
