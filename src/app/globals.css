@@ -2,8 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
-
 @import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
 
 :root {
@@ -65,9 +63,7 @@ h2 {
 
 code {
   font-family: var(--font-family-mono);
-  background-color: white;
-  padding: 2px 4px;
-  border-radius: 4px;
+  padding: 0 4px;
 }
 
 pre.shiki {
@@ -78,7 +74,7 @@ pre.shiki {
   border: 1px solid hsl(0, 0%, 10%);
 
   code {
-    background-color: revert;
+    padding: 0;
   }
 
   .line {
