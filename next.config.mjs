@@ -1,4 +1,5 @@
 import createMDX from '@next/mdx';
+import rehypeShiki from '@shikijs/rehype';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,7 +20,17 @@ const nextConfig = {
 };
 
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
+  extension: /\.mdx?$/,
+  options: {
+    rehypePlugins: [
+      [
+        rehypeShiki,
+        {
+          theme: 'plastic',
+        },
+      ],
+    ],
+  },
 });
 
 export default withMDX(nextConfig);
