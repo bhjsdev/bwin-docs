@@ -8,10 +8,10 @@
       element.innerHTML = 'Hello, World!';
 
       const bwin = new BinaryWindow({
-        width: 600,
-        height: 400,
+        width: 400,
+        height: 300,
         children: [
-          { position: 'left', size: 300, content: element },
+          { position: 'left', size: 200, content: element },
           {
             position: 'right',
             children: [
@@ -25,7 +25,7 @@
       bwin.mount(document.getElementById('container'));
     </script>
   </head>
-  <body>
+  <body style="margin: 0">
     <div id="container"></div>
   </body>
 </html>

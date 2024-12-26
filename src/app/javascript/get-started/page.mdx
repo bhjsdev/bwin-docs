@@ -1,14 +1,17 @@
 import Link from 'next/link';
+import Example from '@/features/javascript-example';
 
 export const demoPath = process.env.LOCAL_BUILD === 'true' ? '/demo.html' : '/bwin-docs/demo.html';
 
-# Vanilla JS
+# JavaScript
 
-You don't need any build tools to use Binary Window. Just include the CSS and JS files directly in your HTML file.
+You don’t need any build tools to use Binary Window. Simply include the CSS and JS files in your HTML file.
 
 ## Get started
 
-Basic example in a HTML file. <a href={demoPath}>Demo</a>
+The example below is hosted within an `iframe`. You can also view it <a href={demoPath}>here</a>.
+
+<Example />
 
 ```html
 <html>
@@ -21,10 +24,10 @@ Basic example in a HTML file. <a href={demoPath}>Demo</a>
       element.innerHTML = 'Hello, World!';
 
       const bwin = new BinaryWindow({
-        width: 600,
-        height: 400,
+        width: 400,
+        height: 300,
         children: [
-          { position: 'left', size: 300, content: element },
+          { position: 'left', size: 200, content: element },
           {
             position: 'right',
             children: [
@@ -38,7 +41,7 @@ Basic example in a HTML file. <a href={demoPath}>Demo</a>
       bwin.mount(document.getElementById('container'));
     </script>
   </head>
-  <body>
+  <body style="margin: 0">
     <div id="container"></div>
   </body>
 </html>

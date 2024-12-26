@@ -11,11 +11,11 @@ export default function Sidebar() {
       </Link>
       <nav className="sidenav">
         <SidenavList
-          heading="Vanilla JS"
+          heading="JavaScript"
           iconClassName="devicon-javascript-plain"
           links={[
-            { href: '/vanilla-js/get-started', title: 'Get started' },
-            { href: '/vanilla-js/apis', title: 'APIs' },
+            { href: '/javascript/get-started', title: 'Get started' },
+            { href: '/javascript/apis', title: 'APIs' },
           ]}
         />
         <SidenavList
