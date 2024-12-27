@@ -43,3 +43,8 @@
     padding-block: 5px;
   }
 }
+
+.sidenav-list__link--active {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
