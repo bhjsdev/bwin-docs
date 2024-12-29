@@ -27,6 +27,7 @@ export default function Sidebar() {
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
           ]}
         />
+        <SidenavList heading="General" links={[{ href: '/general/config', title: 'Config' }]} />
       </nav>
     </aside>
   );

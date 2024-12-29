@@ -1,0 +1,157 @@
+# Configuration
+
+Binary Window organizes panes using a binary tree structure—hence the name **Binary Window**.
+
+## Concept
+
+Internally, Binary Window uses a binary tree to organize its panes. Each node in this tree is called a **sash** (a container of panes).
+
+- If a sash has no children, it renders a **pane**.
+- If a sash has children, it renders a **muntin** (a vertical or horizontal divider) for its child nodes.
+
+## Config Node
+
+Each config node corresponds a sash.
+
+### No Children
+
+Consider following example:
+
+```json
+{
+  "position": "left",
+  "size": 200,
+  "content": "Pane content"
+}
+```
+
+Because this node does not have children, it renders a pane.
+
+- The `position` property determines the pane's position relative to its parent. Valid values include `left`, `right`, `top`, `bottom`.
+
+- The `size` property determines the pane's dimension (width if `left` or `right`, and height if `top` or `bottom`).
+
+- The `content` property determines what is rendered inside the pane (e.g., text, a HTML element or a React component)
+
+### With Children
+
+By design, each node can have at most two children. Consider following example:
+
+```json
+{
+  "position": "left",
+  "size": 200,
+  "children": [
+    {
+      "position": "top",
+      "size": 0.4,
+      "content": "Top pane content"
+    },
+    {
+      "position": "bottom",
+      "size": "60%",
+      "content": "Bottom pane content"
+    }
+  ]
+}
+```
+
+Since this node has children, it renders a muntin (a draggable divider between panes).
+
+- The `size` property determines the total size of its children. Depending on the value of `position`, the size can be the width (if `left` or `right`) or height (if `top` or `bottom`).
+
+- Each child can use a numeric fraction (e.g., 0.4) or a string with a percentage (e.g., "60%") to indicate how much of the total size it occupies. A fraction like 0.4 translates to 40%, and "60%" explicitly denotes 60%.
+
+- In this example, the first child (with a position of `top`) takes 40% of 200 (i.e., 80px) in height, while the bottom child takes 60% of 200 (i.e., 120px) in height.
+
+It is also possible to omit one child node. If omitted, Binary Window infers the missing child's position and size. For instance:
+
+```json
+{
+  "position": "left",
+  "size": 200,
+  "children": [
+    {
+      "position": "top",
+      "size": 0.4,
+      "content": "Top pane content"
+    }
+  ]
+}
+```
+
+Here, because we specified a top pane as the only one child, the system automatically infers a bottom pane to fill the remaining space.
+
+### Root Config Node
+
+The root config node represents the **window** itself. It carries the same properties as a config node, plus a few additional ones. For example:
+
+```json
+{
+  "width": 400,
+  "height": 300,
+  "content": "Single pane content"
+}
+```
+
+- The `width` and `height` properties determine the overall window size.
+- If the window has no children, it simply renders a single pane using the `content` property.
+
+In many cases, you may want the window to automatically fit its container. Set `fitContainer` to `true` to achieve this:
+
+```json
+{
+  "fitContainer": true,
+  "children": ...
+}
+```
+
+With `fitContainer` set, the window will resize to match its parent container.
+
+### Putting it All Together
+
+Because of Binary Window's inference features, many properties can be omitted. Below is an example of a multi-pane layout:
+
+```json
+{
+  "width": 400,
+  "height": 300,
+  "children": [
+    { "position": "left", "size": 200, "content": "Left pane content" },
+    {
+      "children": [
+        { "position": "top", "size": 0.4, "content": "Top right pane content" },
+        { "content": "Bottom right pane content" }
+      ]
+    }
+  ]
+}
+```
+
+In React, the code below is equivalent, using the `Window` component's `panes` prop (instead of children, to avoid conflicts with React's children):
+
+```jsx
+<Window
+  width={400}
+  height={300}
+  panes={[
+    {
+      position: 'left',
+      size: 200,
+      content: 'Left pane content',
+    },
+    {
+      children: [
+        {
+          position: 'top',
+          size: '40%',
+          content: 'Top right pane content',
+        },
+        {
+          content: 'Bottom right pane content',
+        },
+      ],
+    },
+  ]}
+/>
+```

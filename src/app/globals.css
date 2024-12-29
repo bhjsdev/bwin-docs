@@ -64,13 +64,16 @@ h2 {
   margin-top: 3em;
 }
 
+h3 {
+  margin-top: 2em;
+}
+
 code {
   font-family: var(--font-family-mono);
   color: var(--secondary-color);
 }
 
 pre.shiki {
-  max-width: 1000px;
   padding: 0.75em;
   border-radius: 4px;
   font-size: 14px;

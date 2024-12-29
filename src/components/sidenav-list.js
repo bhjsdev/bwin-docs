@@ -9,7 +9,7 @@ export default function SidenavList({ heading, links, iconClassName }) {
   return (
     <div className="sidenav-list">
       <h2>
-        <i className={iconClassName}></i>
+        {iconClassName && <i className={iconClassName}></i>}
         {heading}
       </h2>
       <ul>
