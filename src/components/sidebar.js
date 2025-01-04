@@ -16,6 +16,7 @@ export default function Sidebar() {
           links={[
             { href: '/javascript/get-started', title: 'Get started' },
             { href: '/javascript/apis', title: 'APIs' },
+            { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
           ]}
         />
         <SidenavList
@@ -25,6 +26,7 @@ export default function Sidebar() {
             { href: '/react/get-started', title: 'Get started' },
             { href: '/react/apis', title: 'APIs' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
+            { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
         />
         <SidenavList heading="General" links={[{ href: '/general/config', title: 'Config' }]} />

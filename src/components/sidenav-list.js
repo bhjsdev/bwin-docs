@@ -20,10 +20,15 @@ export default function SidenavList({ heading, links, iconClassName }) {
               : 'sidenav-list__link';
 
           return (
-            <li key={link.href}>
-              <Link href={link.href} className={linkClassName}>
+            <li key={link.href} className="sidenav-list__item">
+              <Link
+                href={link.href}
+                className={linkClassName}
+                target={link.external ? '_blank' : ''}
+              >
                 {link.title}
               </Link>
+              {link.external && <i className="bi bi-box-arrow-up-right"></i>}
             </li>
           );
         })}
