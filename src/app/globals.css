@@ -33,7 +33,11 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.75;
+}
+
+li {
+  line-height: 1.75;
 }
 
 a {
