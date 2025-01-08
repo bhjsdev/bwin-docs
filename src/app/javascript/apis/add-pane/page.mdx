@@ -1,7 +1,7 @@
 import IFrame from '@/components/iframe';
 
 export const metadata = {
-  title: 'addPane - JavaScript APIs - Binary Window',
+  title: 'Add pane - JavaScript APIs - Binary Window',
 };
 
 # Add a pane
@@ -11,21 +11,17 @@ export const metadata = {
 Add a pane to an existing pane.
 
 ```js
-bwin.addPane('target-pane-id', {
-  content: 'Hello, World!',
-  position: 'right',
-  size: 100,
-});
+binaryWindow.addPane(paneId, options);
 ```
 
 ### Parameters
 
 #### Main
 
-| Name      | Type   | Description                                    |
-| --------- | ------ | ---------------------------------------------- |
-| `paneId`  | string | Target pane's ID that the new pane is added to |
-| `options` | object | Options for new pane                           |
+| Name      | Type   | Description                                          |
+| --------- | ------ | ---------------------------------------------------- |
+| `paneId`  | string | Target pane's ID that the new pane is added to.      |
+| `options` | object | Options for new pane. e.g., `size`, `position`, etc. |
 
 #### `options` properties
 
@@ -37,7 +33,9 @@ bwin.addPane('target-pane-id', {
 
 ### Returns
 
-**Type**: `void`
+**Type**: `Sash` object
+
+**Description**: Newly created Sash object.
 
 ### Example
 

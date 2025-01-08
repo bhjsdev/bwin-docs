@@ -1,7 +1,7 @@
 import IFrame from '@/components/iframe';
 
 export const metadata = {
-  title: 'removePane - JavaScript APIs - Binary Window',
+  title: 'Remove pane - JavaScript APIs - Binary Window',
 };
 
 # Remove a pane
@@ -10,6 +10,25 @@ export const metadata = {
 
 Remove a pane from the window.
 
+```js
+binaryWindow.removePane(paneId);
+```
+
+### Parameters
+
+#### Main
+
+| Name     | Type   | Description                  |
+| -------- | ------ | ---------------------------- |
+| `paneId` | string | ID of the pane to be removed |
+
+### Returns
+
+**Type**: `void`
+
+### Example
+
+<br />
 <IFrame path="remove-pane" />
 
 ```html

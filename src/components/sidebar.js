@@ -19,8 +19,8 @@ export default function Sidebar() {
               href: '/javascript/apis',
               title: 'APIs',
               children: [
-                { href: '/javascript/apis/add-pane', title: 'addPane' },
-                { href: '/javascript/apis/remove-pane', title: 'removePane' },
+                { href: '/javascript/apis/add-pane', title: 'Add pane' },
+                { href: '/javascript/apis/remove-pane', title: 'Remove pane' },
               ],
             },
             { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
