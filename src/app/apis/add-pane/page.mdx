@@ -1,0 +1,90 @@
+import IFrame from '@/components/iframe';
+
+export const metadata = {
+  title: 'addPane - APIs - Binary Window',
+};
+
+# `addPane`
+
+## Description
+
+Add a pane to an existing pane.
+
+```js
+binaryWindow.addPane(targetPaneId, options);
+```
+
+## Parameters
+
+### Function parameters
+
+| Name           | Type   | Description                                          |
+| -------------- | ------ | ---------------------------------------------------- |
+| `targetPaneId` | string | Target pane's ID that the new pane is added to.      |
+| `options`      | object | Options for new pane. e.g., `size`, `position`, etc. |
+
+### `options` details
+
+| Name       | Type             | Description                                                          |
+| ---------- | ---------------- | -------------------------------------------------------------------- |
+| `content`  | string\|DOM Node | Content of the new pane                                              |
+| `position` | string           | Position of the new pane. One of `top`, `right`, `bottom`, or `left` |
+| `size`     | number\|string   | Size of the new pane. e.g., 100, 0.5, "50%"                          |
+
+## Returns
+
+**Type**: `Sash` object
+
+**Description**: Newly created Sash object.
+
+## Code snippets
+
+### Javascript
+
+```js
+const binaryWindow = new BinaryWindow();
+
+binaryWindow.addPane('target-pane-id', {
+  position: 'bottom',
+  size: 120,
+  content: Object.assign(document.createElement('div'), { innerHTML: 'Hello, World!' }),
+});
+```
+
+### React
+
+```jsx
+import { useRef } from 'react';
+import { Window } from 'bwin-react';
+
+function App() {
+  const windowRef = useRef(null);
+
+  function handlePaneAdd() {
+    windowRef.current.addPane('pane-2', {
+      position: 'bottom',
+      size: 120,
+      content: <div>Hello, World!</div>,
+    });
+  }
+
+  return (
+    <div>
+      <button onClick={handlePaneAdd}>Add pane</button>
+      <Window
+        ref={windowRef}
+        panes={[
+          {
+            size: 0.5,
+            id: 'pane-1',
+          },
+          {
+            size: 0.5,
+            id: 'pane-2',
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```

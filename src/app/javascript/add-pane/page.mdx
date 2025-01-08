@@ -1,0 +1,43 @@
+import IFrame from '@/components/iframe';
+
+export const metadata = {
+  title: 'Add pane - JavaScript - Binary Window',
+};
+
+# Add a pane
+
+## Example
+
+Click the button to add a new pane to the bottom of the right pane.
+
+<IFrame path="add-pane" />
+
+```html
+<button id="add-pane">Add pane</button>
+<div id="container" style="width: 400px; height: 260px"></div>
+```
+
+```js
+const bwin = new BinaryWindow({
+  fitContainer: true,
+  children: [
+    { position: 'left', id: 'pane-1', content: 'Pane 1' },
+    {
+      position: 'right',
+      id: 'pane-2',
+      content: 'Pane 2',
+    },
+  ],
+});
+
+bwin.mount(document.getElementById('container'));
+
+document.getElementById('add-pane').addEventListener('click', () => {
+  bwin.addPane('pane-2', {
+    position: 'bottom',
+    size: 120,
+    content: Object.assign(document.createElement('em'), { innerHTML: 'Pane 3' }),
+    title: 'Pane 3',
+  });
+});
+```

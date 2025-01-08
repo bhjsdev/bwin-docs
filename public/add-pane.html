@@ -20,15 +20,16 @@
 
       document.getElementById('add-pane').addEventListener('click', () => {
         bwin.addPane('pane-2', {
-          content: Object.assign(document.createElement('em'), { innerHTML: 'Pane 3' }),
           position: 'bottom',
           size: 120,
+          content: Object.assign(document.createElement('em'), { innerHTML: 'Pane 3' }),
+          title: 'Pane 3',
         });
       });
     </script>
   </head>
   <body style="margin: 0">
-    <button id="add-pane">Add Pane 3</button>
+    <button id="add-pane">Add a pane</button>
     <div id="container" style="width: 400px; height: 260px"></div>
   </body>
 </html>

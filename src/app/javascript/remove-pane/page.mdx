@@ -1,32 +1,15 @@
 import IFrame from '@/components/iframe';
 
 export const metadata = {
-  title: 'Remove pane - JavaScript APIs - Binary Window',
+  title: 'Remove pane - JavaScript - Binary Window',
 };
 
 # Remove a pane
 
-## `removePane`
+## Example
 
-Remove a pane from the window.
+Click the button to remove the right pane.
 
-```js
-binaryWindow.removePane(paneId);
-```
-
-### Parameters
-
-| Name     | Type   | Description                  |
-| -------- | ------ | ---------------------------- |
-| `paneId` | string | ID of the pane to be removed |
-
-### Returns
-
-**Type**: `void`
-
-### Example
-
-<br />
 <IFrame path="remove-pane" />
 
 ```html
@@ -52,4 +35,8 @@ bwin.mount(document.getElementById('container'));
 document.getElementById('remove-pane').addEventListener('click', () => {
   bwin.removePane('pane-2');
 });
+```
+
+```
+
 ```

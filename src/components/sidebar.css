@@ -42,7 +42,7 @@
       padding-inline-start: 20px;
 
       li {
-        padding-block: 4px;
+        padding-block: 2px;
       }
     }
   }
@@ -54,7 +54,7 @@
   }
 
   li {
-    padding-block: 8px;
+    padding-block: 4px;
   }
 }
 

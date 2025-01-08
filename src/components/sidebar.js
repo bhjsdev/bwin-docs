@@ -15,14 +15,8 @@ export default function Sidebar() {
           iconClassName="devicon-javascript-plain"
           links={[
             { href: '/javascript/get-started', title: 'Get started' },
-            {
-              href: '/javascript/apis',
-              title: 'APIs',
-              children: [
-                { href: '/javascript/apis/add-pane', title: 'Add pane' },
-                { href: '/javascript/apis/remove-pane', title: 'Remove pane' },
-              ],
-            },
+            { href: '/javascript/add-pane', title: 'Add pane' },
+            { href: '/javascript/remove-pane', title: 'Remove pane' },
             { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
           ]}
         />
@@ -31,12 +25,18 @@ export default function Sidebar() {
           iconClassName={'devicon-react-original'}
           links={[
             { href: '/react/get-started', title: 'Get started' },
-            { href: '/react/apis', title: 'APIs' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
         />
         <SidenavList heading="General" links={[{ href: '/general/config', title: 'Config' }]} />
+        <SidenavList
+          heading="APIs"
+          links={[
+            { href: '/apis/add-pane', title: 'addPane' },
+            { href: '/apis/remove-pane', title: 'removePane' },
+          ]}
+        />
       </nav>
     </aside>
   );
