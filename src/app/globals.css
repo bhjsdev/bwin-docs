@@ -101,3 +101,13 @@ pre.shiki {
     line-height: 1.5;
   }
 }
+
+th {
+  font-weight: 600;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px 10px;
+}

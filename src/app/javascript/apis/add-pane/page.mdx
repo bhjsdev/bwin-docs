@@ -10,6 +10,38 @@ export const metadata = {
 
 Add a pane to an existing pane.
 
+```js
+bwin.addPane('target-pane-id', {
+  content: 'Hello, World!',
+  position: 'right',
+  size: 100,
+});
+```
+
+### Parameters
+
+#### Main
+
+| Name      | Type   | Description                                    |
+| --------- | ------ | ---------------------------------------------- |
+| `paneId`  | string | Target pane's ID that the new pane is added to |
+| `options` | object | Options for new pane                           |
+
+#### `options` properties
+
+| Name       | Type             | Description                                                          |
+| ---------- | ---------------- | -------------------------------------------------------------------- |
+| `content`  | string\|DOM Node | Content of the new pane                                              |
+| `position` | string           | Position of the new pane. One of `top`, `right`, `bottom`, or `left` |
+| `size`     | number\|string   | Size of the new pane. e.g., 100, 0.5, "50%"                          |
+
+### Returns
+
+**Type**: `void`
+
+### Example
+
+<br />
 <IFrame path="add-pane" />
 
 ```html

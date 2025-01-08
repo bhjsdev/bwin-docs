@@ -17,7 +17,8 @@
     "next": "^15.1.2",
     "react": "^19.0.0",
     "react-bwin": "^0.3.2",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "prettier": "^3.4.2",
