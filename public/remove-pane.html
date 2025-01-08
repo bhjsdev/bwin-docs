@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <script type="module">
+      import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      const bwin = new BinaryWindow({
+        fitContainer: true,
+        children: [
+          { position: 'left', id: 'pane-1', content: 'Pane 1' },
+          {
+            position: 'right',
+            id: 'pane-2',
+            content: 'Pane 2',
+          },
+        ],
+      });
+
+      bwin.mount(document.getElementById('container'));
+
+      document.getElementById('remove-pane').addEventListener('click', () => {
+        bwin.removePane('pane-2');
+      });
+    </script>
+  </head>
+  <body style="margin: 0">
+    <button id="remove-pane">Remove Pane 2</button>
+    <div id="container" style="width: 400px; height: 260px"></div>
+  </body>
+</html>

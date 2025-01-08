@@ -64,6 +64,10 @@ h5,
 h6 {
   font-weight: 600;
   margin-bottom: 0.5em;
+
+  code {
+    font-weight: 500;
+  }
 }
 
 h1 {

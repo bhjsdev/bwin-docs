@@ -15,7 +15,14 @@ export default function Sidebar() {
           iconClassName="devicon-javascript-plain"
           links={[
             { href: '/javascript/get-started', title: 'Get started' },
-            { href: '/javascript/apis', title: 'APIs' },
+            {
+              href: '/javascript/apis',
+              title: 'APIs',
+              children: [
+                { href: '/javascript/apis/add-pane', title: 'addPane' },
+                { href: '/javascript/apis/remove-pane', title: 'removePane' },
+              ],
+            },
             { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
           ]}
         />
