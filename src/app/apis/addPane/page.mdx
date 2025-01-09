@@ -25,11 +25,14 @@ binaryWindow.addPane(targetPaneId, options);
 
 ### `options` details
 
-| Name       | Type             | Description                                                          |
-| ---------- | ---------------- | -------------------------------------------------------------------- |
-| `content`  | string\|DOM Node | Content of the new pane                                              |
-| `position` | string           | Position of the new pane. One of `top`, `right`, `bottom`, or `left` |
-| `size`     | number\|string   | Size of the new pane. e.g., 100, 0.5, "50%"                          |
+| Name       | Type                                | Description                                                          |
+| ---------- | ----------------------------------- | -------------------------------------------------------------------- |
+| `content`  | string \| DOM Node \| ReactNode[^1] | Content of the new pane                                              |
+| `position` | string                              | Position of the new pane. One of `top`, `right`, `bottom`, or `left` |
+| `size`     | number \| string                    | Size of the new pane. e.g., 100, 0.5, "50%"                          |
+| `title`    | string \| DOM Node \| ReactNode[^1] | Title of the new pane                                                |
+
+[^1]: `DOM Node` is for vanilla Javascript, and `ReactNode` is for React.
 
 ## Returns
 
@@ -47,7 +50,7 @@ const binaryWindow = new BinaryWindow();
 binaryWindow.addPane('target-pane-id', {
   position: 'bottom',
   size: 120,
-  content: Object.assign(document.createElement('div'), { innerHTML: 'Hello, World!' }),
+  content: Object.assign(document.createElement('div'), { innerHTML: 'Hello World' }),
 });
 ```
 
@@ -60,17 +63,17 @@ import { Window } from 'bwin-react';
 function App() {
   const windowRef = useRef(null);
 
-  function handlePaneAdd() {
+  function handleClick() {
     windowRef.current.addPane('pane-2', {
       position: 'bottom',
       size: 120,
-      content: <div>Hello, World!</div>,
+      content: <div>Hello World</div>,
     });
   }
 
   return (
     <div>
-      <button onClick={handlePaneAdd}>Add pane</button>
+      <button onClick={handleClick}>Add pane</button>
       <Window
         ref={windowRef}
         panes={[

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Example from '@/features/javascript-example';
+import IFrame from '@/components/iframe';
 
 export const demoPath = process.env.LOCAL_BUILD === 'true' ? '/demo.html' : '/bwin-docs/demo.html';
 
@@ -15,7 +15,7 @@ You don't need any build tools to use Binary Window. Simply include the CSS and 
 
 Load the CSS and JavaScript files from a CDN. The example below is hosted within an `iframe`. You can also view it <a href={demoPath}>here</a>.
 
-<Example />
+<IFrame path="get-started" height={320} />
 
 ```html
 <html>
@@ -25,7 +25,7 @@ Load the CSS and JavaScript files from a CDN. The example below is hosted within
       import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
 
       const element = document.createElement('em');
-      element.innerHTML = 'Hello, World!';
+      element.innerHTML = 'Hello World';
 
       const bwin = new BinaryWindow({
         width: 400,

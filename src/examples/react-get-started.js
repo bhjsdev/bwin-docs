@@ -12,7 +12,7 @@ export default function Example() {
           {
             position: 'left',
             size: 200,
-            content: <em>Hello World!</em>,
+            content: <em>Hello World</em>,
           },
           {
             position: 'right',

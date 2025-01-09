@@ -1,6 +1,6 @@
 'use client';
 
-import Example from '@/features/homepage-example';
+import Example from '@/examples/homepage';
 import Content from './page.content.mdx';
 import Client from '@/components/client';
 import './page.css';

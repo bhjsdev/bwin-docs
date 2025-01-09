@@ -33,3 +33,37 @@ const binaryWindow = new BinaryWindow();
 
 binaryWindow.removePane('target-pane-id');
 ```
+
+### React
+
+```jsx
+import { useRef } from 'react';
+import { Window } from 'bwin-react';
+
+function App() {
+  const windowRef = useRef(null);
+
+  function handleClick() {
+    windowRef.current.removePane('pane-2');
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Remove pane</button>
+      <Window
+        ref={windowRef}
+        panes={[
+          {
+            size: 0.5,
+            id: 'pane-1',
+          },
+          {
+            size: 0.5,
+            id: 'pane-2',
+          },
+        ]}
+      />
+    </div>
+  );
+}
+```

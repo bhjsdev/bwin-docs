@@ -33,8 +33,8 @@ export default function Sidebar() {
         <SidenavList
           heading="APIs"
           links={[
-            { href: '/apis/add-pane', title: 'addPane' },
-            { href: '/apis/remove-pane', title: 'removePane' },
+            { href: '/apis/addPane', title: 'addPane' },
+            { href: '/apis/removePane', title: 'removePane' },
           ]}
         />
       </nav>
