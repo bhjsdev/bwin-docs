@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 const nextConfig = {
   output: 'export',
   reactStrictMode: false,
-  basePath: process.env.LOCAL_BUILD === 'true' ? '' : '/bwin-docs',
+  basePath: process.env.BASE_PATH,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   env: {
     BUILD_DATE: new Date().toISOString(),

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import IFrame from '@/components/iframe';
 
-export const demoPath = process.env.LOCAL_BUILD === 'true' ? '/demo.html' : '/bwin-docs/demo.html';
+export const examplePath = process.env.BASE_PATH + '/get-started.html';
 
 export const metadata = {
   title: 'Get started - JavaScript - Binary Window',
@@ -13,7 +13,7 @@ You don't need any build tools to use Binary Window. Simply include the CSS and 
 
 ## Quick start
 
-Load the CSS and JavaScript files from a CDN. The example below is hosted within an `iframe`. You can also view it <a href={demoPath}>here</a>.
+Load the CSS and JavaScript files from a CDN. The example below is hosted within an `iframe`. You can also view it <a href={examplePath}>here</a>.
 
 <IFrame path="get-started" height={320} />
 
