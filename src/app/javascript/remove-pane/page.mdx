@@ -1,4 +1,5 @@
 import IFrame from '@/components/iframe';
+import { getPath } from '@/utils';
 
 export const metadata = {
   title: 'Remove pane - JavaScript - Binary Window',
@@ -8,7 +9,7 @@ export const metadata = {
 
 ## Example
 
-Click the button to remove the right pane.
+Click the button to remove the right pane. For more details, see the <a href={getPath('/apis/removePane')}>removePane</a> API.
 
 <IFrame path="/remove-pane.html" />
 
