@@ -8,4 +8,20 @@ Check the following items if you run into issues, such as restoring a minimized 
 
 ## StrictMode
 
-- Disable `StrictMode` in React 18 or later, including frameworks built on it (e.g., Next.js).
+Disable `StrictMode` in React 18 or later, including frameworks built on it (e.g., Next.js).
+
+## Server rendered HTML not matching client properties
+
+In frameworks like Next.js that use server-side rendering (SSR), it may throw errors indicating that the server rendered HTML does not match the client-side properties. To fix this, you can call `useEffect` to render the `Window` component after the initial render.
+
+```jsx
+function ClientWindow() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  return isClient && <Window />;
+}
+```
