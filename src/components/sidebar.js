@@ -25,6 +25,8 @@ export default function Sidebar() {
           iconClassName={'devicon-react-original'}
           links={[
             { href: '/react/get-started', title: 'Get started' },
+            { href: '/react/add-pane', title: 'Add pane' },
+            { href: '/react/remove-pane', title: 'Remove pane' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
