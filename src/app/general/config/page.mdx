@@ -6,8 +6,10 @@ Binary Window organizes panes using a binary tree structure—hence the name **B
 
 Internally, Binary Window uses a binary tree to organize its panes. Each node in this tree is called a **sash** (a container of panes).
 
-- If a sash has no children, it renders a **pane**.
-- If a sash has children, it renders a **muntin** (a vertical or horizontal divider) that allows you to resize the panes.
+- If a sash has no children, it renders a **pane** with a Sash ID, e.g., <br />`<bw-pane sash-id="AB-123">`
+- If a sash has children, it renders a **muntin** (a vertical or horizontal divider) with a Sash ID for resizing the panes, e.g., <br />`<bw-muntin sash-id="CD-456">`
+
+Sash IDs are used to identify panes and muntins. Some APIs require a Sash ID to target a specific pane or muntin.
 
 ## Config Node
 

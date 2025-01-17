@@ -9,14 +9,14 @@ export const metadata = {
 Remove a pane from the window.
 
 ```js
-binaryWindow.removePane(paneId);
+binaryWindow.removePane(sashId);
 ```
 
 ## Parameters
 
-| Name     | Type   | Description                  |
-| -------- | ------ | ---------------------------- |
-| `paneId` | string | ID of the pane to be removed |
+| Name     | Type   | Description                       |
+| -------- | ------ | --------------------------------- |
+| `sashId` | string | Sash ID of the pane to be removed |
 
 ## Returns
 
@@ -35,7 +35,7 @@ const binaryWindow = new BinaryWindow();
 
 binaryWindow.mount(document.getElementById('container'));
 
-binaryWindow.removePane('pane-id');
+binaryWindow.removePane('sash-id');
 ```
 
 ### React
@@ -48,7 +48,7 @@ function App() {
   const windowRef = useRef(null);
 
   useEffect(() => {
-    windowRef.current.removePane('pane-id');
+    windowRef.current.removePane('sash-id');
   }, []);
 
   return <Window ref={windowRef} />;

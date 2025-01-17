@@ -9,24 +9,24 @@ export const metadata = {
 Add a pane to an existing pane.
 
 ```js
-binaryWindow.addPane(targetPaneId, options);
+binaryWindow.addPane(targetPaneSashId, options);
 ```
 
 ## Parameters
 
 ### Function parameters
 
-| Name           | Type   | Description                                          |
-| -------------- | ------ | ---------------------------------------------------- |
-| `targetPaneId` | string | Target pane's ID that the new pane is added to.      |
-| `options`      | object | Options for new pane. e.g., `size`, `position`, etc. |
+| Name               | Type   | Description                                          |
+| ------------------ | ------ | ---------------------------------------------------- |
+| `targetPaneSashId` | string | Target pane's Sash ID that the new pane is added to. |
+| `options`          | object | Options for new pane. e.g., `size`, `position`, etc. |
 
 ### `options` details
 
 | Name       | Type                                | Description                                                          |
 | ---------- | ----------------------------------- | -------------------------------------------------------------------- |
 | `content`  | string \| DOM Node \| ReactNode[^1] | Content of the new pane                                              |
-| `id`       | string                              | ID of the new pane                                                   |
+| `id`       | string                              | Sash ID to the new pane                                              |
 | `position` | string                              | Position of the new pane. One of `top`, `right`, `bottom`, or `left` |
 | `size`     | number \| string                    | Size of the new pane. e.g., 100, 0.5, "50%"                          |
 | `title`    | string \| DOM Node \| ReactNode[^1] | Title of the new pane                                                |
@@ -52,7 +52,7 @@ const binaryWindow = new BinaryWindow();
 
 binaryWindow.mount(document.getElementById('container'));
 
-binaryWindow.addPane('target-pane-id', {
+binaryWindow.addPane('target-pane-sash-id', {
   position: 'bottom',
   size: 120,
   content: Object.assign(document.createElement('div'), { innerHTML: 'Hello World' }),
@@ -69,7 +69,7 @@ function App() {
   const windowRef = useRef(null);
 
   useEffect(() => {
-    windowRef.current.addPane('target-pane-id', {
+    windowRef.current.addPane('target-pane-sash-id', {
       position: 'bottom',
       size: 120,
       content: <div>Hello World</div>,
