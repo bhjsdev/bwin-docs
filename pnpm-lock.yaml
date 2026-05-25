@@ -21,13 +21,13 @@ importers:
         specifier: ^15.5.18
         version: 15.5.18(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
-        specifier: ^19.1.0
+        specifier: ^19.2.6
         version: 19.2.6
       react-bwin:
         specifier: ^0.3.3
         version: 0.3.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-dom:
-        specifier: ^19.1.0
+        specifier: ^19.2.6
         version: 19.2.6(react@19.2.6)
       remark-gfm:
         specifier: ^4.0.1
@@ -37,11 +37,11 @@ importers:
         version: 4.1.0
     devDependencies:
       prettier:
-        specifier: ^3.5.3
+        specifier: ^3.8.3
         version: 3.8.3
       prettier-plugin-brace-style:
-        specifier: ^0.7.2
-        version: 0.7.3(prettier@3.8.3)
+        specifier: ^0.10.1
+        version: 0.10.1(prettier@3.8.3)
 
 packages:
 
@@ -697,14 +697,17 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-plugin-brace-style@0.7.3:
-    resolution: {integrity: sha512-dpNenn3Dm4BdDmVE0azn0SLclTTcMgWjMGYsQgT5uV/mKNToYi97bT+SiAtSYb36SRQFlZ0nEs/2eD/tUI3maA==}
-    engines: {node: '>=14'}
+  prettier-plugin-brace-style@0.10.1:
+    resolution: {integrity: sha512-enGi/oen00iu1CSGbbGakrCrdnS2pfG2KcEzVv/qNK+vY5jTPIKKblg555Fd6wtR7ZxERttzJNcaAe8Z9/oMuA==}
+    engines: {node: '>=18'}
     peerDependencies:
-      prettier: ^2 || ^3
+      '@prettier/plugin-oxc': '*'
+      prettier: ^3
       prettier-plugin-astro: '*'
       prettier-plugin-svelte: '*'
     peerDependenciesMeta:
+      '@prettier/plugin-oxc':
+        optional: true
       prettier-plugin-astro:
         optional: true
       prettier-plugin-svelte:
@@ -858,6 +861,9 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
+
+  zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -1778,9 +1784,10 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-brace-style@0.7.3(prettier@3.8.3):
+  prettier-plugin-brace-style@0.10.1(prettier@3.8.3):
     dependencies:
       prettier: 3.8.3
+      zod: 3.22.4
 
   prettier@3.8.3: {}
 
@@ -2010,5 +2017,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
+
+  zod@3.22.4: {}
 
   zwitch@2.0.4: {}
