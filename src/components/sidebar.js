@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import SidenavList from './sidenav-list';
+import Image from 'next/image';
 import './sidebar.css';
-import LogoIcon from './logo.svg';
 
 export default function Sidebar() {
   return (
     <aside className="layout__sidebar">
       <Link className="logo" href="/">
-        <LogoIcon />
+        <Image src="/logo.svg" alt="Binary Window Logo" width={100} height={50}/>
       </Link>
       <nav className="sidenav">
         <SidenavList
