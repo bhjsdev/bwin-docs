@@ -11,6 +11,10 @@ pnpm install
 pnpm dev
 ```
 
+### Why not Turbopack?
+
+The MDX pipeline uses remark/rehype plugins (remark-gfm, @shikijs/rehype) which are JavaScript functions. Turbopack requires all loader options to be serializable plain objects and cannot handle function references, so the dev server uses Webpack instead.
+
 ## Environment Variables
 
 Create a `.env.local` file with the following variable for static HTML files from `public/` to be included in the pages:
