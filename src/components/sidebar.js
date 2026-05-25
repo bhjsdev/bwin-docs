@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <aside className="layout__sidebar">
       <Link className="logo" href="/">
-        <Image src="/logo.svg" alt="Binary Window Logo" width={100} height={50}/>
+        <Image src={process.env.BASE_PATH + '/logo.svg'} alt="Logo" width={100} height={50}/>
       </Link>
       <nav className="sidenav">
         <SidenavList
