@@ -1,0 +1,8 @@
+.docs {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+.docs__main {
+  padding: 30px;
+}

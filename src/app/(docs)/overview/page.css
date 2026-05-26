@@ -5,5 +5,5 @@
 }
 
 .overview__example {
-  flex-grow: 1;
+  flex: 1;
 }

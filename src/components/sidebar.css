@@ -1,26 +1,5 @@
-.layout__sidebar {
-  grid-row: span 2;
+.docs__sidebar {
   padding: 30px 40px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration: none;
-  line-height: 1;
-  display: block;
-  margin-bottom: 40px;
-  color: var(--font-color);
-  width: 100px;
-
-  &:hover {
-    background-color: revert;
-    color: var(--font-color);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
 }
 
 .sidenav {
