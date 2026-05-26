@@ -1,8 +1,13 @@
+import Example from '@/examples/home';
+import Client from '@/components/client';
+import './page.css';
 
 export default function Page() {
   return (
     <div className="home">
-      <h1>Home</h1>
+      <Client>
+        <Example />
+      </Client>
     </div>
   );
 }

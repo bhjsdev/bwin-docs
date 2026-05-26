@@ -32,6 +32,9 @@
   margin: 0 auto;
 }
 
+.main {
+}
+
 .footer {
   height: var(--footer-height);
   display: flex;

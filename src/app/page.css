@@ -1,0 +1,4 @@
+.home {
+  padding: 10px var(--clearance);
+  height: calc(100% - 20px);
+}

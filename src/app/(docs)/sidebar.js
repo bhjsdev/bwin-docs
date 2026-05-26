@@ -8,7 +8,7 @@ export default function Sidebar() {
         <SidenavList
           heading="General"
           links={[
-            { href: '/overview', title: 'Overview' },
+            { href: '/general/overview', title: 'Overview' },
             { href: '/general/config', title: 'Config' },
           ]}
         />
