@@ -11,6 +11,10 @@ export default function Sidebar() {
       </Link>
       <nav className="sidenav">
         <SidenavList
+          heading="Home"
+          links={[{ href: '/overview', title: 'Overview' }]}
+        />
+        <SidenavList
           heading="JavaScript"
           iconClassName="devicon-javascript-plain"
           links={[

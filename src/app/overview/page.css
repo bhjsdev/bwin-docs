@@ -1,9 +1,9 @@
-.home {
+.overview {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.home__example {
+.overview__example {
   flex-grow: 1;
 }
