@@ -1,10 +1,10 @@
-import Sidenav from '@/components/sidebar';
+import Sidebar from './sidebar';
 import './layout.css';
 
 export default function DocsLayout({ children }) {
   return (
     <div className="docs">
-      <Sidenav />
+      <Sidebar />
       <div className="docs__main">{children}</div>
     </div>
   );
