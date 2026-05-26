@@ -10,38 +10,20 @@ export default function Example() {
         fitContainer
         panes={[
           {
-            position: 'left',
-            size: '30%',
-            title: 'Title',
-          },
-          {
-            position: 'right',
+            position: 'top',
+            size: 0.6,
             children: [
               {
-                position: 'top',
-                size: '40%',
-                title: <i>No action buttons</i>,
-                actions: null,
+                position: 'left',
+                size: 0.5,
               },
               {
-                position: 'bottom',
-                size: '60%',
-                children: [
-                  {
-                    position: 'left',
-                    size: '50%',
-                    draggable: false,
-                    content: 'Drag disabled',
-                  },
-                  {
-                    position: 'right',
-                    size: '50%',
-                    content: ' Drop disabled',
-                    droppable: false,
-                  },
-                ],
+                position: 'right',
               },
             ],
+          },
+          {
+            position: 'bottom',
           },
         ]}
       />

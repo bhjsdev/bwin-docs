@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
             </Link>
             <div className="top-nav__links">
               <Link href="/">Home</Link>
-              <Link href="/general/overview">Documentation</Link>
+              <Link href="/general/overview">Docs</Link>
             </div>
           </nav>
           <main className="main">{children}</main>
