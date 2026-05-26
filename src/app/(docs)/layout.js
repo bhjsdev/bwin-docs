@@ -1,10 +1,10 @@
-import Sidebar from './sidebar';
+import DocsSidebar from './sidebar';
 import './layout.css';
 
 export default function DocsLayout({ children }) {
   return (
     <div className="docs">
-      <Sidebar />
+      <DocsSidebar />
       <div className="docs__main">{children}</div>
     </div>
   );

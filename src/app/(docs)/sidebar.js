@@ -5,7 +5,13 @@ export default function Sidebar() {
   return (
     <aside className="docs__sidebar">
       <nav className="sidenav">
-        <SidenavList heading="Home" links={[{ href: '/overview', title: 'Overview' }]} />
+        <SidenavList
+          heading="General"
+          links={[
+            { href: '/overview', title: 'Overview' },
+            { href: '/general/config', title: 'Config' },
+          ]}
+        />
         <SidenavList
           heading="JavaScript"
           iconClassName="devicon-javascript-plain"
@@ -27,7 +33,6 @@ export default function Sidebar() {
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
         />
-        <SidenavList heading="General" links={[{ href: '/general/config', title: 'Config' }]} />
         <SidenavList
           heading="APIs"
           links={[

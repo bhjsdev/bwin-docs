@@ -4,5 +4,5 @@
 }
 
 .docs__main {
-  padding: 30px;
+  padding: var(--clearance);
 }

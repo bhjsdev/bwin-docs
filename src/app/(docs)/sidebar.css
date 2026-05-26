@@ -1,5 +1,5 @@
 .docs__sidebar {
-  padding: 30px 40px;
+  padding: var(--clearance);
 }
 
 .sidenav {
