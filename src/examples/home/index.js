@@ -7,12 +7,13 @@ import PieChart from './pie-chart';
 import BubbleChart from './bubble-chart';
 import DataGrid from './data-grid';
 import 'react-bwin/react-bwin.css';
+import './styles.css';
 
 ModuleRegistry.registerModules(AllCommunityModule);
 
 export default function Example() {
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div className="home-example" style={{ width: '100%', height: '100%' }}>
       <Window
         fitContainer
         panes={[

@@ -7,6 +7,7 @@ export default function BarChart() {
     const countries = populationData.filter((d) => d.city === null).slice(0, 20);
 
     return {
+      theme: 'ag-sheets',
       data: countries,
       series: [
         {

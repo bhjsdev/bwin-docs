@@ -15,6 +15,7 @@ export default function PieChart() {
       .sort((a, b) => b.population - a.population);
 
     return {
+      theme: 'ag-sheets',
       data,
       series: [
         {
@@ -29,9 +30,5 @@ export default function PieChart() {
     };
   }, []);
 
-  return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <AgCharts options={options} style={{ height: '100%' }} />
-    </div>
-  );
+  return <AgCharts options={options} style={{ height: '100%' }} />;
 }

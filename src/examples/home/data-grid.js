@@ -25,7 +25,6 @@ export default function DataGrid() {
   return (
     <AgGridProvider modules={gridModules}>
       <AgGridReact
-        containerStyle={{padding: 10}}
         rowData={rowData}
         columnDefs={columnDefs}
         defaultColDef={{ flex: 1, minWidth: 100 }}

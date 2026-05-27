@@ -7,6 +7,7 @@ export default function BubbleChart() {
     const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
 
     return {
+      theme: 'ag-sheets',
       data: cities,
       series: [
         {
