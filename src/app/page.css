@@ -1,9 +1,4 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.home__example {
-  flex-grow: 1;
+  padding: 10px var(--clearance);
+  height: calc(100% - 20px);
 }

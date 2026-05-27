@@ -1,15 +1,17 @@
-import Link from 'next/link';
 import SidenavList from './sidenav-list';
-import Image from 'next/image';
 import './sidebar.css';
 
 export default function Sidebar() {
   return (
-    <aside className="layout__sidebar">
-      <Link className="logo" href="/">
-        <Image src={process.env.BASE_PATH + '/logo.svg'} alt="Logo" width={100} height={50}/>
-      </Link>
+    <aside className="docs__sidebar">
       <nav className="sidenav">
+        <SidenavList
+          heading="General"
+          links={[
+            { href: '/general/overview', title: 'Overview' },
+            { href: '/general/config', title: 'Config' },
+          ]}
+        />
         <SidenavList
           heading="JavaScript"
           iconClassName="devicon-javascript-plain"
@@ -31,7 +33,6 @@ export default function Sidebar() {
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
         />
-        <SidenavList heading="General" links={[{ href: '/general/config', title: 'Config' }]} />
         <SidenavList
           heading="APIs"
           links={[
