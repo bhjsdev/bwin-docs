@@ -4,6 +4,7 @@ import { Window } from 'react-bwin';
 import { ModuleRegistry, AllCommunityModule } from 'ag-charts-community';
 import BarChart from './bar-chart';
 import PieChart from './pie-chart';
+import BubbleChart from './bubble-chart';
 import DataGrid from './data-grid';
 import 'react-bwin/react-bwin.css';
 
@@ -17,22 +18,20 @@ export default function Example() {
         panes={[
           {
             position: 'top',
-            size: 0.6,
+            size: 0.5,
             children: [
               {
                 position: 'left',
-                size: 0.5,
+                size: 0.6,
                 content: <BarChart />,
               },
               {
-                position: 'right',
                 content: <PieChart />,
               },
             ],
           },
           {
-            position: 'bottom',
-            content: <DataGrid />,
+            children: [{ position: 'left', size: 0.5, content: <BubbleChart /> }, { content: <DataGrid /> }],
           },
         ]}
       />

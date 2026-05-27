@@ -6,10 +6,7 @@ import populationData from '@/data/population.json';
 const gridModules = [AllCommunityModule];
 
 export default function DataGrid() {
-  const rowData = useMemo(
-    () => populationData.filter((d) => d.city === null),
-    []
-  );
+  const rowData = useMemo(() => populationData.filter((d) => d.city === null), []);
 
   const columnDefs = useMemo(
     () => [
@@ -26,14 +23,13 @@ export default function DataGrid() {
   );
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <AgGridProvider modules={gridModules}>
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={columnDefs}
-          defaultColDef={{ flex: 1, minWidth: 100 }}
-        />
-      </AgGridProvider>
-    </div>
+    <AgGridProvider modules={gridModules}>
+      <AgGridReact
+        containerStyle={{padding: 10}}
+        rowData={rowData}
+        columnDefs={columnDefs}
+        defaultColDef={{ flex: 1, minWidth: 100 }}
+      />
+    </AgGridProvider>
   );
 }

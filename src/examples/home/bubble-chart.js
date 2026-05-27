@@ -2,31 +2,29 @@ import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
 import populationData from '@/data/population.json';
 
-export default function BarChart() {
+export default function BubbleChart() {
   const options = useMemo(() => {
-    const countries = populationData.filter((d) => d.city === null).slice(0, 20);
+    const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
 
     return {
-      data: countries,
+      data: cities,
       series: [
         {
-          type: 'bar',
-          xKey: 'country',
+          type: 'bubble',
+          xKey: 'city',
           yKey: 'population',
-          yName: 'Population',
+          sizeKey: 'population',
+          marker: { maxSize: 60 },
         },
       ],
       axes: [
-        { type: 'category', position: 'bottom' },
+        { type: 'category', position: 'bottom', label: { rotation: 45 } },
         {
           type: 'number',
           position: 'left',
-          label: {
-            formatter: ({ value }) => `${(value / 1e9).toFixed(1)}B`,
-          },
         },
       ],
-      title: { text: 'Top 20 Countries by Population' },
+      title: { text: 'Most Populous Cities' },
     };
   }, []);
 
