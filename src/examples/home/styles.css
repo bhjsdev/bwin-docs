@@ -1,7 +1,7 @@
 .home-example {
   --bw-glass-border-radius: 4px;
   --bw-glass-clearance: 4px;
-  --bw-glass-border-color: hsl(0, 0, 0, 0.3);
+  --bw-glass-border-color: hsl(0 0% 70%);
 
   bw-glass-content {
     padding: 8px;
