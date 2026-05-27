@@ -1,2 +1,2 @@
-1. Implement code first, no need to test or build unless asked
-2. Do not commit or push unless asked
+1. NEVER run `pnpm build`, `pnpm dev`, tests, or any verification commands unless explicitly asked
+2. NEVER commit or push unless explicitly asked
