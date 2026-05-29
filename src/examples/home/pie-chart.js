@@ -18,7 +18,7 @@ export default function PieChart() {
       .sort((a, b) => b.population - a.population);
 
     return {
-      theme: chartTheme,
+      ...chartTheme,
       data,
       series: [
         {

@@ -19,7 +19,7 @@
 
 [data-theme='dark'] {
   --primary-color: hsl(0, 0%, 90%);
-  --secondary-color: hsl(23, 90%, 58%);
+  --secondary-color: hsl(17, 89%, 68%);
 
   --font-color: var(--primary-color);
   --bg-color: hsl(0, 0%, 12%);
@@ -124,13 +124,13 @@ pre.shiki {
   }
 }
 
-/* Shiki dual themes: swap to the dark token colors under the dark theme.
-   The light colors are inlined by Shiki; the dark ones live in CSS variables. */
+[data-theme='dark'] pre.shiki {
+  border-color: hsl(0, 0%, 25%);
+}
+
 [data-theme='dark'] .shiki,
 [data-theme='dark'] .shiki span {
   color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+  background-color: hsl(0, 0%, 15%) !important;
 }
 
-/* The bwin dark theme lives in public/bwin-dark-theme.css (linked from layout.js),
-   shared verbatim with the standalone iframe examples. */
