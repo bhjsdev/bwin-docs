@@ -20,16 +20,16 @@ export default function BarChart() {
           yName: 'Population',
         },
       ],
-      axes: [
-        { type: 'category', position: 'bottom' },
-        {
+      axes: {
+        x: { type: 'category', position: 'bottom' },
+        y: {
           type: 'number',
           position: 'left',
           label: {
             formatter: ({ value }) => `${(value / 1e9).toFixed(1)}B`,
           },
         },
-      ],
+      },
       title: { text: 'Top 20 Countries by Population' },
     };
   }, [chartTheme]);

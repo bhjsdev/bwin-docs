@@ -18,16 +18,23 @@ export default function BubbleChart() {
           xKey: 'city',
           yKey: 'population',
           sizeKey: 'population',
-          marker: { maxSize: 60 },
+          maxSize: 60,
         },
       ],
-      axes: [
-        { type: 'category', position: 'bottom', label: { rotation: 45 } },
-        {
+      axes: {
+        x: { type: 'category', position: 'bottom', label: { rotation: 45 } },
+        y: {
           type: 'number',
           position: 'left',
+          label: {
+            // Compact notation auto-picks the unit by magnitude: 1.5B, 37M, 1.2K.
+            formatter: ({ value }) =>
+              new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(
+                value
+              ),
+          },
         },
-      ],
+      },
       title: { text: 'Most Populous Cities' },
     };
   }, [chartTheme]);
