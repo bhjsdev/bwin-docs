@@ -3,7 +3,10 @@ import { useTheme } from 'next-themes';
 
 // ag-charts takes its theme via the options object (no global provider), so each
 // chart selects the light/dark variant from the resolved docs theme. Centralised
-// here so the theme name and matching background fill live in one place.
+// here so the theme name, matching background fill and font live in one place.
+//
+// The theme is a full AgChartTheme object: baseTheme picks the light/dark variant,
+// and params.fontFamily applies the app font across the whole chart.
 //
 // The background fill matches the bw-glass pane bg (see public/bwin-dark-theme.css)
 // so charts blend into the window panes instead of showing ag-sheets-dark's default
@@ -15,7 +18,10 @@ export function useChartTheme() {
 
   return useMemo(
     () => ({
-      theme: isDark ? 'ag-sheets-dark' : 'ag-sheets',
+      theme: {
+        baseTheme: isDark ? 'ag-sheets-dark' : 'ag-sheets',
+        params: { fontFamily: "'Noto Sans', system-ui" },
+      },
       background: { fill: isDark ? 'hsl(0 0% 16%)' : 'hsl(0 0% 100%)' },
     }),
     [isDark]

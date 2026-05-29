@@ -15,7 +15,10 @@ export default function DataGrid() {
   const { resolvedTheme } = useTheme();
 
   const theme = useMemo(
-    () => themeQuartz.withPart(resolvedTheme === 'dark' ? colorSchemeDark : colorSchemeLight),
+    () =>
+      themeQuartz
+        .withPart(resolvedTheme === 'dark' ? colorSchemeDark : colorSchemeLight)
+        .withParams({ fontFamily: "'Noto Sans', system-ui" }),
     [resolvedTheme]
   );
 
