@@ -1,0 +1,182 @@
+[
+  {
+    "city": "Delhi",
+    "country": "India",
+    "continent": "Asia",
+    "population": 32940000
+  },
+  {
+    "city": "Shanghai",
+    "country": "China",
+    "continent": "Asia",
+    "population": 29210000
+  },
+  {
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "continent": "Asia",
+    "population": 23210000
+  },
+  {
+    "city": "São Paulo",
+    "country": "Brazil",
+    "continent": "South America",
+    "population": 22430000
+  },
+  {
+    "city": "Cairo",
+    "country": "Egypt",
+    "continent": "Africa",
+    "population": 22180000
+  },
+  {
+    "city": "Mexico City",
+    "country": "Mexico",
+    "continent": "North America",
+    "population": 21800000
+  },
+  {
+    "city": "Mumbai",
+    "country": "India",
+    "continent": "Asia",
+    "population": 21670000
+  },
+  {
+    "city": "Beijing",
+    "country": "China",
+    "continent": "Asia",
+    "population": 21540000
+  },
+  {
+    "city": "Osaka",
+    "country": "Japan",
+    "continent": "Asia",
+    "population": 19060000
+  },
+  {
+    "city": "New York",
+    "country": "United States",
+    "continent": "North America",
+    "population": 18870000
+  },
+  {
+    "city": "Kinshasa",
+    "country": "Congo, Dem. Rep.",
+    "continent": "Africa",
+    "population": 17070000
+  },
+  {
+    "city": "Chongqing",
+    "country": "China",
+    "continent": "Asia",
+    "population": 16870000
+  },
+  {
+    "city": "Karachi",
+    "country": "Pakistan",
+    "continent": "Asia",
+    "population": 16840000
+  },
+  {
+    "city": "Lagos",
+    "country": "Nigeria",
+    "continent": "Africa",
+    "population": 15950000
+  },
+  {
+    "city": "Istanbul",
+    "country": "Turkiye",
+    "continent": "Europe",
+    "population": 15910000
+  },
+  {
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "continent": "South America",
+    "population": 15370000
+  },
+  {
+    "city": "Kolkata",
+    "country": "India",
+    "continent": "Asia",
+    "population": 15130000
+  },
+  {
+    "city": "Manila",
+    "country": "Philippines",
+    "continent": "Asia",
+    "population": 14400000
+  },
+  {
+    "city": "Guangzhou",
+    "country": "China",
+    "continent": "Asia",
+    "population": 14000000
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "continent": "Asia",
+    "population": 13960000
+  },
+  {
+    "city": "Lahore",
+    "country": "Pakistan",
+    "continent": "Asia",
+    "population": 13540000
+  },
+  {
+    "city": "Shenzhen",
+    "country": "China",
+    "continent": "Asia",
+    "population": 13400000
+  },
+  {
+    "city": "Bangalore",
+    "country": "India",
+    "continent": "Asia",
+    "population": 13190000
+  },
+  {
+    "city": "Moscow",
+    "country": "Russian Federation",
+    "continent": "Europe",
+    "population": 12640000
+  },
+  {
+    "city": "Los Angeles",
+    "country": "United States",
+    "continent": "North America",
+    "population": 12480000
+  },
+  {
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "continent": "Asia",
+    "population": 11240000
+  },
+  {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "continent": "Asia",
+    "population": 11070000
+  },
+  {
+    "city": "Lima",
+    "country": "Peru",
+    "continent": "South America",
+    "population": 11040000
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "continent": "Europe",
+    "population": 11020000
+  },
+  {
+    "city": "London",
+    "country": "United Kingdom",
+    "continent": "Europe",
+    "population": 9540000
+  }
+]

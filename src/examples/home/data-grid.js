@@ -7,7 +7,7 @@ import {
   colorSchemeLight,
 } from 'ag-grid-community';
 import { useTheme } from 'next-themes';
-import populationData from '@/data/population.json';
+import populationByCountry from '@/data/population-by-country.json';
 
 const gridModules = [AllCommunityModule];
 
@@ -21,8 +21,6 @@ export default function DataGrid() {
         .withParams({ fontFamily: "'Noto Sans', system-ui" }),
     [resolvedTheme]
   );
-
-  const rowData = useMemo(() => populationData.filter((d) => d.city === null), []);
 
   const columnDefs = useMemo(
     () => [
@@ -42,7 +40,7 @@ export default function DataGrid() {
     <AgGridProvider modules={gridModules}>
       <AgGridReact
         theme={theme}
-        rowData={rowData}
+        rowData={populationByCountry}
         columnDefs={columnDefs}
         defaultColDef={{ flex: 1, minWidth: 100 }}
       />

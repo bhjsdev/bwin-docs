@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
-import populationData from '@/data/population.json';
+import populationByCountry from '@/data/population-by-country.json';
 import { useChartTheme } from './use-chart-theme';
 
 export default function BarChart() {
   const chartTheme = useChartTheme();
 
   const options = useMemo(() => {
-    const countries = populationData.filter((d) => d.city === null).slice(0, 20);
+    const countries = populationByCountry.slice(0, 20);
 
     return {
       ...chartTheme,
@@ -15,16 +15,17 @@ export default function BarChart() {
       series: [
         {
           type: 'bar',
+          direction: 'horizontal',
           xKey: 'country',
           yKey: 'population',
           yName: 'Population',
         },
       ],
       axes: {
-        x: { type: 'category', position: 'bottom' },
+        x: { type: 'category', position: 'left' },
         y: {
           type: 'number',
-          position: 'left',
+          position: 'bottom',
           label: {
             formatter: ({ value }) => `${(value / 1e9).toFixed(1)}B`,
           },

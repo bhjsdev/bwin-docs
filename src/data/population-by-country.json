@@ -1,1344 +1,970 @@
 [
   {
-    "city": null,
     "country": "India",
     "continent": "Asia",
     "population": 1438069596
   },
   {
-    "city": null,
     "country": "China",
     "continent": "Asia",
     "population": 1410710000
   },
   {
-    "city": null,
     "country": "United States",
     "continent": "North America",
     "population": 336806231
   },
   {
-    "city": null,
     "country": "Indonesia",
     "continent": "Asia",
     "population": 281190067
   },
   {
-    "city": null,
     "country": "Nigeria",
     "continent": "Africa",
     "population": 227882945
   },
   {
-    "city": null,
     "country": "Brazil",
     "continent": "South America",
     "population": 211140729
   },
   {
-    "city": null,
     "country": "Bangladesh",
     "continent": "Asia",
     "population": 171466990
   },
   {
-    "city": null,
     "country": "Russian Federation",
     "continent": "Europe",
     "population": 143826130
   },
   {
-    "city": null,
     "country": "Mexico",
     "continent": "South America",
     "population": 129739759
   },
   {
-    "city": null,
     "country": "Ethiopia",
     "continent": "Africa",
     "population": 128691692
   },
   {
-    "city": null,
     "country": "Japan",
     "continent": "Asia",
     "population": 124516650
   },
   {
-    "city": null,
     "country": "Philippines",
     "continent": "Asia",
     "population": 114891199
   },
   {
-    "city": null,
     "country": "Congo, Dem. Rep.",
     "continent": "Africa",
     "population": 105789731
   },
   {
-    "city": null,
     "country": "Viet Nam",
     "continent": "Asia",
     "population": 100352192
   },
   {
-    "city": null,
     "country": "Turkiye",
     "continent": "Europe",
     "population": 85325965
   },
   {
-    "city": null,
     "country": "Germany",
     "continent": "Europe",
     "population": 83287273
   },
   {
-    "city": null,
     "country": "Thailand",
     "continent": "Asia",
     "population": 71702435
   },
   {
-    "city": null,
     "country": "United Kingdom",
     "continent": "Europe",
     "population": 68492000
   },
   {
-    "city": null,
     "country": "France",
     "continent": "Europe",
     "population": 68372286
   },
   {
-    "city": null,
     "country": "Tanzania",
     "continent": "Africa",
     "population": 66617606
   },
   {
-    "city": null,
     "country": "South Africa",
     "continent": "Africa",
     "population": 63212384
   },
   {
-    "city": null,
     "country": "Italy",
     "continent": "Europe",
     "population": 58984216
   },
   {
-    "city": null,
     "country": "Kenya",
     "continent": "Africa",
     "population": 55339003
   },
   {
-    "city": null,
     "country": "Myanmar",
     "continent": "Asia",
     "population": 54133798
   },
   {
-    "city": null,
     "country": "Colombia",
     "continent": "South America",
     "population": 52321152
   },
   {
-    "city": null,
     "country": "Korea, Rep.",
     "continent": "Asia",
     "population": 51712619
   },
   {
-    "city": null,
     "country": "Sudan",
     "continent": "Africa",
     "population": 50042791
   },
   {
-    "city": null,
     "country": "Uganda",
     "continent": "Africa",
     "population": 48656601
   },
   {
-    "city": null,
     "country": "Spain",
     "continent": "Europe",
     "population": 48352528
   },
   {
-    "city": null,
     "country": "Argentina",
     "continent": "South America",
     "population": 45538401
   },
   {
-    "city": null,
     "country": "Canada",
     "continent": "North America",
     "population": 40083484
   },
   {
-    "city": null,
     "country": "Ukraine",
     "continent": "Europe",
     "population": 37732836
   },
   {
-    "city": null,
     "country": "Angola",
     "continent": "Africa",
     "population": 36749906
   },
   {
-    "city": null,
     "country": "Poland",
     "continent": "Europe",
     "population": 36687353
   },
   {
-    "city": null,
     "country": "Uzbekistan",
     "continent": "Europe",
     "population": 35652307
   },
   {
-    "city": null,
     "country": "Malaysia",
     "continent": "Asia",
     "population": 35126298
   },
   {
-    "city": null,
     "country": "Peru",
     "continent": "South America",
     "population": 33845617
   },
   {
-    "city": null,
     "country": "Ghana",
     "continent": "Africa",
     "population": 33787914
   },
   {
-    "city": null,
     "country": "Mozambique",
     "continent": "Africa",
     "population": 33635160
   },
   {
-    "city": "Delhi",
-    "country": "India",
-    "continent": "Asia",
-    "population": 32940000
-  },
-  {
-    "city": null,
     "country": "Madagascar",
     "continent": "Africa",
     "population": 31195932
   },
   {
-    "city": null,
     "country": "Cote d'Ivoire",
     "continent": "Africa",
     "population": 31165654
   },
   {
-    "city": null,
     "country": "Nepal",
     "continent": "Asia",
     "population": 29694614
   },
   {
-    "city": "Shanghai",
-    "country": "China",
-    "continent": "Asia",
-    "population": 29210000
-  },
-  {
-    "city": null,
     "country": "Cameroon",
     "continent": "Africa",
     "population": 28372687
   },
   {
-    "city": null,
     "country": "Venezuela, RB",
     "continent": "South America",
     "population": 28300854
   },
   {
-    "city": null,
     "country": "Australia",
     "continent": "Oceania",
     "population": 26659922
   },
   {
-    "city": null,
     "country": "Korea, Dem. People's Rep.",
     "continent": "Asia",
     "population": 26418204
   },
   {
-    "city": null,
     "country": "Niger",
     "continent": "Africa",
     "population": 26159867
   },
   {
-    "city": null,
     "country": "Mali",
     "continent": "Africa",
     "population": 23769127
   },
   {
-    "city": "Dhaka",
-    "country": "Bangladesh",
-    "continent": "Asia",
-    "population": 23210000
-  },
-  {
-    "city": null,
     "country": "Burkina Faso",
     "continent": "Africa",
     "population": 23025776
   },
   {
-    "city": "São Paulo",
-    "country": "Brazil",
-    "continent": "South America",
-    "population": 22430000
-  },
-  {
-    "city": "Cairo",
-    "country": "Egypt",
-    "continent": "Africa",
-    "population": 22180000
-  },
-  {
-    "city": null,
     "country": "Sri Lanka",
     "continent": "Asia",
     "population": 22037000
   },
   {
-    "city": "Mexico City",
-    "country": "Mexico",
-    "continent": "North America",
-    "population": 21800000
-  },
-  {
-    "city": "Mumbai",
-    "country": "India",
-    "continent": "Asia",
-    "population": 21670000
-  },
-  {
-    "city": "Beijing",
-    "country": "China",
-    "continent": "Asia",
-    "population": 21540000
-  },
-  {
-    "city": null,
     "country": "Malawi",
     "continent": "Africa",
     "population": 21104482
   },
   {
-    "city": null,
     "country": "Zambia",
     "continent": "Africa",
     "population": 20723965
   },
   {
-    "city": null,
     "country": "Kazakhstan",
     "continent": "Europe",
     "population": 20330104
   },
   {
-    "city": null,
     "country": "Chile",
     "continent": "South America",
     "population": 19658835
   },
   {
-    "city": null,
     "country": "Chad",
     "continent": "Africa",
     "population": 19319064
   },
   {
-    "city": null,
     "country": "Romania",
     "continent": "Europe",
     "population": 19061062
   },
   {
-    "city": "Osaka",
-    "country": "Japan",
-    "continent": "Asia",
-    "population": 19060000
-  },
-  {
-    "city": "New York",
-    "country": "United States",
-    "continent": "North America",
-    "population": 18870000
-  },
-  {
-    "city": null,
     "country": "Somalia, Fed. Rep.",
     "continent": "Africa",
     "population": 18358615
   },
   {
-    "city": null,
     "country": "Guatemala",
     "continent": "South America",
     "population": 18124838
   },
   {
-    "city": null,
     "country": "Senegal",
     "continent": "Africa",
     "population": 18077573
   },
   {
-    "city": null,
     "country": "Ecuador",
     "continent": "South America",
     "population": 17980083
   },
   {
-    "city": null,
     "country": "Netherlands",
     "continent": "Europe",
     "population": 17877117
   },
   {
-    "city": null,
     "country": "Cambodia",
     "continent": "Asia",
     "population": 17423880
   },
   {
-    "city": "Kinshasa",
-    "country": "Congo, Dem. Rep.",
-    "continent": "Africa",
-    "population": 17070000
-  },
-  {
-    "city": "Chongqing",
-    "country": "China",
-    "continent": "Asia",
-    "population": 16870000
-  },
-  {
-    "city": "Karachi",
-    "country": "Pakistan",
-    "continent": "Asia",
-    "population": 16840000
-  },
-  {
-    "city": null,
     "country": "Zimbabwe",
     "continent": "Africa",
     "population": 16340822
   },
   {
-    "city": "Lagos",
-    "country": "Nigeria",
-    "continent": "Africa",
-    "population": 15950000
-  },
-  {
-    "city": "Istanbul",
-    "country": "Turkiye",
-    "continent": "Europe",
-    "population": 15910000
-  },
-  {
-    "city": "Buenos Aires",
-    "country": "Argentina",
-    "continent": "South America",
-    "population": 15370000
-  },
-  {
-    "city": "Kolkata",
-    "country": "India",
-    "continent": "Asia",
-    "population": 15130000
-  },
-  {
-    "city": null,
     "country": "Guinea",
     "continent": "Africa",
     "population": 14405468
   },
   {
-    "city": "Manila",
-    "country": "Philippines",
-    "continent": "Asia",
-    "population": 14400000
-  },
-  {
-    "city": null,
     "country": "Benin",
     "continent": "Africa",
     "population": 14111034
   },
   {
-    "city": "Guangzhou",
-    "country": "China",
-    "continent": "Asia",
-    "population": 14000000
-  },
-  {
-    "city": "Tokyo",
-    "country": "Japan",
-    "continent": "Asia",
-    "population": 13960000
-  },
-  {
-    "city": null,
     "country": "Rwanda",
     "continent": "Africa",
     "population": 13954471
   },
   {
-    "city": null,
     "country": "Burundi",
     "continent": "Africa",
     "population": 13689450
   },
   {
-    "city": "Lahore",
-    "country": "Pakistan",
-    "continent": "Asia",
-    "population": 13540000
-  },
-  {
-    "city": "Shenzhen",
-    "country": "China",
-    "continent": "Asia",
-    "population": 13400000
-  },
-  {
-    "city": "Bangalore",
-    "country": "India",
-    "continent": "Asia",
-    "population": 13190000
-  },
-  {
-    "city": "Moscow",
-    "country": "Russian Federation",
-    "continent": "Europe",
-    "population": 12640000
-  },
-  {
-    "city": "Los Angeles",
-    "country": "United States",
-    "continent": "North America",
-    "population": 12480000
-  },
-  {
-    "city": null,
     "country": "Bolivia",
     "continent": "South America",
     "population": 12244159
   },
   {
-    "city": null,
     "country": "Belgium",
     "continent": "Europe",
     "population": 11779946
   },
   {
-    "city": null,
     "country": "Haiti",
     "continent": "South America",
     "population": 11637398
   },
   {
-    "city": null,
     "country": "South Sudan",
     "continent": "Africa",
     "population": 11483374
   },
   {
-    "city": null,
     "country": "Dominican Republic",
     "continent": "South America",
     "population": 11331265
   },
   {
-    "city": "Jakarta",
-    "country": "Indonesia",
-    "continent": "Asia",
-    "population": 11240000
-  },
-  {
-    "city": "Bangkok",
-    "country": "Thailand",
-    "continent": "Asia",
-    "population": 11070000
-  },
-  {
-    "city": "Lima",
-    "country": "Peru",
-    "continent": "South America",
-    "population": 11040000
-  },
-  {
-    "city": "Paris",
-    "country": "France",
-    "continent": "Europe",
-    "population": 11020000
-  },
-  {
-    "city": null,
     "country": "Cuba",
     "continent": "South America",
     "population": 11019931
   },
   {
-    "city": null,
     "country": "Czechia",
     "continent": "Europe",
     "population": 10864042
   },
   {
-    "city": null,
     "country": "Honduras",
     "continent": "South America",
     "population": 10644851
   },
   {
-    "city": null,
     "country": "Portugal",
     "continent": "Europe",
     "population": 10578174
   },
   {
-    "city": null,
     "country": "Sweden",
     "continent": "Europe",
     "population": 10536632
   },
   {
-    "city": null,
     "country": "Greece",
     "continent": "Europe",
     "population": 10407351
   },
   {
-    "city": null,
     "country": "Tajikistan",
     "continent": "Europe",
     "population": 10389799
   },
   {
-    "city": null,
     "country": "Papua New Guinea",
     "continent": "Oceania",
     "population": 10389635
   },
   {
-    "city": null,
     "country": "Azerbaijan",
     "continent": "Europe",
     "population": 10153958
   },
   {
-    "city": null,
     "country": "Hungary",
     "continent": "Europe",
     "population": 9592186
   },
   {
-    "city": "London",
-    "country": "United Kingdom",
-    "continent": "Europe",
-    "population": 9540000
-  },
-  {
-    "city": null,
     "country": "Togo",
     "continent": "Africa",
     "population": 9304337
   },
   {
-    "city": null,
     "country": "Belarus",
     "continent": "Europe",
     "population": 9178298
   },
   {
-    "city": null,
     "country": "Austria",
     "continent": "Europe",
     "population": 9131761
   },
   {
-    "city": null,
     "country": "Switzerland",
     "continent": "Europe",
     "population": 8888822
   },
   {
-    "city": null,
     "country": "Sierra Leone",
     "continent": "Africa",
     "population": 8460512
   },
   {
-    "city": null,
     "country": "Lao PDR",
     "continent": "Asia",
     "population": 7664993
   },
   {
-    "city": null,
     "country": "Hong Kong SAR, China",
     "continent": "Asia",
     "population": 7536100
   },
   {
-    "city": null,
     "country": "Turkmenistan",
     "continent": "Europe",
     "population": 7364438
   },
   {
-    "city": null,
     "country": "Kyrgyz Republic",
     "continent": "Europe",
     "population": 7099750
   },
   {
-    "city": null,
     "country": "Paraguay",
     "continent": "South America",
     "population": 6844146
   },
   {
-    "city": null,
     "country": "Nicaragua",
     "continent": "South America",
     "population": 6823613
   },
   {
-    "city": null,
     "country": "Serbia",
     "continent": "Europe",
     "population": 6623183
   },
   {
-    "city": null,
     "country": "Bulgaria",
     "continent": "Europe",
     "population": 6446596
   },
   {
-    "city": null,
     "country": "El Salvador",
     "continent": "South America",
     "population": 6309624
   },
   {
-    "city": null,
     "country": "Congo, Rep.",
     "continent": "Africa",
     "population": 6182885
   },
   {
-    "city": null,
     "country": "Denmark",
     "continent": "Europe",
     "population": 5946952
   },
   {
-    "city": null,
     "country": "Singapore",
     "continent": "Asia",
     "population": 5917648
   },
   {
-    "city": null,
     "country": "Finland",
     "continent": "Europe",
     "population": 5583911
   },
   {
-    "city": null,
     "country": "Norway",
     "continent": "Europe",
     "population": 5519601
   },
   {
-    "city": null,
     "country": "Liberia",
     "continent": "Africa",
     "population": 5493031
   },
   {
-    "city": null,
     "country": "Slovak Republic",
     "continent": "Europe",
     "population": 5426740
   },
   {
-    "city": null,
     "country": "Ireland",
     "continent": "Europe",
     "population": 5311538
   },
   {
-    "city": null,
     "country": "New Zealand",
     "continent": "Oceania",
     "population": 5200000
   },
   {
-    "city": null,
     "country": "Central African Republic",
     "continent": "Africa",
     "population": 5152421
   },
   {
-    "city": null,
     "country": "Costa Rica",
     "continent": "South America",
     "population": 5105525
   },
   {
-    "city": null,
     "country": "Mauritania",
     "continent": "Africa",
     "population": 5022441
   },
   {
-    "city": null,
     "country": "Panama",
     "continent": "South America",
     "population": 4458759
   },
   {
-    "city": null,
     "country": "Croatia",
     "continent": "Europe",
     "population": 3859686
   },
   {
-    "city": null,
     "country": "Georgia",
     "continent": "Europe",
     "population": 3715483
   },
   {
-    "city": null,
     "country": "Mongolia",
     "continent": "Asia",
     "population": 3481145
   },
   {
-    "city": null,
     "country": "Eritrea",
     "continent": "Africa",
     "population": 3470390
   },
   {
-    "city": null,
     "country": "Uruguay",
     "continent": "South America",
     "population": 3388081
   },
   {
-    "city": null,
     "country": "Puerto Rico (US)",
     "continent": "South America",
     "population": 3203792
   },
   {
-    "city": null,
     "country": "Bosnia and Herzegovina",
     "continent": "Europe",
     "population": 3185073
   },
   {
-    "city": null,
     "country": "Armenia",
     "continent": "Europe",
     "population": 2964300
   },
   {
-    "city": null,
     "country": "Namibia",
     "continent": "Africa",
     "population": 2963095
   },
   {
-    "city": null,
     "country": "Lithuania",
     "continent": "Europe",
     "population": 2871585
   },
   {
-    "city": null,
     "country": "Jamaica",
     "continent": "South America",
     "population": 2839786
   },
   {
-    "city": null,
     "country": "Gambia, The",
     "continent": "Africa",
     "population": 2697845
   },
   {
-    "city": null,
     "country": "Gabon",
     "continent": "Africa",
     "population": 2484789
   },
   {
-    "city": null,
     "country": "Botswana",
     "continent": "Africa",
     "population": 2480244
   },
   {
-    "city": null,
     "country": "Moldova",
     "continent": "Europe",
     "population": 2457783
   },
   {
-    "city": null,
     "country": "Albania",
     "continent": "Europe",
     "population": 2414095
   },
   {
-    "city": null,
     "country": "Lesotho",
     "continent": "Africa",
     "population": 2311472
   },
   {
-    "city": null,
     "country": "Guinea-Bissau",
     "continent": "Africa",
     "population": 2153339
   },
   {
-    "city": null,
     "country": "Slovenia",
     "continent": "Europe",
     "population": 2120461
   },
   {
-    "city": null,
     "country": "Latvia",
     "continent": "Europe",
     "population": 1883710
   },
   {
-    "city": null,
     "country": "Equatorial Guinea",
     "continent": "Africa",
     "population": 1847549
   },
   {
-    "city": null,
     "country": "North Macedonia",
     "continent": "Europe",
     "population": 1827816
   },
   {
-    "city": null,
     "country": "Kosovo",
     "continent": "Europe",
     "population": 1682668
   },
   {
-    "city": null,
     "country": "Timor-Leste",
     "continent": "Asia",
     "population": 1384286
   },
   {
-    "city": null,
     "country": "Estonia",
     "continent": "Europe",
     "population": 1370286
   },
   {
-    "city": null,
     "country": "Trinidad and Tobago",
     "continent": "South America",
     "population": 1367510
   },
   {
-    "city": null,
     "country": "Cyprus",
     "continent": "Europe",
     "population": 1344976
   },
   {
-    "city": null,
     "country": "Mauritius",
     "continent": "Africa",
     "population": 1248647
   },
   {
-    "city": null,
     "country": "Eswatini",
     "continent": "Africa",
     "population": 1230506
   },
   {
-    "city": null,
     "country": "Fiji",
     "continent": "Oceania",
     "population": 924145
   },
   {
-    "city": null,
     "country": "Comoros",
     "continent": "Africa",
     "population": 850387
   },
   {
-    "city": null,
     "country": "Guyana",
     "continent": "South America",
     "population": 826353
   },
   {
-    "city": null,
     "country": "Solomon Islands",
     "continent": "Oceania",
     "population": 800005
   },
   {
-    "city": null,
     "country": "Bhutan",
     "continent": "Asia",
     "population": 786385
   },
   {
-    "city": null,
     "country": "Macao SAR, China",
     "continent": "Asia",
     "population": 678800
   },
   {
-    "city": null,
     "country": "Luxembourg",
     "continent": "Europe",
     "population": 666430
   },
   {
-    "city": null,
     "country": "Suriname",
     "continent": "South America",
     "population": 628886
   },
   {
-    "city": null,
     "country": "Montenegro",
     "continent": "Europe",
     "population": 623529
   },
   {
-    "city": null,
     "country": "Maldives",
     "continent": "Asia",
     "population": 525994
   },
   {
-    "city": null,
     "country": "Cabo Verde",
     "continent": "Africa",
     "population": 522331
   },
   {
-    "city": null,
     "country": "Brunei Darussalam",
     "continent": "Asia",
     "population": 458949
   },
   {
-    "city": null,
     "country": "Belize",
     "continent": "South America",
     "population": 411106
   },
   {
-    "city": null,
     "country": "Bahamas, The",
     "continent": "South America",
     "population": 399440
   },
   {
-    "city": null,
     "country": "Iceland",
     "continent": "Europe",
     "population": 385663
   },
   {
-    "city": null,
     "country": "Vanuatu",
     "continent": "Oceania",
     "population": 320409
   },
   {
-    "city": null,
     "country": "New Caledonia",
     "continent": "Asia",
     "population": 289870
   },
   {
-    "city": null,
     "country": "Barbados",
     "continent": "South America",
     "population": 282336
   },
   {
-    "city": null,
     "country": "French Polynesia",
     "continent": "Asia",
     "population": 281118
   },
   {
-    "city": null,
     "country": "Sao Tome and Principe",
     "continent": "Africa",
     "population": 230871
   },
   {
-    "city": null,
     "country": "Samoa",
     "continent": "Oceania",
     "population": 216663
   },
   {
-    "city": null,
     "country": "St. Lucia",
     "continent": "South America",
     "population": 179285
   },
   {
-    "city": null,
     "country": "Channel Islands",
     "continent": "Europe",
     "population": 167691
   },
   {
-    "city": null,
     "country": "Guam",
     "continent": "Asia",
     "population": 166506
   },
   {
-    "city": null,
     "country": "Curacao",
     "continent": "South America",
     "population": 154654
   },
   {
-    "city": null,
     "country": "Kiribati",
     "continent": "Oceania",
     "population": 132530
   },
   {
-    "city": null,
     "country": "Seychelles",
     "continent": "Africa",
     "population": 119773
   },
   {
-    "city": null,
     "country": "Grenada",
     "continent": "South America",
     "population": 117081
   },
   {
-    "city": null,
     "country": "Micronesia, Fed. Sts.",
     "continent": "Oceania",
     "population": 112630
   },
   {
-    "city": null,
     "country": "Aruba",
     "continent": "South America",
     "population": 107359
   },
   {
-    "city": null,
     "country": "Virgin Islands (U.S.)",
     "continent": "South America",
     "population": 104917
   },
   {
-    "city": null,
     "country": "Tonga",
     "continent": "Oceania",
     "population": 104597
   },
   {
-    "city": null,
     "country": "St. Vincent and the Grenadines",
     "continent": "South America",
     "population": 101323
   },
   {
-    "city": null,
     "country": "Antigua and Barbuda",
     "continent": "South America",
     "population": 93316
   },
   {
-    "city": null,
     "country": "Isle of Man",
     "continent": "Europe",
     "population": 84165
   },
   {
-    "city": null,
     "country": "Andorra",
     "continent": "Europe",
     "population": 80856
   },
   {
-    "city": null,
     "country": "Cayman Islands",
     "continent": "South America",
     "population": 73038
   },
   {
-    "city": null,
     "country": "Dominica",
     "continent": "South America",
     "population": 66510
   },
   {
-    "city": null,
     "country": "Bermuda",
     "continent": "North America",
     "population": 64698
   },
   {
-    "city": null,
     "country": "Greenland",
     "continent": "Europe",
     "population": 56865
   },
   {
-    "city": null,
     "country": "Faroe Islands",
     "continent": "Europe",
     "population": 54414
   },
   {
-    "city": null,
     "country": "American Samoa",
     "continent": "Asia",
     "population": 47521
   },
   {
-    "city": null,
     "country": "St. Kitts and Nevis",
     "continent": "South America",
     "population": 46758
   },
   {
-    "city": null,
     "country": "Turks and Caicos Islands",
     "continent": "South America",
     "population": 46198
   },
   {
-    "city": null,
     "country": "Northern Mariana Islands",
     "continent": "Asia",
     "population": 45143
   },
   {
-    "city": null,
     "country": "Sint Maarten (Dutch part)",
     "continent": "South America",
     "population": 42749
   },
   {
-    "city": null,
     "country": "Liechtenstein",
     "continent": "Europe",
     "population": 39846
   },
   {
-    "city": null,
     "country": "British Virgin Islands",
     "continent": "South America",
     "population": 38985
   },
   {
-    "city": null,
     "country": "Monaco",
     "continent": "Europe",
     "population": 38956
   },
   {
-    "city": null,
     "country": "Marshall Islands",
     "continent": "Oceania",
     "population": 38827
   },
   {
-    "city": null,
     "country": "Gibraltar",
     "continent": "Europe",
     "population": 38471
   },
   {
-    "city": null,
     "country": "San Marino",
     "continent": "Europe",
     "population": 33860
   },
   {
-    "city": null,
     "country": "St. Martin (French part)",
     "continent": "South America",
     "population": 27515
   },
   {
-    "city": null,
     "country": "Palau",
     "continent": "Oceania",
     "population": 17727
   },
   {
-    "city": null,
     "country": "Nauru",
     "continent": "Oceania",
     "population": 11875
   },
   {
-    "city": null,
     "country": "Tuvalu",
     "continent": "Oceania",
     "population": 9816
