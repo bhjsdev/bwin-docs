@@ -10,7 +10,12 @@ function renderLink(link, pathname) {
 
   return (
     <>
-      <Link href={link.href} className={linkClassName} target={link.external ? '_blank' : ''}>
+      <Link
+        href={link.href}
+        className={linkClassName}
+        target={link.external ? '_blank' : ''}
+        prefetch={false}
+      >
         {link.title}
       </Link>
       {link.external && <i className="bi bi-box-arrow-up-right"></i>}

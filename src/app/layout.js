@@ -34,12 +34,12 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <div className="layout">
             <nav className="top-nav">
-              <Link className="logo" href="/">
+              <Link className="logo" href="/" prefetch={false}>
                 <Logo width={100} height={50} />
               </Link>
               <div className="top-nav__links">
-                <Link href="/">Home</Link>
-                <Link href="/general/overview">Docs</Link>
+                <Link href="/" prefetch={false}>Home</Link>
+                <Link href="/general/overview" prefetch={false}>Docs</Link>
                 <ThemeToggle />
               </div>
             </nav>
