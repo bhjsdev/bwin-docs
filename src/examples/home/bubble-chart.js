@@ -1,33 +1,58 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
 import populationData from '@/data/population.json';
+import { useChartTheme } from './use-chart-theme';
 
 export default function BubbleChart() {
+  const chartTheme = useChartTheme();
+
   const options = useMemo(() => {
     const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
 
+    // One bubble series per continent so each gets its own colour and legend
+    // entry — making each city's continent visible at a glance.
+    const byContinent = {};
+    for (const city of cities) {
+      (byContinent[city.continent] = byContinent[city.continent] || []).push(city);
+    }
+
+    // Shared size domain across all series so bubble sizes stay comparable
+    // between continents (otherwise each series scales its own min/max).
+    const populations = cities.map((c) => c.population);
+    const sizeDomain = [Math.min(...populations), Math.max(...populations)];
+
+    const series = Object.entries(byContinent).map(([continent, data]) => ({
+      type: 'bubble',
+      data,
+      xKey: 'city',
+      yKey: 'population',
+      sizeKey: 'population',
+      title: continent,
+      domain: sizeDomain,
+      maxSize: 60,
+    }));
+
     return {
-      theme: 'ag-sheets',
-      data: cities,
-      series: [
-        {
-          type: 'bubble',
-          xKey: 'city',
-          yKey: 'population',
-          sizeKey: 'population',
-          marker: { maxSize: 60 },
-        },
-      ],
-      axes: [
-        { type: 'category', position: 'bottom', label: { rotation: 45 } },
-        {
+      ...chartTheme,
+      series,
+      legend: { enabled: true, position: 'bottom' },
+      axes: {
+        x: { type: 'category', position: 'bottom', label: { rotation: 45 } },
+        y: {
           type: 'number',
           position: 'left',
+          label: {
+            // Compact notation auto-picks the unit by magnitude: 1.5B, 37M, 1.2K.
+            formatter: ({ value }) =>
+              new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(
+                value
+              ),
+          },
         },
-      ],
-      title: { text: 'Most Populous Cities' },
+      },
+      title: { text: 'Most Populous Cities by Continent' },
     };
-  }, []);
+  }, [chartTheme]);
 
   return <AgCharts options={options} style={{ height: '100%' }} />;
 }

@@ -9,10 +9,39 @@
 .top-nav__links {
   margin-left: auto;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--font-color);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
 .logo {
+  /* Inline SVG logo uses currentColor, so it follows the link's color. */
+  display: inline-flex;
+
   &:hover {
     background-color: revert;
     color: var(--font-color);
