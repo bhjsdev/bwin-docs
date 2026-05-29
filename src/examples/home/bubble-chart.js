@@ -1,13 +1,16 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
 import populationData from '@/data/population.json';
+import { useChartTheme } from './use-chart-theme';
 
 export default function BubbleChart() {
+  const chartTheme = useChartTheme();
+
   const options = useMemo(() => {
     const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
 
     return {
-      theme: 'ag-sheets',
+      theme: chartTheme,
       data: cities,
       series: [
         {
@@ -27,7 +30,7 @@ export default function BubbleChart() {
       ],
       title: { text: 'Most Populous Cities' },
     };
-  }, []);
+  }, [chartTheme]);
 
   return <AgCharts options={options} style={{ height: '100%' }} />;
 }

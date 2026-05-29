@@ -1,9 +1,14 @@
 .home-example {
   --bw-glass-border-radius: 4px;
   --bw-glass-clearance: 4px;
-  --bw-glass-border-color: hsl(0 0% 70%);
 
   bw-glass-content {
     padding: 8px;
   }
+}
+
+/* Lighter border than bwin's default — light mode only, so it doesn't shadow the
+   shared dark theme's border (public/bwin-dark-theme.css) when dark is active. */
+:root:not([data-theme='dark']) .home-example {
+  --bw-glass-border-color: hsl(0 0% 70%);
 }

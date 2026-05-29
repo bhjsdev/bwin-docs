@@ -1,13 +1,16 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
 import populationData from '@/data/population.json';
+import { useChartTheme } from './use-chart-theme';
 
 export default function BarChart() {
+  const chartTheme = useChartTheme();
+
   const options = useMemo(() => {
     const countries = populationData.filter((d) => d.city === null).slice(0, 20);
 
     return {
-      theme: 'ag-sheets',
+      theme: chartTheme,
       data: countries,
       series: [
         {
@@ -29,7 +32,7 @@ export default function BarChart() {
       ],
       title: { text: 'Top 20 Countries by Population' },
     };
-  }, []);
+  }, [chartTheme]);
 
   return <AgCharts options={options} style={{ height: '100%' }} />;
 }

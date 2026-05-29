@@ -8,6 +8,9 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   env: {
     BUILD_DATE: new Date().toISOString(),
+    // Exposed to the client bundle so getPath() / process.env.BASE_PATH resolve
+    // identically on server and client (IFrame is a client component now).
+    BASE_PATH: process.env.BASE_PATH ?? '',
   },
 };
 

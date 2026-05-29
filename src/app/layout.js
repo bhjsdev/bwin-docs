@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from './footer';
+import ThemeProvider from '@/components/theme-provider';
+import ThemeToggle from '@/components/theme-toggle';
 import './globals.css';
 import './layout.css';
 
@@ -12,7 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,21 +26,32 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
           rel="stylesheet"
         />
+        {/* Single source of truth for the bwin dark theme, shared with the
+            standalone iframe examples (public/*.html). Served from public/. */}
+        <link rel="stylesheet" href={process.env.BASE_PATH + '/bwin-dark-theme.css'} />
       </head>
       <body>
-        <div className="layout">
-          <nav className="top-nav">
-            <Link className="logo" href="/">
-              <Image src={process.env.BASE_PATH + '/logo.svg'} alt="Logo" width={100} height={50} />
-            </Link>
-            <div className="top-nav__links">
-              <Link href="/">Home</Link>
-              <Link href="/general/overview">Docs</Link>
-            </div>
-          </nav>
-          <main className="main">{children}</main>
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="layout">
+            <nav className="top-nav">
+              <Link className="logo" href="/">
+                <Image
+                  src={process.env.BASE_PATH + '/logo.svg'}
+                  alt="Logo"
+                  width={100}
+                  height={50}
+                />
+              </Link>
+              <div className="top-nav__links">
+                <Link href="/">Home</Link>
+                <Link href="/general/overview">Docs</Link>
+                <ThemeToggle />
+              </div>
+            </nav>
+            <main className="main">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

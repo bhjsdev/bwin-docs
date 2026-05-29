@@ -1,0 +1,46 @@
+/* Single source of truth for the bwin dark theme.
+   Used in two contexts, both keyed on the data-theme="dark" attribute:
+   - The docs site: linked from src/app/layout.js, themes every inline <Window>.
+   - The standalone iframe examples (public/*.html): linked there directly.
+
+   bwin themes most surfaces via --bw-* vars (overridden here) but hardcodes a few
+   light backgrounds — bw-pane #f2f2f2, bw-glass/bw-muntin #fff, and #fff on
+   tab/action/minimized :hover — which need element-level overrides.
+
+   Colors are hardcoded (not var(--font-color) etc.) so the file is self-contained:
+   the iframe documents don't load the docs' globals.css. The values match the docs
+   dark palette, so it composes cleanly in both contexts. :root[data-theme='dark']
+   beats bwin's :root var defaults regardless of stylesheet order; the descendant
+   selectors (0,1,2) outrank its element rules (0,0,1). */
+:root[data-theme='dark'] {
+  --bw-glass-border-color: hsl(0 0% 40%);
+  --bw-glass-border-color-disabled: hsl(0 0% 30%);
+  --bw-glass-header-bg-color: hsl(0 0% 18%);
+  --bw-glass-bg-color-disabled: hsl(0 0% 16%);
+  --bw-drop-area-bg-color: hsl(0 0% 100% / 0.1);
+  color-scheme: dark;
+}
+
+/* Page background for standalone/iframe documents that have no other base styles.
+   Matches the docs dark palette (--bg-color / --font-color), so it's a harmless
+   restatement when this file is loaded alongside globals.css. */
+[data-theme='dark'] body {
+  background-color: hsl(0 0% 12%);
+  color: hsl(0 0% 90%);
+}
+
+[data-theme='dark'] bw-pane,
+[data-theme='dark'] bw-muntin {
+  background-color: hsl(0 0% 14%);
+}
+
+[data-theme='dark'] bw-glass {
+  background-color: hsl(0 0% 16%);
+  color: hsl(0 0% 90%);
+}
+
+[data-theme='dark'] .bw-glass-tab:hover,
+[data-theme='dark'] .bw-glass-action:hover,
+[data-theme='dark'] .bw-minimized-glass:hover {
+  background-color: hsl(0 0% 26%);
+}
