@@ -13,7 +13,9 @@ ModuleRegistry.registerModules(AllCommunityModule);
 
 export default function Example() {
   return (
-    <div className="home-example" style={{ width: '100%', height: '100%' }}>
+    // Set minHeight to 1 to prevent the window from being resized to zero
+    // but not being able to resize back. A potential bug in `bwin`            
+    <div className="home-example" style={{ width: '100%', height: '100%', minHeight: 1 }}>
       <Window
         fitContainer
         panes={[
