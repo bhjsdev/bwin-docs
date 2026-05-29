@@ -36,6 +36,9 @@
 }
 
 .logo {
+  /* Inline SVG logo uses currentColor, so it follows the link's color. */
+  display: inline-flex;
+
   &:hover {
     background-color: revert;
     color: var(--font-color);

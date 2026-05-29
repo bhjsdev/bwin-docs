@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import Footer from './footer';
+import Logo from '@/components/logo';
 import ThemeProvider from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
 import './globals.css';
@@ -35,12 +35,7 @@ export default function RootLayout({ children }) {
           <div className="layout">
             <nav className="top-nav">
               <Link className="logo" href="/">
-                <Image
-                  src={process.env.BASE_PATH + '/logo.svg'}
-                  alt="Logo"
-                  width={100}
-                  height={50}
-                />
+                <Logo width={100} height={50} />
               </Link>
               <div className="top-nav__links">
                 <Link href="/">Home</Link>
