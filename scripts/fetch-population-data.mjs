@@ -3,7 +3,8 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUTPUT_PATH = resolve(__dirname, '../src/data/population.json');
+const COUNTRY_OUTPUT_PATH = resolve(__dirname, '../src/data/population-by-country.json');
+const CITY_OUTPUT_PATH = resolve(__dirname, '../src/data/population-by-city.json');
 
 const POPULATION_URL =
   'https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&date=2023&per_page=300';
@@ -93,9 +94,8 @@ async function fetchPopulationData() {
     throw new Error('No data returned from World Bank API');
   }
 
-  // Country-level entries (city = null)
-  const data = [];
-
+  // Population by country
+  const countries = [];
   for (const record of records) {
     const code = record.countryiso3code;
     const meta = countryMap.get(code);
@@ -104,23 +104,21 @@ async function fetchPopulationData() {
     const population = record.value;
     if (!population) continue;
 
-    data.push({
-      city: null,
+    countries.push({
       country: meta.name,
       continent: meta.continent,
       population: Math.round(population),
     });
   }
+  countries.sort((a, b) => b.population - a.population);
 
-  // Add city entries
-  for (const city of CITIES) {
-    data.push(city);
-  }
+  // Population by city
+  const cities = [...CITIES].sort((a, b) => b.population - a.population);
 
-  data.sort((a, b) => b.population - a.population);
-
-  writeFileSync(OUTPUT_PATH, JSON.stringify(data, null, 2));
-  console.log(`Written ${data.length} records (${data.filter(d => !d.city).length} countries, ${CITIES.length} cities) to ${OUTPUT_PATH}`);
+  writeFileSync(COUNTRY_OUTPUT_PATH, JSON.stringify(countries, null, 2));
+  writeFileSync(CITY_OUTPUT_PATH, JSON.stringify(cities, null, 2));
+  console.log(`Written ${countries.length} countries to ${COUNTRY_OUTPUT_PATH}`);
+  console.log(`Written ${cities.length} cities to ${CITY_OUTPUT_PATH}`);
 }
 
 fetchPopulationData().catch((err) => {

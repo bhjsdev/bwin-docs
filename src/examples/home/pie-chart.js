@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
-import populationData from '@/data/population.json';
+import populationByCountry from '@/data/population-by-country.json';
 import { useChartTheme } from './use-chart-theme';
 
 export default function PieChart() {
@@ -8,8 +8,7 @@ export default function PieChart() {
 
   const options = useMemo(() => {
     const byContinent = {};
-    for (const d of populationData) {
-      if (d.city !== null) continue;
+    for (const d of populationByCountry) {
       byContinent[d.continent] = (byContinent[d.continent] || 0) + d.population;
     }
 

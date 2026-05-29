@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { AgCharts } from 'ag-charts-react';
-import populationData from '@/data/population.json';
+import populationByCity from '@/data/population-by-city.json';
 import { useChartTheme } from './use-chart-theme';
 
 export default function BubbleChart() {
   const chartTheme = useChartTheme();
 
   const options = useMemo(() => {
-    const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
+    const cities = populationByCity.slice(0, 20);
 
     // Compact notation auto-picks the unit by magnitude: 1.5B, 37M, 1.2K.
     const formatPopulation = (value) =>
@@ -58,7 +58,7 @@ export default function BubbleChart() {
           },
         },
       },
-      title: { text: 'Most Populous Cities by Continent' },
+      title: { text: 'Top 20 Cities by Population' },
     };
   }, [chartTheme]);
 
