@@ -15,16 +15,17 @@ export default function BarChart() {
       series: [
         {
           type: 'bar',
+          direction: 'horizontal',
           xKey: 'country',
           yKey: 'population',
           yName: 'Population',
         },
       ],
       axes: {
-        x: { type: 'category', position: 'bottom' },
+        x: { type: 'category', position: 'left' },
         y: {
           type: 'number',
-          position: 'left',
+          position: 'bottom',
           label: {
             formatter: ({ value }) => `${(value / 1e9).toFixed(1)}B`,
           },
