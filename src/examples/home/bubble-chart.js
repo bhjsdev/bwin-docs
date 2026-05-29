@@ -9,6 +9,10 @@ export default function BubbleChart() {
   const options = useMemo(() => {
     const cities = populationData.filter((d) => d.city !== null).slice(0, 20);
 
+    // Compact notation auto-picks the unit by magnitude: 1.5B, 37M, 1.2K.
+    const formatPopulation = (value) =>
+      new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
+
     // One bubble series per continent so each gets its own colour and legend
     // entry — making each city's continent visible at a glance.
     const byContinent = {};
@@ -30,6 +34,14 @@ export default function BubbleChart() {
       title: continent,
       domain: sizeDomain,
       maxSize: 60,
+      // yKey and sizeKey are both `population`, so the default tooltip lists it
+      // twice (once raw). Render a single formatted line instead.
+      tooltip: {
+        renderer: ({ datum }) => ({
+          title: datum.city,
+          data: [{ label: 'Population', value: formatPopulation(datum.population) }],
+        }),
+      },
     }));
 
     return {
@@ -42,11 +54,7 @@ export default function BubbleChart() {
           type: 'number',
           position: 'left',
           label: {
-            // Compact notation auto-picks the unit by magnitude: 1.5B, 37M, 1.2K.
-            formatter: ({ value }) =>
-              new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(
-                value
-              ),
+            formatter: ({ value }) => formatPopulation(value),
           },
         },
       },
