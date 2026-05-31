@@ -28,8 +28,8 @@ export default function BubbleChart() {
     const series = Object.entries(byContinent).map(([continent, data]) => ({
       type: 'bubble',
       data,
-      xKey: 'city',
-      yKey: 'population',
+      xKey: 'population',
+      yKey: 'city',
       sizeKey: 'population',
       title: continent,
       domain: sizeDomain,
@@ -49,14 +49,14 @@ export default function BubbleChart() {
       series,
       legend: { enabled: true, position: 'bottom' },
       axes: {
-        x: { type: 'category', position: 'bottom', label: { rotation: 45 } },
-        y: {
+        x: {
           type: 'number',
-          position: 'left',
+          position: 'bottom',
           label: {
             formatter: ({ value }) => formatPopulation(value),
           },
         },
+        y: { type: 'category', position: 'left' },
       },
       title: { text: 'Top 20 Cities by Population' },
     };
