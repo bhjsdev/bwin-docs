@@ -20,7 +20,7 @@ export function useChartTheme() {
     () => ({
       theme: {
         baseTheme: isDark ? 'ag-sheets-dark' : 'ag-sheets',
-        params: { fontFamily: "'Noto Sans', system-ui" },
+        params: { fontFamily: "'IBM Plex Sans', system-ui" },
       },
       background: { fill: isDark ? 'hsl(0 0% 16%)' : 'hsl(0 0% 100%)' },
     }),
