@@ -28,7 +28,7 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: stable both-edges;
   color-scheme: light;
 }
 
