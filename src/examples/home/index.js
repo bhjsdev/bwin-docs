@@ -7,37 +7,45 @@ import PieChart from './pie-chart';
 import BubbleChart from './bubble-chart';
 import DataGrid from './data-grid';
 import 'react-bwin/react-bwin.css';
-import './styles.css';
+import './home.css';
 
 ModuleRegistry.registerModules(AllCommunityModule);
 
 export default function Example() {
   return (
-    // Set minHeight to 1 to prevent the window from being resized to zero
-    // but not being able to resize back. A potential bug in `bwin`            
-    <div className="home-example" style={{ width: '100%', height: '100%', minHeight: 1 }}>
-      <Window
-        fitContainer
-        panes={[
-          {
-            position: 'top',
-            size: 0.5,
-            children: [
-              {
-                position: 'left',
-                size: 0.6,
-                content: <BarChart />,
-              },
-              {
-                content: <PieChart />,
-              },
-            ],
-          },
-          {
-            children: [{ position: 'left', size: 0.5, content: <BubbleChart /> }, { content: <DataGrid /> }],
-          },
-        ]}
-      />
+    <div className="home">
+      {/* Set minHeight to 1 to prevent the window from being resized to zero */}
+      {/* but not being able to resize back. A potential bug in `bwin` */}
+      <div className="home__example" style={{ width: '100%', height: '100%', minHeight: 1 }}>
+        <Window
+          fitContainer
+          panes={[
+            {
+              position: 'top',
+              size: 0.5,
+              children: [
+                {
+                  position: 'left',
+                  size: 0.6,
+                  content: <BarChart />,
+                },
+                {
+                  content: <PieChart />,
+                },
+              ],
+            },
+            {
+              children: [
+                { position: 'left', size: 0.5, content: <BubbleChart /> },
+                { content: <DataGrid /> },
+              ],
+            },
+          ]}
+        />
+      </div>
+      <div className="home__caption">
+        Data: World Bank, 2026. Visualizations by AG Charts and AG Grid.
+      </div>
     </div>
   );
 }
