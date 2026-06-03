@@ -10,6 +10,7 @@ export default function Sidebar() {
           links={[
             { href: '/general/overview', title: 'Overview' },
             { href: '/general/config', title: 'Config' },
+            { href: '/general/theme', title: 'Theme' },
           ]}
         />
         <SidenavList
@@ -19,6 +20,7 @@ export default function Sidebar() {
             { href: '/javascript/get-started', title: 'Get started' },
             { href: '/javascript/add-pane', title: 'Add pane' },
             { href: '/javascript/remove-pane', title: 'Remove pane' },
+            { href: '/javascript/theme', title: 'Theme' },
             { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
           ]}
         />
@@ -29,6 +31,7 @@ export default function Sidebar() {
             { href: '/react/get-started', title: 'Get started' },
             { href: '/react/add-pane', title: 'Add pane' },
             { href: '/react/remove-pane', title: 'Remove pane' },
+            { href: '/react/theme', title: 'Theme' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}
@@ -38,6 +41,7 @@ export default function Sidebar() {
           links={[
             { href: '/apis/addPane', title: 'addPane' },
             { href: '/apis/removePane', title: 'removePane' },
+            { href: '/apis/setTheme', title: 'setTheme' },
           ]}
         />
       </nav>

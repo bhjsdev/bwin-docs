@@ -1,0 +1,61 @@
+export const metadata = {
+  title: 'setTheme - APIs - Binary Window',
+};
+
+# `setTheme`
+
+## Description
+
+Set the window theme. The theme name is set as the `theme` attribute on the
+`bw-window` element. Passing an empty (or falsy) value removes the attribute,
+reverting to the default (light) theme.
+
+Binary Window ships a built-in `dark` theme; any other name can be used to drive
+your own `bw-window[theme="..."]` styles.
+
+```js
+binaryWindow.setTheme(theme);
+```
+
+## Parameters
+
+| Name    | Type   | Description                                                              |
+| ------- | ------ | ------------------------------------------------------------------------ |
+| `theme` | string | Theme name set as the `theme` attribute on `bw-window`. e.g., `'dark'`. Falsy clears it. |
+
+## Returns
+
+**Type**: `void`
+
+## Code snippets
+
+### JavaScript
+
+```html
+<div id="container"></div>
+```
+
+```js
+const binaryWindow = new BinaryWindow();
+
+binaryWindow.mount(document.getElementById('container'));
+
+binaryWindow.setTheme('dark');
+```
+
+### React
+
+```jsx
+import { useEffect, useRef } from 'react';
+import { Window } from 'react-bwin';
+
+function App() {
+  const windowRef = useRef(null);
+
+  useEffect(() => {
+    windowRef.current.setTheme('dark');
+  }, []);
+
+  return <Window ref={windowRef} />;
+}
+```

@@ -1,0 +1,71 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Theme - General - Binary Window',
+};
+
+# Theme
+
+Binary Window is themed entirely with CSS. The active theme is exposed as a
+`theme` attribute on the `bw-window` element, so a theme is just a set of CSS
+rules scoped to `bw-window[theme='<name>']`. Binary Window ships a built-in
+`dark` theme this way; you can author your own the same way.
+
+## How theming works
+
+Most surfaces are driven by `--bw-*` custom properties declared on `bw-window`,
+so a theme usually just overrides those variables. A few surfaces are styled
+directly and can be overridden with element/class rules nested inside the theme
+selector.
+
+### Available variables
+
+| Variable                          | Purpose                                              |
+| --------------------------------- | ---------------------------------------------------- |
+| `--bw-font-family`                | Font family for window chrome                        |
+| `--bw-font-size`                  | Font size for window chrome                          |
+| `--bw-glass-clearance`            | Gap between a pane edge and its glass                |
+| `--bw-glass-border-radius`        | Glass corner radius                                  |
+| `--bw-glass-border-color`         | Glass border color                                   |
+| `--bw-glass-border-color-disabled`| Border color of disabled glass / actions             |
+| `--bw-glass-bg-color-disabled`    | Background of disabled actions                       |
+| `--bw-glass-header-height`        | Glass header height                                  |
+| `--bw-glass-header-gap`           | Gap/padding within the glass header                  |
+| `--bw-glass-header-bg-color`      | Glass header background                               |
+| `--bw-drop-area-bg-color`         | Background of the drop area highlighted during a drag |
+| `--bw-sill-gap`                   | Gap between minimized panes on the sill              |
+
+### Surfaces styled directly
+
+Some backgrounds and colors are set on elements rather than variables, so a theme
+overrides them with nested rules:
+
+- `bw-pane`, `bw-muntin` — pane and divider backgrounds
+- `bw-glass` — glass background and text color
+- `.bw-glass-tab:hover`, `.bw-glass-action:hover`, `.bw-minimized-glass:hover` — hover states
+
+## Creating a theme
+
+Create a CSS file (e.g. `my-theme.css`) with a rule scoped to your theme name,
+overriding the variables and surfaces you want to change:
+
+```css
+bw-window[theme='my-theme'] {
+  --bw-glass-border-color: hsl(210 50% 60%);
+  --bw-glass-header-bg-color: hsl(210 40% 96%);
+
+  bw-glass {
+    background-color: hsl(210 40% 98%);
+    color: hsl(210 30% 20%);
+  }
+}
+```
+
+## Using a theme
+
+Load your CSS file after Binary Window's own stylesheet, then activate the theme
+by name. See the per-framework guides for how to set the active theme and toggle
+it at runtime:
+
+- <a href={getPath('/javascript/theme')}>JavaScript — Theme</a>
+- <a href={getPath('/react/theme')}>React — Theme</a>
