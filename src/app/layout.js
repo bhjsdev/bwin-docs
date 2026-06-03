@@ -12,10 +12,27 @@ export const metadata = {
     'A lightweight JavaScript library for creating window tiling layouts with drag, drop, and resizable features.',
 };
 
+// Seed the theme from a ?theme= query param before paint. next-themes has no
+// query-param support, so we write the value into the localStorage key it reads
+// ('theme') ahead of its own pre-paint script (which renders in <body>). Head
+// runs first, so this always wins. While ?theme= is in the URL it overrides any
+// saved preference; ThemeToggle strips it once the user picks manually.
+const themeFromQueryScript = `
+(function () {
+  try {
+    var theme = new URLSearchParams(location.search).get('theme');
+    if (theme && ['light', 'dark', 'system'].indexOf(theme) !== -1) {
+      localStorage.setItem('theme', theme);
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeFromQueryScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Noto Sans: app body font. DM Mono: code font. IBM Plex Sans:
