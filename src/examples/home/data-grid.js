@@ -18,7 +18,14 @@ export default function DataGrid() {
     () =>
       themeQuartz
         .withPart(resolvedTheme === 'dark' ? colorSchemeDark : colorSchemeLight)
-        .withParams({ fontFamily: "'IBM Plex Sans', system-ui" }),
+        .withParams({
+          fontFamily: "'IBM Plex Sans', system-ui",
+          fontSize: 13,
+          headerHeight: 32,
+          rowHeight: 30,
+          oddRowBackgroundColor:
+            resolvedTheme === 'dark' ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.03)',
+        }),
     [resolvedTheme]
   );
 
