@@ -2,10 +2,12 @@
 
 import { useRef } from 'react';
 import { Window } from 'react-bwin';
+import { useBwinTheme } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 
 export default function Example() {
   const windowRef = useRef(null);
+  useBwinTheme(windowRef);
 
   return (
     <div style={{ width: 400, height: 260 }}>

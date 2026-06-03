@@ -1,0 +1,47 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Theme - JavaScript - Binary Window',
+};
+
+# Theme
+
+Set the active theme by name. Binary Window ships a built-in `dark` theme; to
+author your own, see <a href={getPath('/general/theme')}>General — Theme</a>.
+
+## Setting the theme
+
+Set the `theme` property on the root config node to a theme name. When omitted,
+the default (light) theme is used.
+
+```js
+const bwin = new BinaryWindow({
+  theme: 'dark',
+  children: [
+    /* ... */
+  ],
+});
+```
+
+If you authored a custom theme (see <a href={getPath('/general/theme')}>General —
+Theme</a>), load its CSS and set the matching name:
+
+```js
+const bwin = new BinaryWindow({
+  theme: 'my-theme',
+  children: [
+    /* ... */
+  ],
+});
+```
+
+## Toggling the theme
+
+To switch themes at runtime, call the <a href={getPath('/apis/setTheme')}>setTheme</a>
+API on the instance. Passing an empty value reverts to the default (light) theme.
+
+```js
+bwin.setTheme('dark'); // switch to the dark theme
+bwin.setTheme('my-theme'); // switch to a custom theme
+bwin.setTheme(''); // back to the default (light) theme
+```

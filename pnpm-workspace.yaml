@@ -1,2 +1,4 @@
 allowBuilds:
   sharp: true
+minimumReleaseAgeExclude:
+  - react-bwin@0.3.5

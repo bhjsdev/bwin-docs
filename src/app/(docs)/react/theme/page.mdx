@@ -1,0 +1,51 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Theme - React - Binary Window',
+};
+
+# Theme
+
+Set the active theme by name. Binary Window ships a built-in `dark` theme; to
+author your own, see <a href={getPath('/general/theme')}>General — Theme</a>.
+
+## Setting the theme
+
+Pass the initial theme through the `Window` component's `theme` prop. When
+omitted, the default (light) theme is used.
+
+```jsx
+<Window theme="dark" panes={...} />
+```
+
+If you authored a custom theme (see <a href={getPath('/general/theme')}>General —
+Theme</a>), import its CSS and pass the matching name:
+
+```jsx
+<Window theme="my-theme" panes={...} />
+```
+
+## Toggling the theme
+
+The `theme` prop is only read once, when the window is first created, so changing
+it later has no effect. To switch themes at runtime (for example, a light/dark
+toggle), call the <a href={getPath('/apis/setTheme')}>setTheme</a> API through the
+`Window` component's `ref`. Passing an empty value reverts to the default (light)
+theme.
+
+```jsx
+import { useRef } from 'react';
+import { Window } from 'react-bwin';
+
+function App() {
+  const windowRef = useRef(null);
+
+  return (
+    <>
+      <button onClick={() => windowRef.current.setTheme('dark')}>Dark</button>
+      <button onClick={() => windowRef.current.setTheme('')}>Light</button>
+      <Window ref={windowRef} panes={...} />
+    </>
+  );
+}
+```
