@@ -38,6 +38,17 @@ export default function RootLayout({ children }) {
               <div className="top-nav__links">
                 <Link href="/" prefetch={false}>Home</Link>
                 <Link href="/general/overview" prefetch={false}>Docs</Link>
+                <Link
+                  className="top-nav__github"
+                  href="https://github.com/bhjsdev/bwin-docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub repository"
+                  title="GitHub repository"
+                  prefetch={false}
+                >
+                  <i className="devicon-github-original" aria-hidden="true" />
+                </Link>
                 <ThemeToggle />
               </div>
             </nav>

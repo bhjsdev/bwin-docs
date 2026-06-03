@@ -13,20 +13,22 @@
   gap: 20px;
 }
 
-.theme-toggle {
+
+
+.theme-toggle,
+.top-nav__github {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  padding: 0;
   background: transparent;
   border: none;
   border-radius: 50%;
   color: var(--font-color);
   font-size: 16px;
-  line-height: 1;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: var(--secondary-color);
@@ -36,6 +38,10 @@
   &:active {
     transform: translateY(1px);
   }
+}
+
+.top-nav__github + .theme-toggle {
+  margin-left: -12px;
 }
 
 .logo {
@@ -68,5 +74,5 @@
   justify-content: flex-end;
   padding: 0 var(--clearance);
   font-size: 13px;
-  color: hsl(0 0% 30%);
+  color: hsl(0 0 30);
 }
