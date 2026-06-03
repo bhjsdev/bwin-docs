@@ -2,10 +2,12 @@
 
 import { useRef } from 'react';
 import { Window } from 'react-bwin';
+import { useBwinTheme } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 
 export default function Example() {
   const windowRef = useRef(null);
+  useBwinTheme(windowRef);
 
   function handleClick() {
     windowRef.current.addPane('pane-2', {

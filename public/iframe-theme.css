@@ -1,0 +1,23 @@
+/* Keeps iframe canvases transparent in dark mode. NOT a bwin theme — bwin now
+   ships its own dark theme, applied via the theme="dark" attribute on bw-window
+   (see react-bwin's react-bwin.css / the CDN bwin.css). All that remains here is
+   the color-scheme concern below.
+
+   Used in two contexts:
+   - The docs site: linked from src/app/layout.js.
+   - The standalone iframe examples (public/*.html): linked there directly.
+
+   Scope note: loaded by BOTH the docs site and the iframes, so it must only set
+   color-scheme on :root. Do NOT add a `body` rule here — the iframe canvas is
+   transparent (see below) so it already shows the parent's dark background, and a
+   `body` rule would leak into the docs site and override globals.css's themed body. */
+:root[data-theme='dark'] {
+  /* Keeps the iframe canvas transparent so the parent docs page's dark background
+     shows through (the iframe <body> sets no background of its own). A browser only
+     renders an iframe's canvas transparent when its used color-scheme MATCHES the
+     embedder's; mismatched schemes force an opaque canvas of the iframe's own
+     default — i.e. WHITE here, the bug you see if this line is removed. Setting
+     `dark` matches the dark parent, restoring transparency. (Opened standalone with
+     no parent, this instead yields the UA's own dark canvas — also correct.) */
+  color-scheme: dark;
+}

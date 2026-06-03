@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet"
         />
-        {/* Single source of truth for the bwin dark theme, shared with the
-            standalone iframe examples (public/*.html). Served from public/. */}
-        <link rel="stylesheet" href={process.env.BASE_PATH + '/bwin-dark-theme.css'} />
+        {/* Keeps dark-mode iframe canvases transparent (color-scheme), shared with
+            the standalone iframe examples (public/*.html). Served from public/. */}
+        <link rel="stylesheet" href={process.env.BASE_PATH + '/iframe-theme.css'} />
       </head>
       <body>
         <ThemeProvider>

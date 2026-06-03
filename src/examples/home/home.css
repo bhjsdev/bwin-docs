@@ -20,8 +20,8 @@
   }
 }
 
-/* Lighter border than bwin's default — light mode only, so it doesn't shadow the
-   shared dark theme's border (public/bwin-dark-theme.css) when dark is active. */
+/* Lighter border than bwin's default — light mode only, so it doesn't shadow
+   bwin's own dark-theme border (react-bwin.css) when dark is active. */
 :root:not([data-theme='dark']) .home__example {
   --bw-glass-border-color: hsl(0 0% 70%);
 }
