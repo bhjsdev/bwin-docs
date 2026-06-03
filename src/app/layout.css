@@ -20,8 +20,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background: transparent;
   border: none;
   border-radius: 50%;
@@ -41,7 +41,7 @@
 }
 
 .top-nav__github + .theme-toggle {
-  margin-left: -12px;
+  margin-left: -10px;
 }
 
 .logo {
