@@ -11,7 +11,7 @@ export default function Page() {
       <div className="overview__intro">
         <Content />
       </div>
-      <div className="overview__example">
+      <div className="overview__example" style={{ minHeight: 1 }}>
         <Client>
           <Example />
         </Client>
