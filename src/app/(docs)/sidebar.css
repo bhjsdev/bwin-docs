@@ -2,7 +2,6 @@
   padding: var(--clearance);
   position: sticky;
   top: 0;
-  align-self: start;
   max-height: calc(100vh - var(--top-nav-height) - var(--clearance) * 2);
   overflow-y: auto;
   scrollbar-width: thin;
