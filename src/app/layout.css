@@ -68,4 +68,5 @@
   justify-content: flex-end;
   padding: 0 var(--clearance);
   font-size: 13px;
+  color: hsl(0 0% 30%);
 }
