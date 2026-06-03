@@ -36,19 +36,29 @@ export default function RootLayout({ children }) {
                 <Logo width={100} height={50} />
               </Link>
               <div className="top-nav__links">
-                <Link href="/" prefetch={false}>Home</Link>
-                <Link href="/general/overview" prefetch={false}>Docs</Link>
-                <Link
-                  className="top-nav__github"
-                  href="https://github.com/bhjsdev/bwin-docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub repository"
-                  title="GitHub repository"
-                  prefetch={false}
-                >
+                <span className="top-nav__link">
+                  <i className="bi bi-house" aria-hidden="true" />
+                  <Link href="/" prefetch={false}>
+                    Home
+                  </Link>
+                </span>
+                <span className="top-nav__link">
+                  <i className="bi bi-book" aria-hidden="true" />
+                  <Link href="/general/overview" prefetch={false}>
+                    Docs
+                  </Link>
+                </span>
+                <span className="top-nav__link">
                   <i className="devicon-github-original" aria-hidden="true" />
-                </Link>
+                  <Link
+                    href="https://github.com/bhjsdev/bwin-docs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    prefetch={false}
+                  >
+                    Repo
+                  </Link>
+                </span>
                 <ThemeToggle />
               </div>
             </nav>

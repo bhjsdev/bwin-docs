@@ -10,13 +10,21 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
+.top-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
+  .bi,
+  [class^='devicon-'] {
+    font-size: 14px;
+  }
+}
 
-.theme-toggle,
-.top-nav__github {
+.theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -38,10 +46,6 @@
   &:active {
     transform: translateY(1px);
   }
-}
-
-.top-nav__github + .theme-toggle {
-  margin-left: -10px;
 }
 
 .logo {
