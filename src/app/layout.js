@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
                 <span className="top-nav__link">
                   <i className="devicon-github-original" aria-hidden="true" />
                   <Link
-                    href="https://github.com/bhjsdev/bwin-docs"
+                    href="https://github.com/bhjsdev/bwin"
                     target="_blank"
                     rel="noopener noreferrer"
                     prefetch={false}

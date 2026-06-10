@@ -10,5 +10,17 @@ export default function Footer() {
     setBuildDate(new Date(buildDate).toLocaleString('en-GB', { timeZoneName: 'short' }));
   }, []);
 
-  return <footer className="footer">Build date: {buildDate}</footer>;
+  return (
+    <footer className="footer">
+      <a
+        className="footer__link"
+        href="https://github.com/bhjsdev/bwin-docs"
+        target="_blank"
+        rel="noreferrer"
+      >
+        This site on GitHub
+      </a>
+      <span>Build date: {buildDate}</span>
+    </footer>
+  );
 }
