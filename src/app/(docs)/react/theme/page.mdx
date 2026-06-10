@@ -9,7 +9,7 @@ export const metadata = {
 Set the active theme by name. Binary Window ships a built-in `dark` theme; to
 author your own, see <a href={getPath('/general/theme')}>General — Theme</a>.
 
-## Setting the theme
+## Set the theme
 
 Pass the initial theme through the `Window` component's `theme` prop. When
 omitted, the default (light) theme is used.
@@ -25,7 +25,7 @@ Theme</a>), import its CSS and pass the matching name:
 <Window theme="my-theme" panes={...} />
 ```
 
-## Toggling the theme
+## Toggle the theme
 
 The `theme` prop is only read once, when the window is first created, so changing
 it later has no effect. To switch themes at runtime (for example, a light/dark
