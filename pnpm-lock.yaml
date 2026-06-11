@@ -39,8 +39,8 @@ importers:
         specifier: ^19.2.6
         version: 19.2.6
       react-bwin:
-        specifier: ^0.4.0
-        version: 0.4.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^0.4.1
+        version: 0.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-dom:
         specifier: ^19.2.6
         version: 19.2.6(react@19.2.6)
@@ -782,8 +782,8 @@ packages:
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
-  react-bwin@0.4.0:
-    resolution: {integrity: sha512-hghN+0zbdzA5yfaWXforfc/A+XAFBrOBDCuPsA3zU/h8KTzDS250gEXCdJINrScipdZD0kFv0VXpeK+ONNKBPA==}
+  react-bwin@0.4.1:
+    resolution: {integrity: sha512-jkI669QmrcAvp8aLEzuQ1dEfPti3eqJM1W9e2Oso9bFHUy6lh5btTkEU53kZo6ueH9y3PHSIv1PEhRW3BwJ+QA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1906,7 +1906,7 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  react-bwin@0.4.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+  react-bwin@0.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
