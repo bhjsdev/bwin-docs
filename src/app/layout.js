@@ -49,13 +49,16 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <div className="layout">
             <nav className="top-nav">
-              <Link className="logo" href="/">
+              {/* Home '/' resolves to the basePath root ('/bwin-docs'); with
+                  trailingSlash off, prefetch requests '/bwin-docs.txt' instead of
+                  the emitted '/bwin-docs/index.txt' → 404. Skip prefetch for it. */}
+              <Link className="logo" href="/" prefetch={false}>
                 <Logo width={100} height={50} />
               </Link>
               <div className="top-nav__links">
                 <span className="top-nav__link">
                   <i className="bi bi-house" aria-hidden="true" />
-                  <Link href="/">
+                  <Link href="/" prefetch={false}>
                     Home
                   </Link>
                 </span>
