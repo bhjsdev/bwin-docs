@@ -14,7 +14,7 @@ function renderLink(link, pathname) {
         href={link.href}
         className={linkClassName}
         target={link.external ? '_blank' : ''}
-        prefetch={false}
+        prefetch={link.external ? false : undefined}
       >
         {link.title}
       </Link>

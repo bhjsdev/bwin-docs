@@ -49,19 +49,19 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <div className="layout">
             <nav className="top-nav">
-              <Link className="logo" href="/" prefetch={false}>
+              <Link className="logo" href="/">
                 <Logo width={100} height={50} />
               </Link>
               <div className="top-nav__links">
                 <span className="top-nav__link">
                   <i className="bi bi-house" aria-hidden="true" />
-                  <Link href="/" prefetch={false}>
+                  <Link href="/">
                     Home
                   </Link>
                 </span>
                 <span className="top-nav__link">
                   <i className="bi bi-book" aria-hidden="true" />
-                  <Link href="/general/overview" prefetch={false}>
+                  <Link href="/general/overview">
                     Docs
                   </Link>
                 </span>
