@@ -4,6 +4,12 @@ import createMDX from '@next/mdx';
 const nextConfig = {
   output: 'export',
   reactStrictMode: false,
+  // Emit a directory-per-route ('/general/overview/index.html' + 'index.txt')
+  // and trailing-slash URLs. This keeps the home link ('/') prefetchable: the
+  // export prefetcher appends 'index.txt' for paths ending in '/', so the root
+  // resolves to '/bwin-docs/index.txt' (which exists) rather than the 404ing
+  // '/bwin-docs.txt' it would request without a trailing slash.
+  trailingSlash: true,
   basePath: process.env.BASE_PATH,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   env: {
