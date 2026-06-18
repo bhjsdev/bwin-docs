@@ -1,3 +1,5 @@
+import { getPath } from '@/utils';
+
 export const metadata = {
   title: 'setTheme - APIs - Binary Window',
 };
@@ -27,35 +29,7 @@ binaryWindow.setTheme(theme);
 
 **Type**: `void`
 
-## Code snippets
+## Examples
 
-### JavaScript
-
-```html
-<div id="container"></div>
-```
-
-```js
-const binaryWindow = new BinaryWindow();
-
-binaryWindow.mount(document.getElementById('container'));
-
-binaryWindow.setTheme('dark');
-```
-
-### React
-
-```jsx
-import { useEffect, useRef } from 'react';
-import { Window } from 'react-bwin';
-
-function App() {
-  const windowRef = useRef(null);
-
-  useEffect(() => {
-    windowRef.current.setTheme('dark');
-  }, []);
-
-  return <Window ref={windowRef} />;
-}
-```
+- <a href={getPath('/javascript/theme')}>JavaScript — Theme</a>
+- <a href={getPath('/react/theme')}>React — Theme</a>

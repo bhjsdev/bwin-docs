@@ -1,18 +1,15 @@
 'use client';
 
-import { useRef } from 'react';
-import { Window } from 'react-bwin';
-import { useBwinTheme } from '@/components/use-bwin-theme';
+import { Window, WindowProvider } from 'react-bwin';
+import { useBwinThemeApi } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 
-export default function Example() {
-  const windowRef = useRef(null);
-  useBwinTheme(windowRef);
+function GetStarted() {
+  useBwinThemeApi();
 
   return (
     <div style={{ width: 400, height: 300 }}>
       <Window
-        ref={windowRef}
         fitContainer
         panes={[
           {
@@ -36,5 +33,13 @@ export default function Example() {
         ]}
       />
     </div>
+  );
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <GetStarted />
+    </WindowProvider>
   );
 }

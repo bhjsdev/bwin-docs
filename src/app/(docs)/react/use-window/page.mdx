@@ -1,0 +1,90 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'useWindow hook - React - Binary Window',
+};
+
+# useWindow hook
+
+The `useWindow` hook exposes the `Window` API to any component.
+
+## Wrap the tree in a WindowProvider
+
+`useWindow` reads the API from the nearest `WindowProvider`. Render the provider
+above every component that needs the API — including the one that renders the
+`Window` itself.
+
+```jsx
+import { Window, WindowProvider, useWindow } from 'react-bwin';
+import 'react-bwin/react-bwin.css';
+
+export default function App() {
+  return (
+    <WindowProvider>
+      <Toolbar />
+      <Editor />
+    </WindowProvider>
+  );
+}
+```
+
+The `Window` registers its API with the provider when it mounts, so any sibling
+or descendant of the provider can reach it through `useWindow` — they don't need
+to be related to the `Window` component directly.
+
+## Call the API
+
+Call `useWindow` inside a component and destructure the methods you need. They
+forward to the live `Window`, so call them from event handlers, effects, or
+anywhere else.
+
+```jsx
+function Toolbar() {
+  const { addPane, removePane, setTheme } = useWindow();
+
+  return (
+    <>
+      <button
+        onClick={() =>
+          addPane('pane-2', {
+            position: 'bottom',
+            size: 120,
+            title: 'Pane 3',
+            content: <em>Pane 3</em>,
+          })
+        }
+      >
+        Add pane
+      </button>
+      <button onClick={() => removePane('pane-2')}>Remove pane</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
+      <button onClick={() => setTheme('')}>Light</button>
+    </>
+  );
+}
+```
+
+See <a href={getPath('/react/add-pane')}>Add a pane</a>, <a href={getPath('/react/remove-pane')}>Remove a pane</a>,
+and <a href={getPath('/react/theme')}>Theme</a> for live examples of each method.
+
+## Stable references
+
+The methods returned by `useWindow` keep a stable identity for the lifetime of
+the component, so it's safe to list them in a dependency array without causing
+effects to re-run.
+
+```jsx
+function DarkOnMount() {
+  const { setTheme } = useWindow();
+
+  useEffect(() => {
+    setTheme('dark');
+  }, [setTheme]); // setTheme is stable, so this runs only once
+}
+```
+
+## Render a Window before calling the API
+
+The API is only available once a `Window` has mounted inside the provider.
+Calling a method before then throws an error. Trigger calls from user
+interactions or effects that run after mount, not during the first render.

@@ -1,25 +1,20 @@
 'use client';
 
 import { Window, WindowProvider, useWindow } from 'react-bwin';
-import { useBwinThemeApi } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 
-function RemovePane() {
-  const { removePane } = useWindow();
-  useBwinThemeApi();
+function Theme() {
+  const { setTheme } = useWindow();
 
   return (
     <div style={{ width: 400, height: 260 }}>
-      <button onClick={() => removePane('pane-2')}>Remove pane</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
+      <button onClick={() => setTheme('')}>Light</button>
       <Window
         fitContainer
         panes={[
           { position: 'left', id: 'pane-1', content: <div>Pane 1</div> },
-          {
-            position: 'right',
-            id: 'pane-2',
-            content: <div>Pane 2</div>,
-          },
+          { position: 'right', id: 'pane-2', content: <div>Pane 2</div> },
         ]}
       />
     </div>
@@ -29,7 +24,7 @@ function RemovePane() {
 export default function Example() {
   return (
     <WindowProvider>
-      <RemovePane />
+      <Theme />
     </WindowProvider>
   );
 }

@@ -1,21 +1,19 @@
 'use client';
 
-import { useRef } from 'react';
-import { Window } from 'react-bwin';
+import { Window, WindowProvider } from 'react-bwin';
 import { ModuleRegistry, AllCommunityModule } from 'ag-charts-community';
 import BarChart from './bar-chart';
 import PieChart from './pie-chart';
 import BubbleChart from './bubble-chart';
 import DataGrid from './data-grid';
-import { useBwinTheme } from '@/components/use-bwin-theme';
+import { useBwinThemeApi } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 import './home.css';
 
 ModuleRegistry.registerModules(AllCommunityModule);
 
-export default function Example() {
-  const windowRef = useRef(null);
-  useBwinTheme(windowRef);
+function Home() {
+  useBwinThemeApi();
 
   return (
     <div className="home">
@@ -23,7 +21,6 @@ export default function Example() {
       {/* but not being able to resize back. A potential bug in `bwin` */}
       <div className="home__example" style={{ width: '100%', height: '100%', minHeight: 1 }}>
         <Window
-          ref={windowRef}
           fitContainer
           panes={[
             {
@@ -53,5 +50,13 @@ export default function Example() {
         Data: World Bank, 2026. Visualizations by AG Charts and AG Grid.
       </div>
     </div>
+  );
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <Home />
+    </WindowProvider>
   );
 }

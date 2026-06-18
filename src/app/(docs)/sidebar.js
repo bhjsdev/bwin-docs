@@ -32,6 +32,7 @@ export default function Sidebar() {
             { href: '/react/add-pane', title: 'Add pane' },
             { href: '/react/remove-pane', title: 'Remove pane' },
             { href: '/react/theme', title: 'Theme' },
+            { href: '/react/use-window', title: 'useWindow hook' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
             { href: 'https://github.com/bhjsdev/react-bwin', title: 'Repo', external: true },
           ]}

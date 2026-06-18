@@ -94,6 +94,12 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
+blockquote {
+  margin-inline: 0;
+  padding-left: 1em;
+  border-left: 3px solid hsl(0 0 80);
+}
+
 code {
   font-family: var(--font-family-mono);
   color: var(--secondary-color);

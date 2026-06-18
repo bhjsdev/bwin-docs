@@ -1,3 +1,5 @@
+import { getPath } from '@/utils';
+
 export const metadata = {
   title: 'addPane - APIs - Binary Window',
 };
@@ -39,43 +41,7 @@ binaryWindow.addPane(targetPaneSashId, options);
 
 **Description**: Newly created Sash object.
 
-## Code snippets
+## Examples
 
-### Javascript
-
-```html
-<div id="container"></div>
-```
-
-```js
-const binaryWindow = new BinaryWindow();
-
-binaryWindow.mount(document.getElementById('container'));
-
-binaryWindow.addPane('target-pane-sash-id', {
-  position: 'bottom',
-  size: 120,
-  content: Object.assign(document.createElement('div'), { innerHTML: 'Hello World' }),
-});
-```
-
-### React
-
-```jsx
-import { useEffect, useRef } from 'react';
-import { Window } from 'bwin-react';
-
-function App() {
-  const windowRef = useRef(null);
-
-  useEffect(() => {
-    windowRef.current.addPane('target-pane-sash-id', {
-      position: 'bottom',
-      size: 120,
-      content: <div>Hello World</div>,
-    });
-  }, []);
-
-  return <Window ref={windowRef} />;
-}
-```
+- <a href={getPath('/javascript/add-pane')}>JavaScript — Add a pane</a>
+- <a href={getPath('/react/add-pane')}>React — Add a pane</a>

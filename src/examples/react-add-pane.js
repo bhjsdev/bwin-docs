@@ -1,16 +1,15 @@
 'use client';
 
-import { useRef } from 'react';
-import { Window } from 'react-bwin';
-import { useBwinTheme } from '@/components/use-bwin-theme';
+import { Window, WindowProvider, useWindow } from 'react-bwin';
+import { useBwinThemeApi } from '@/components/use-bwin-theme';
 import 'react-bwin/react-bwin.css';
 
-export default function Example() {
-  const windowRef = useRef(null);
-  useBwinTheme(windowRef);
+function AddPane() {
+  const { addPane } = useWindow();
+  useBwinThemeApi();
 
   function handleClick() {
-    windowRef.current.addPane('pane-2', {
+    addPane('pane-2', {
       position: 'bottom',
       size: 120,
       title: 'Pane 3',
@@ -31,8 +30,15 @@ export default function Example() {
             content: <div>Pane 2</div>,
           },
         ]}
-        ref={windowRef}
       />
     </div>
+  );
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <AddPane />
+    </WindowProvider>
   );
 }

@@ -1,3 +1,5 @@
+import { getPath } from '@/utils';
+
 export const metadata = {
   title: 'removePane - APIs - Binary Window',
 };
@@ -22,35 +24,7 @@ binaryWindow.removePane(sashId);
 
 **Type**: `void`
 
-## Code snippets
+## Examples
 
-### JavaScript
-
-```html
-<div id="container"></div>
-```
-
-```js
-const binaryWindow = new BinaryWindow();
-
-binaryWindow.mount(document.getElementById('container'));
-
-binaryWindow.removePane('sash-id');
-```
-
-### React
-
-```jsx
-import { useEffect, useRef } from 'react';
-import { Window } from 'bwin-react';
-
-function App() {
-  const windowRef = useRef(null);
-
-  useEffect(() => {
-    windowRef.current.removePane('sash-id');
-  }, []);
-
-  return <Window ref={windowRef} />;
-}
-```
+- <a href={getPath('/javascript/remove-pane')}>JavaScript — Remove a pane</a>
+- <a href={getPath('/react/remove-pane')}>React — Remove a pane</a>

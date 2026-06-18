@@ -10,7 +10,7 @@ export const metadata = {
 
 ## Example
 
-Click the button to remove the right pane. The <a href={getPath('/apis/removePane')}>removePane</a> API is available through the `ref` prop of the `Window` component.
+Click the button to remove the right pane. The <a href={getPath('/apis/removePane')}>removePane</a> API is available through the `useWindow` hook, which reads the `Window` API from the surrounding `WindowProvider`.
 
 <Client>
   <Example />
@@ -20,16 +20,15 @@ Click the button to remove the right pane. The <a href={getPath('/apis/removePan
 <br />
 
 ```jsx
-import { useRef } from 'react';
-import { Window } from 'react-bwin';
+import { Window, WindowProvider, useWindow } from 'react-bwin';
 import 'react-bwin/react-bwin.css';
 
-export default function Example() {
-  const windowRef = useRef(null);
+function RemovePane() {
+  const { removePane } = useWindow();
 
   return (
     <div style={{ width: 400, height: 260 }}>
-      <button onClick={() => windowRef.current.removePane('pane-2')}>Remove pane</button>
+      <button onClick={() => removePane('pane-2')}>Remove pane</button>
       <Window
         fitContainer
         panes={[
@@ -40,9 +39,16 @@ export default function Example() {
             content: <div>Pane 2</div>,
           },
         ]}
-        ref={windowRef}
       />
     </div>
+  );
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <RemovePane />
+    </WindowProvider>
   );
 }
 ```

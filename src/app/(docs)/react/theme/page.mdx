@@ -1,3 +1,5 @@
+import Client from '@/components/client';
+import Example from '@/examples/react-theme';
 import { getPath } from '@/utils';
 
 export const metadata = {
@@ -29,23 +31,41 @@ Theme</a>), import its CSS and pass the matching name:
 
 The `theme` prop is only read once, when the window is first created, so changing
 it later has no effect. To switch themes at runtime (for example, a light/dark
-toggle), call the <a href={getPath('/apis/setTheme')}>setTheme</a> API through the
-`Window` component's `ref`. Passing an empty value reverts to the default (light)
-theme.
+toggle), call the <a href={getPath('/apis/setTheme')}>setTheme</a> API from the
+`useWindow` hook. Passing an empty value reverts to the default (light) theme.
+
+### Example
+
+Click the buttons to switch the window between the dark and light themes.
+
+<Client>
+  <Example />
+</Client>
+
+<br />
+<br />
 
 ```jsx
-import { useRef } from 'react';
-import { Window } from 'react-bwin';
+import { Window, WindowProvider, useWindow } from 'react-bwin';
+import 'react-bwin/react-bwin.css';
 
-function App() {
-  const windowRef = useRef(null);
+function Toggle() {
+  const { setTheme } = useWindow();
 
   return (
     <>
-      <button onClick={() => windowRef.current.setTheme('dark')}>Dark</button>
-      <button onClick={() => windowRef.current.setTheme('')}>Light</button>
-      <Window ref={windowRef} panes={...} />
+      <button onClick={() => setTheme('dark')}>Dark</button>
+      <button onClick={() => setTheme('')}>Light</button>
+      <Window panes={...} />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <WindowProvider>
+      <Toggle />
+    </WindowProvider>
   );
 }
 ```
