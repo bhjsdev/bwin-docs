@@ -1,5 +1,6 @@
 import Client from '@/components/client';
 import Example from '@/examples/react-get-started';
+import { getPath } from '@/utils';
 
 export const metadata = {
   title: 'Get started - React - Binary Window',
@@ -59,3 +60,11 @@ function Example() {
   );
 }
 ```
+
+## Next steps
+
+- <a href={getPath('/general/config')}>Config</a> — how the `panes` layout is described
+- <a href={getPath('/react/add-pane')}>Add</a>, <a href={getPath('/react/update-pane')}>update</a>, and <a href={getPath('/react/remove-pane')}>remove</a> panes
+- <a href={getPath('/react/use-window')}>useWindow hook</a> — reach the window API from any component
+- <a href={getPath('/react/actions')}>Customize actions</a> and set a <a href={getPath('/react/theme')}>theme</a>
+- <a href={getPath('/react/troubleshooting')}>Troubleshooting</a> — StrictMode and SSR hydration

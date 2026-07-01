@@ -1,0 +1,40 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Detached glass - General - Binary Window',
+};
+
+# Detached glass
+
+A **detached glass** is a <a href={getPath('/general/glass')}>glass</a> that has
+popped out of its pane and floats freely inside the window, like an OS window. It
+renders as a `<bw-glass detached>` element appended to the window rather than to a
+pane.
+
+## Concept
+
+A detached glass is created by the **detach** action on an attached glass: the
+glass leaves its pane (the pane's sibling collapses to fill the space) and becomes
+a floating panel carrying the same title and content.
+
+Once floating, it behaves like a window: **drag** its header to move it,
+**resize** it from its edges, and click it to bring it to the front of other
+detached glasses.
+
+## Actions
+
+A detached glass defaults to `DEFAULT_DETACHED_GLASS_ACTIONS`: **minimize**,
+**attach**, and **close** — a different set from an attached glass because the
+actions have to make sense for a floating panel.
+
+- **minimize** — docks the glass on the sill; click its dock entry to restore it.
+- **attach** — the inverse of detach: the glass returns into a pane. It re-splits
+  its original location when possible, otherwise splits the largest pane.
+- **close** — removes the detached glass.
+
+As with any glass, pass your own `actions` array to customize the buttons. See
+<a href={getPath('/general/actions')}>Actions</a> for details.
+
+A detached glass with no owning window is a
+<a href={getPath('/general/windowless-glass')}>windowless glass</a> — the same
+floating component living on the page itself.

@@ -10,8 +10,9 @@ A Binary Window instance emits events as panes and glasses change — added,
 removed, closed, minimized, maximized, detached, and so on. Subscribe to them to
 react to layout changes or to veto an action before it happens.
 
-Events are per-instance: `on` and `off` register and remove listeners on a
-single window, and the payload each listener receives depends on the event.
+Events are per-instance: <a href={getPath('/apis/on')}>`on`</a> and
+<a href={getPath('/apis/off')}>`off`</a> register and remove listeners on a single
+window, and the payload each listener receives depends on the event.
 
 ## Subscribe and unsubscribe
 
@@ -54,7 +55,10 @@ the API from any component.
 ## Available events
 
 Pane-lifecycle events carry the affected **sash**. Glass-action events carry the
-affected `<bw-glass>` element (the detached glass element for `detach`).
+affected `<bw-glass>` element (the detached glass element for `detach`). The
+glass-action events correspond to the built-in
+<a href={getPath('/general/actions')}>actions</a> — close, minimize, maximize,
+detach, and attach.
 
 | Event                | Payload            | Fired when                                     |
 | -------------------- | ------------------ | ---------------------------------------------- |
@@ -91,3 +95,9 @@ non-`before-*` events are notifications only — their return values are ignored
 Listeners fire outside React's render cycle. If a listener should update the UI,
 have it set React state yourself. Always unsubscribe on unmount to avoid leaking
 listeners and stale closures.
+
+## Related
+
+- <a href={getPath('/apis/on')}>on</a> / <a href={getPath('/apis/off')}>off</a> — the API reference
+- <a href={getPath('/general/actions')}>Actions</a> — what the glass-action events come from
+- <a href={getPath('/react/use-window')}>useWindow hook</a> — reach `on`/`off` from any React component

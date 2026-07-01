@@ -6,9 +6,10 @@ export const metadata = {
 
 # Actions
 
-Each glass has a header with **actions** — the buttons that minimize, maximize,
-detach, or close it. Binary Window ships a default set, and you can replace it
-with your own to add custom buttons or change which built-ins appear.
+Each <a href={getPath('/general/glass')}>glass</a> has a header with **actions** —
+the buttons that minimize, maximize, detach, or close it. Binary Window ships a
+default set, and you can replace it with your own to add custom buttons or change
+which built-ins appear.
 
 ## Default actions
 
@@ -85,3 +86,14 @@ const actions = [
 
 See <a href={getPath('/apis/addPane')}>addPane</a> and <a href={getPath('/apis/updatePane')}>updatePane</a>
 for the methods you can call from a handler.
+
+The built-in actions also emit <a href={getPath('/general/events')}>events</a>
+(close, minimize, maximize, detach, attach) you can listen for. Detached and
+windowless glasses carry their own default action sets — see
+<a href={getPath('/general/detached-glass')}>Detached glass</a> and
+<a href={getPath('/general/windowless-glass')}>Windowless glass</a>.
+
+## Examples
+
+- <a href={getPath('/javascript/actions')}>JavaScript — Customize actions</a>
+- <a href={getPath('/react/actions')}>React — Customize actions</a>

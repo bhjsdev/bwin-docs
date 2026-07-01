@@ -8,7 +8,9 @@ export const metadata = {
 
 ## Description
 
-Remove a pane from the window.
+Remove a pane from the window, along with the
+<a href={getPath('/general/glass')}>glass</a> it holds. The removed pane's sibling
+expands to fill the freed space.
 
 ```js
 binaryWindow.removePane(sashId);
@@ -28,3 +30,8 @@ binaryWindow.removePane(sashId);
 
 - <a href={getPath('/javascript/remove-pane')}>JavaScript — Remove a pane</a>
 - <a href={getPath('/react/remove-pane')}>React — Remove a pane</a>
+
+## See also
+
+- <a href={getPath('/general/pane')}>Pane</a> — the concept
+- <a href={getPath('/apis/addPane')}>addPane</a> / <a href={getPath('/apis/updatePane')}>updatePane</a>

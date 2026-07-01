@@ -1,0 +1,39 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Pane - General - Binary Window',
+};
+
+# Pane
+
+A **pane** is a single region of the tiled layout. It renders as a
+`<bw-pane sash-id="…">` element and holds exactly one
+<a href={getPath('/general/glass')}>glass</a>, which fills it with a header and
+content.
+
+## Concept
+
+Panes come from the layout tree. Each leaf of the
+<a href={getPath('/general/config')}>config</a> becomes a pane; a node with
+children becomes a split, drawn as a draggable **muntin** (divider) between its
+two sides. Every pane carries a **Sash ID** — the identifier you pass to APIs
+like <a href={getPath('/apis/addPane')}>addPane</a>,
+<a href={getPath('/apis/updatePane')}>updatePane</a>, and
+<a href={getPath('/apis/removePane')}>removePane</a> to target it.
+
+A pane is just the region; the glass is what fills it. Binary Window seeds each
+new pane with a glass built from that node's `title`, `content`, and `actions`.
+
+## Add, update, and remove
+
+Panes are created by splitting an existing one and removed by collapsing back:
+
+- **Add** — <a href={getPath('/apis/addPane')}>addPane</a> splits a target pane,
+  placing the new one to its `top`, `right`, `bottom`, or `left`.
+- **Update** — <a href={getPath('/apis/updatePane')}>updatePane</a> changes a
+  pane's size, position, or its glass title and content in place.
+- **Remove** — <a href={getPath('/apis/removePane')}>removePane</a> removes a pane;
+  its sibling expands to fill the freed space.
+
+Rearranging panes by dragging a glass, or resizing them by dragging a muntin, is
+handled for you — see <a href={getPath('/general/glass')}>Glass</a>.

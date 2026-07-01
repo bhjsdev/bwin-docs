@@ -1,0 +1,38 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Glass - General - Binary Window',
+};
+
+# Glass
+
+A **glass** is the content inside a pane — a header (title or tabs, plus action
+buttons) above a content area. Every pane holds one glass, rendered as a
+`<bw-glass>` element inside its `<bw-pane>`.
+
+## Concept
+
+A pane is just a region of the layout; the glass is what fills it. Splitting the
+window with <a href={getPath('/general/config')}>config</a> or
+<a href={getPath('/apis/addPane')}>addPane</a> creates a pane, and Binary Window
+seeds it with a glass built from that node's `title`, `content`, and `actions`.
+
+Because the glass owns the header, it's also the drag handle: dragging a glass by
+its header onto another pane rearranges the layout.
+
+## Actions
+
+The header shows **actions** — buttons that operate on the glass. An attached
+glass defaults to `DEFAULT_GLASS_ACTIONS`: **minimize**, **detach**, and
+**close**. A **maximize** action is also built in and can be added.
+
+- **minimize** — removes the pane and docks the glass on the sill at the bottom
+  of the window; click its dock entry to restore it.
+- **detach** — pops the glass out of its pane into a floating
+  <a href={getPath('/general/detached-glass')}>detached glass</a>.
+- **maximize** — expands the pane to fill the window; toggling restores it.
+- **close** — removes the pane and its glass.
+
+Pass your own `actions` array to change which buttons appear or to add custom
+ones. See <a href={getPath('/general/actions')}>Actions</a> for the action object
+and placement details.

@@ -10,6 +10,10 @@ export default function Sidebar() {
           links={[
             { href: '/general/overview', title: 'Overview' },
             { href: '/general/config', title: 'Config' },
+            { href: '/general/pane', title: 'Pane' },
+            { href: '/general/glass', title: 'Glass' },
+            { href: '/general/detached-glass', title: 'Detached glass' },
+            { href: '/general/windowless-glass', title: 'Windowless glass' },
             { href: '/general/events', title: 'Events' },
             { href: '/general/actions', title: 'Actions' },
             { href: '/general/theme', title: 'Theme' },
