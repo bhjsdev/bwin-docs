@@ -1,0 +1,64 @@
+import Client from '@/components/client';
+import Example from '@/examples/react-detached-glass';
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Detached glass - React - Binary Window',
+};
+
+# Detached glass
+
+## Example
+
+Click the button to add a floating detached glass to the window. Drag it by its header to move it, or resize it from its edges. `addDetachedGlass` is available through the `useWindow` hook, which reads the `Window` API from the surrounding `WindowProvider`. See <a href={getPath('/apis/addDetachedGlass')}>addDetachedGlass</a> for all options.
+
+<Client>
+  <Example />
+</Client>
+
+<br />
+<br />
+
+```jsx
+import { useRef } from 'react';
+import { Window, WindowProvider, useWindow } from 'react-bwin';
+import 'react-bwin/react-bwin.css';
+
+function DetachedGlass() {
+  const { addDetachedGlass } = useWindow();
+  const countRef = useRef(0);
+
+  function handleClick() {
+    countRef.current += 1;
+    addDetachedGlass({
+      width: 160,
+      height: 120,
+      title: `Panel ${countRef.current}`,
+      content: <em>Floating panel {countRef.current}</em>,
+    });
+  }
+
+  return (
+    <div style={{ width: 400, height: 260 }}>
+      <button onClick={handleClick}>Add detached glass</button>
+      <Window
+        fitContainer
+        panes={[
+          { position: 'left', id: 'pane-1', title: 'Pane 1', content: <div>Pane 1</div> },
+          { position: 'right', id: 'pane-2', title: 'Pane 2', content: <div>Pane 2</div> },
+        ]}
+      />
+    </div>
+  );
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <DetachedGlass />
+    </WindowProvider>
+  );
+}
+```
+
+Remove a detached glass by its id with <a href={getPath('/apis/removeDetachedGlass')}>removeDetachedGlass</a>.

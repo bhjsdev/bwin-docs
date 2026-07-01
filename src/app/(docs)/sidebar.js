@@ -43,6 +43,7 @@ export default function Sidebar() {
             { href: '/react/update-pane', title: 'Update pane' },
             { href: '/react/remove-pane', title: 'Remove pane' },
             { href: '/react/actions', title: 'Customize actions' },
+            { href: '/react/detached-glass', title: 'Detached glass' },
             { href: '/react/windowless-glass', title: 'Windowless glass' },
             { href: '/react/theme', title: 'Theme' },
             { href: '/react/use-window', title: 'useWindow hook' },

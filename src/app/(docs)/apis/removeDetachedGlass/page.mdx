@@ -16,8 +16,8 @@ action) is a no-op, so a stale id is harmless.
 binaryWindow.removeDetachedGlass(id, options);
 ```
 
-> This is an instance method on a mounted `BinaryWindow`. It is not exposed
-> through the React wrapper.
+In React, reach `removeDetachedGlass` through the
+<a href={getPath('/react/use-window')}>useWindow hook</a>.
 
 ## Parameters
 
@@ -46,6 +46,7 @@ binaryWindow.removeDetachedGlass(glassEl.id, { animate: false });
 ```
 
 - <a href={getPath('/javascript/detached-glass')}>JavaScript — Detached glass</a>
+- <a href={getPath('/react/detached-glass')}>React — Detached glass</a>
 
 ## See also
 
