@@ -64,6 +64,8 @@
 
 .layout {
   display: grid;
+  /* Middle row gets a min height of (viewport - nav - footer), so the home page's
+     full-height example fills the screen; grows past it when content is taller. */
   grid-template-rows:
     var(--top-nav-height) minmax(calc(100vh - var(--top-nav-height) - var(--footer-height)), 1fr)
     var(--footer-height);
