@@ -1,4 +1,10 @@
-# Configuration
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Config - General - Binary Window',
+};
+
+# Config
 
 Binary Window organizes panes using a binary tree structure—hence the name **Binary Window**.
 
@@ -10,6 +16,8 @@ Internally, Binary Window uses a binary tree to organize its panes. Each node in
 - If a sash has children, it renders a **muntin** (a vertical or horizontal divider) with a Sash ID for resizing the panes, e.g., <br />`<bw-muntin sash-id="CD-456">`
 
 Sash IDs are used to identify panes and muntins. Some APIs require a Sash ID to target a specific pane or muntin.
+
+Each pane holds a <a href={getPath('/general/glass')}>glass</a> (its header and content). See <a href={getPath('/general/pane')}>Pane</a> and <a href={getPath('/general/glass')}>Glass</a> for how those pieces fit together.
 
 ## Config Node
 
@@ -157,3 +165,8 @@ In React, the code below is equivalent, using the `Window` component's `panes` p
   ]}
 />
 ```
+
+## Next steps
+
+- <a href={getPath('/javascript/get-started')}>JavaScript — Get started</a>
+- <a href={getPath('/react/get-started')}>React — Get started</a>

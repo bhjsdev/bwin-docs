@@ -1,0 +1,99 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Actions - General - Binary Window',
+};
+
+# Actions
+
+Each <a href={getPath('/general/glass')}>glass</a> has a header with **actions** —
+the buttons that minimize, maximize, detach, or close it. Binary Window ships a
+default set, and you can replace it with your own to add custom buttons or change
+which built-ins appear.
+
+## Default actions
+
+When you don't specify any actions, each glass gets `DEFAULT_GLASS_ACTIONS`:
+**minimize**, **detach**, and **close**. A **maximize** action is also built in
+and can be added to the set.
+
+```js
+import { DEFAULT_GLASS_ACTIONS } from 'bwin';
+```
+
+## Configure actions
+
+Pass an `actions` array on the config to control which buttons a glass shows.
+Start from `DEFAULT_GLASS_ACTIONS` and add your own entries, or pass an entirely
+custom array. Each entry is an action object.
+
+```js
+import { BinaryWindow, DEFAULT_GLASS_ACTIONS } from 'bwin';
+
+const bwin = new BinaryWindow({
+  width: 400,
+  height: 300,
+  actions: [...DEFAULT_GLASS_ACTIONS, myCustomAction],
+  content: 'Pane content',
+});
+```
+
+### Action object
+
+| Field       | Type     | Description                                                          |
+| ----------- | -------- | -------------------------------------------------------------------- |
+| `label`     | string   | Button label. Built-ins use an icon and leave this empty.           |
+| `className` | string   | CSS class applied to the button, for styling.                       |
+| `placement` | string   | Where the action appears: `'bar'` (default) or `'menu'`.            |
+| `onClick`   | function | Called with `(event, binaryWindow)` when the button is clicked.     |
+
+## Placement: bar or menu
+
+Set `placement` to choose where an action renders:
+
+- `'bar'` (the default) — the action is a button directly in the glass header.
+- `'menu'` — the action is collected into a dropdown menu, keeping the header
+  compact when there are many actions.
+
+```js
+const actions = [
+  { label: 'Save', onClick: savePane }, // placement defaults to 'bar'
+  { label: 'Rename', placement: 'menu', onClick: renamePane },
+  { label: 'Duplicate', placement: 'menu', onClick: duplicatePane },
+];
+```
+
+## Custom actions
+
+An action with an `onClick` handler can do anything. The handler receives the
+click `event` and the `binaryWindow` instance, so it can call the window's API —
+for example to add, update, or remove a pane.
+
+```js
+const actions = [
+  ...DEFAULT_GLASS_ACTIONS,
+  {
+    label: 'Split',
+    className: 'my-split-action',
+    onClick: (event, binaryWindow) => {
+      const paneEl = event.target.closest('bw-pane');
+      const sashId = paneEl.getAttribute('sash-id');
+      binaryWindow.addPane(sashId, { position: 'right', size: '50%' });
+    },
+  },
+];
+```
+
+See <a href={getPath('/apis/addPane')}>addPane</a> and <a href={getPath('/apis/updatePane')}>updatePane</a>
+for the methods you can call from a handler.
+
+The built-in actions also emit <a href={getPath('/general/events')}>events</a>
+(close, minimize, maximize, detach, attach) you can listen for. Detached and
+windowless glasses carry their own default action sets — see
+<a href={getPath('/general/detached-glass')}>Detached glass</a> and
+<a href={getPath('/general/windowless-glass')}>Windowless glass</a>.
+
+## Examples
+
+- <a href={getPath('/javascript/actions')}>JavaScript — Customize actions</a>
+- <a href={getPath('/react/actions')}>React — Customize actions</a>

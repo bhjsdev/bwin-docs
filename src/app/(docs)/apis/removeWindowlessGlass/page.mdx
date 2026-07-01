@@ -1,0 +1,51 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'removeWindowlessGlass - APIs - Binary Window',
+};
+
+# `removeWindowlessGlass`
+
+## Description
+
+Remove a windowless glass by its id. This is a **static** method on
+`BinaryWindow`. Removing an already-removed glass (for example one closed via its
+own close action) is a no-op, so a stale id is harmless.
+
+```js
+BinaryWindow.removeWindowlessGlass(id, options);
+```
+
+## Parameters
+
+| Name              | Type    | Default | Description                                                    |
+| ----------------- | ------- | ------- | -------------------------------------------------------------- |
+| `id`              | string  | —       | Id of the windowless glass to remove.                          |
+| `options.animate` | boolean | `true`  | Whether to play the close animation. Pass `false` to remove immediately. |
+
+## Returns
+
+**Type**: `Promise<Element | null>`
+
+**Description**: Resolves to the removed glass element, or `null` if no glass with
+that id existed.
+
+## Examples
+
+```js
+const glassEl = await BinaryWindow.addWindowlessGlass({ title: 'Dialog' });
+
+// later
+BinaryWindow.removeWindowlessGlass(glassEl.id);
+
+// remove immediately, without the close animation
+BinaryWindow.removeWindowlessGlass(glassEl.id, { animate: false });
+```
+
+- <a href={getPath('/javascript/windowless-glass')}>JavaScript — Windowless glass</a>
+- <a href={getPath('/react/windowless-glass')}>React — Windowless glass</a>
+
+## See also
+
+- <a href={getPath('/general/windowless-glass')}>Windowless glass</a> — the concept
+- <a href={getPath('/apis/addWindowlessGlass')}>addWindowlessGlass</a>

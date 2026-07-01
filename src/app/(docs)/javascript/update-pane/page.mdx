@@ -1,0 +1,45 @@
+import IFrame from '@/components/iframe';
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Update pane - JavaScript - Binary Window',
+};
+
+# Update a pane
+
+## Example
+
+Click the button to update the right pane's title and content. See <a href={getPath('/apis/updatePane')}>updatePane</a> API for more details. The example below is hosted within an `iframe`. You can also view it <a href={getPath('/update-pane.html')} target="_blank" rel="noopener noreferrer">here</a>.
+
+<br />
+<IFrame path="/update-pane.html" />
+<br />
+
+```html
+<button id="update-pane">Update pane</button>
+<div id="container" style="width: 400px; height: 260px"></div>
+```
+
+```js
+const bwin = new BinaryWindow({
+  fitContainer: true,
+  children: [
+    { position: 'left', id: 'pane-1', content: 'Pane 1' },
+    {
+      position: 'right',
+      id: 'pane-2',
+      title: 'Pane 2',
+      content: 'Pane 2',
+    },
+  ],
+});
+
+bwin.mount(document.getElementById('container'));
+
+document.getElementById('update-pane').addEventListener('click', () => {
+  bwin.updatePane('pane-2', {
+    title: 'Updated',
+    content: Object.assign(document.createElement('em'), { innerHTML: 'Updated content' }),
+  });
+});
+```

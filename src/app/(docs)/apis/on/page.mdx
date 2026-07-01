@@ -1,0 +1,50 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'on - APIs - Binary Window',
+};
+
+# `on`
+
+## Description
+
+Register a listener for an event on the window. The listener is called with the
+event's payload each time the event fires. Register the same listener with
+multiple events, or multiple listeners for one event, as needed.
+
+```js
+binaryWindow.on(eventName, listener);
+```
+
+## Parameters
+
+| Name        | Type     | Description                                                    |
+| ----------- | -------- | -------------------------------------------------------------- |
+| `eventName` | string   | Name of the event to listen for. e.g., `'pane-add'`.           |
+| `listener`  | function | Called with the event payload when the event fires.           |
+
+The `before-pane-add` and `before-pane-remove` events are vetoable: a listener
+that returns `false` cancels the action. Return values from other events are
+ignored. See <a href={getPath('/general/events')}>Events</a> for the full list of
+events and their payloads.
+
+## Returns
+
+**Type**: `void`
+
+## Examples
+
+```js
+function handleAdd(sash) {
+  console.log('pane added', sash.id);
+}
+
+binaryWindow.on('pane-add', handleAdd);
+```
+
+- <a href={getPath('/general/events')}>General — Events</a>
+
+## See also
+
+- <a href={getPath('/apis/off')}>off</a> — remove a listener
+- <a href={getPath('/react/use-window')}>useWindow hook</a> — reach `on` from any React component

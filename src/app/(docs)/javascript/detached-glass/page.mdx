@@ -1,0 +1,47 @@
+import IFrame from '@/components/iframe';
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Detached glass - JavaScript - Binary Window',
+};
+
+# Detached glass
+
+## Example
+
+Click the button to add a floating detached glass to the window. Drag it by its header to move it, or resize it from its edges. See <a href={getPath('/apis/addDetachedGlass')}>addDetachedGlass</a> for all options. The example below is hosted within an `iframe`. You can also view it <a href={getPath('/detached-glass.html')} target="_blank" rel="noopener noreferrer">here</a>.
+
+<br />
+<IFrame path="/detached-glass.html" />
+<br />
+
+```html
+<button id="add-detached">Add detached glass</button>
+<div id="container" style="width: 400px; height: 260px"></div>
+```
+
+```js
+let count = 0;
+
+const bwin = new BinaryWindow({
+  fitContainer: true,
+  children: [
+    { position: 'left', id: 'pane-1', title: 'Pane 1', content: 'Pane 1' },
+    { position: 'right', id: 'pane-2', title: 'Pane 2', content: 'Pane 2' },
+  ],
+});
+
+bwin.mount(document.getElementById('container'));
+
+document.getElementById('add-detached').addEventListener('click', () => {
+  count += 1;
+  bwin.addDetachedGlass({
+    width: 160,
+    height: 120,
+    title: `Panel ${count}`,
+    content: `Floating panel ${count}`,
+  });
+});
+```
+
+Remove a detached glass by its id with <a href={getPath('/apis/removeDetachedGlass')}>removeDetachedGlass</a>.

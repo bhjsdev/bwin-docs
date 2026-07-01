@@ -1,0 +1,65 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'updatePane - APIs - Binary Window',
+};
+
+# `updatePane`
+
+## Description
+
+Update an existing pane in place. Change its layout (`position`, `size`,
+`minWidth`, `minHeight`) and/or the `title` and `content` of the pane's
+<a href={getPath('/general/glass')}>glass</a> — `title` and `content` are written
+into that glass's header and body. Only the fields you pass are changed; the rest
+are left untouched.
+
+```js
+binaryWindow.updatePane(sashId, options);
+```
+
+## Parameters
+
+### Function parameters
+
+| Name      | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| `sashId`  | string | Sash ID of the pane to update.                   |
+| `options` | object | Fields to update. e.g., `title`, `size`, etc.    |
+
+### `options` details
+
+| Name        | Type                                | Description                                                          |
+| ----------- | ----------------------------------- | -------------------------------------------------------------------- |
+| `content`   | string \| DOM Node \| ReactNode[^1] | New content of the pane's glass                                     |
+| `title`     | string \| DOM Node \| ReactNode[^1] | New title of the pane's glass                                       |
+| `position`  | string                              | New position of the pane. One of `top`, `right`, `bottom`, or `left` |
+| `size`      | number \| string                    | New size of the pane. e.g., 100, 0.5, "50%"                          |
+| `minWidth`  | number                              | Minimum width the pane can be resized to                            |
+| `minHeight` | number                              | Minimum height the pane can be resized to                           |
+
+[^1]: `DOM Node` is for vanilla Javascript, and `ReactNode` is for React.
+
+## Returns
+
+**Type**: `void`
+
+## Examples
+
+```js
+// Change only the title
+binaryWindow.updatePane('pane-1', { title: 'Renamed' });
+
+// Resize and swap content
+binaryWindow.updatePane('pane-1', { size: '60%', content: 'New content' });
+```
+
+- <a href={getPath('/javascript/update-pane')}>JavaScript — Update a pane</a>
+- <a href={getPath('/react/update-pane')}>React — Update a pane</a>
+
+In React, reach `updatePane` through the <a href={getPath('/react/use-window')}>useWindow hook</a>.
+
+## See also
+
+- <a href={getPath('/general/pane')}>Pane</a> — the concept
+- <a href={getPath('/apis/addPane')}>addPane</a> / <a href={getPath('/apis/removePane')}>removePane</a>

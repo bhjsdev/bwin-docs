@@ -1,0 +1,68 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'addDetachedGlass - APIs - Binary Window',
+};
+
+# `addDetachedGlass`
+
+## Description
+
+Add a <a href={getPath('/general/detached-glass')}>detached glass</a> — a floating
+panel inside the window, not bound to any pane. This is the programmatic
+equivalent of the **detach** action. It returns a promise that resolves to the
+glass element once the open animation finishes.
+
+When no `position` is given, the glass cascades down-right from the active glass
+(or centers if there is none).
+
+```js
+binaryWindow.addDetachedGlass(options);
+```
+
+In React, reach `addDetachedGlass` through the
+<a href={getPath('/react/use-window')}>useWindow hook</a>.
+
+## Parameters
+
+### `options` details
+
+| Name                  | Type                    | Default        | Description                                                          |
+| --------------------- | ----------------------- | -------------- | -------------------------------------------------------------------- |
+| `position`            | string                  | cascaded       | Anchor: `center`, `top-left`, `top-right`, `bottom-left`, `bottom-right` |
+| `width`               | number                  | `200`          | Glass width in px                                                    |
+| `height`              | number                  | `200`          | Glass height in px                                                   |
+| `offset`              | number                  | `0`            | Distance in px from the anchored corner/edge (no effect on `center`) |
+| `offsetX` / `offsetY` | number                  | `0`            | Per-axis override of `offset`                                        |
+| `id`                  | string                  | auto-generated | Glass id; used to remove it later                                    |
+| `actions`             | object[]                | minimize, attach, close | Action buttons                                              |
+| `title`               | string \| DOM Node      | —              | Header title                                                        |
+| `content`             | string \| DOM Node      | —              | Glass body content                                                  |
+| `draggable`           | boolean                 | `true`         | Whether the header can be dragged to move the glass                 |
+| `resizable`           | boolean                 | `true`         | Whether resize handles appear on hover                              |
+| `animate`             | boolean                 | `true`         | Whether to play the open animation                                  |
+
+## Returns
+
+**Type**: `Promise<Element>`
+
+**Description**: Resolves to the detached glass element once the open animation
+completes.
+
+## Examples
+
+```js
+const glassEl = await binaryWindow.addDetachedGlass({
+  title: 'Panel',
+  content: 'Floating content',
+});
+```
+
+- <a href={getPath('/javascript/detached-glass')}>JavaScript — Detached glass</a>
+- <a href={getPath('/react/detached-glass')}>React — Detached glass</a>
+
+## See also
+
+- <a href={getPath('/general/detached-glass')}>Detached glass</a> — the concept
+- <a href={getPath('/apis/removeDetachedGlass')}>removeDetachedGlass</a>
+- <a href={getPath('/apis/addWindowlessGlass')}>addWindowlessGlass</a> — a detached glass with no owning window

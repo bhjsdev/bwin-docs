@@ -1,5 +1,3 @@
-'use client';
-
 import Example from '@/examples/overview';
 import Client from '@/components/client';
 import Content from './page.content.mdx';

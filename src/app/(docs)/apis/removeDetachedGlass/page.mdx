@@ -1,0 +1,54 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'removeDetachedGlass - APIs - Binary Window',
+};
+
+# `removeDetachedGlass`
+
+## Description
+
+Remove a <a href={getPath('/general/detached-glass')}>detached glass</a> by its
+id. Removing an already-removed glass (for example one closed via its own close
+action) is a no-op, so a stale id is harmless.
+
+```js
+binaryWindow.removeDetachedGlass(id, options);
+```
+
+In React, reach `removeDetachedGlass` through the
+<a href={getPath('/react/use-window')}>useWindow hook</a>.
+
+## Parameters
+
+| Name              | Type    | Default | Description                                                    |
+| ----------------- | ------- | ------- | -------------------------------------------------------------- |
+| `id`              | string  | —       | Id of the detached glass to remove.                            |
+| `options.animate` | boolean | `true`  | Whether to play the close animation. Pass `false` to remove immediately. |
+
+## Returns
+
+**Type**: `Promise<Element | null>`
+
+**Description**: Resolves to the removed glass element, or `null` if no glass with
+that id existed.
+
+## Examples
+
+```js
+const glassEl = await binaryWindow.addDetachedGlass({ title: 'Panel' });
+
+// later
+binaryWindow.removeDetachedGlass(glassEl.id);
+
+// remove immediately, without the close animation
+binaryWindow.removeDetachedGlass(glassEl.id, { animate: false });
+```
+
+- <a href={getPath('/javascript/detached-glass')}>JavaScript — Detached glass</a>
+- <a href={getPath('/react/detached-glass')}>React — Detached glass</a>
+
+## See also
+
+- <a href={getPath('/general/detached-glass')}>Detached glass</a> — the concept
+- <a href={getPath('/apis/addDetachedGlass')}>addDetachedGlass</a>

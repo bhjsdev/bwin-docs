@@ -1,0 +1,103 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Events - General - Binary Window',
+};
+
+# Events
+
+A Binary Window instance emits events as panes and glasses change — added,
+removed, closed, minimized, maximized, detached, and so on. Subscribe to them to
+react to layout changes or to veto an action before it happens.
+
+Events are per-instance: <a href={getPath('/apis/on')}>`on`</a> and
+<a href={getPath('/apis/off')}>`off`</a> register and remove listeners on a single
+window, and the payload each listener receives depends on the event.
+
+## Subscribe and unsubscribe
+
+Register a listener with `on(eventName, listener)` and remove it with
+`off(eventName, listener)` — pass the same function reference you registered.
+
+```js
+const bwin = new BinaryWindow(config);
+bwin.mount(container);
+
+function handleAdd(sash) {
+  console.log('pane added', sash.id);
+}
+
+bwin.on('pane-add', handleAdd);
+bwin.off('pane-add', handleAdd); // stop listening
+```
+
+In React the same `on` / `off` methods are exposed through the `Window` ref and
+the `useWindow` hook. Subscribe in an effect and unsubscribe in its cleanup so
+the listener is removed when the component unmounts:
+
+```jsx
+function PaneLogger() {
+  const { on, off } = useWindow();
+
+  useEffect(() => {
+    const handleAdd = (sash) => console.log('pane added', sash.id);
+    on('pane-add', handleAdd);
+    return () => off('pane-add', handleAdd);
+  }, [on, off]);
+
+  return null;
+}
+```
+
+See <a href={getPath('/react/use-window')}>the useWindow hook</a> for how to reach
+the API from any component.
+
+## Available events
+
+Pane-lifecycle events carry the affected **sash**. Glass-action events carry the
+affected `<bw-glass>` element (the detached glass element for `detach`). The
+glass-action events correspond to the built-in
+<a href={getPath('/general/actions')}>actions</a> — close, minimize, maximize,
+detach, and attach.
+
+| Event                | Payload            | Fired when                                     |
+| -------------------- | ------------------ | ---------------------------------------------- |
+| `before-pane-add`    | target `Sash`      | Before a pane is added (vetoable)              |
+| `pane-add`           | new `Sash`         | After a pane is added                          |
+| `before-pane-remove` | `Sash`             | Before a pane is removed (vetoable)            |
+| `pane-remove`        | `Sash`             | After a pane is removed                        |
+| `close`              | glass element          | A glass is closed                              |
+| `minimize`           | glass element          | A glass is minimized                           |
+| `maximize`           | glass element          | A glass is maximized                           |
+| `unmaximize`         | glass element          | A maximized glass is restored to its size      |
+| `detach`             | detached glass element | A glass is detached into a floating window     |
+| `attach`             | glass element          | A detached glass is re-attached into a pane    |
+| `restore`            | detached glass element | A minimized glass is restored from the sill    |
+
+## Veto an action
+
+The `before-pane-add` and `before-pane-remove` events are **vetoable**: return
+`false` from a listener to cancel the action. When an add is vetoed no pane is
+created; when a remove is vetoed the pane stays.
+
+```js
+bwin.on('before-pane-remove', (sash) => {
+  // Keep a required pane from being removed
+  if (sash.id === 'sidebar') return false;
+});
+```
+
+Any other return value (including `undefined`) allows the action to proceed. The
+non-`before-*` events are notifications only — their return values are ignored.
+
+## Listeners run outside React
+
+Listeners fire outside React's render cycle. If a listener should update the UI,
+have it set React state yourself. Always unsubscribe on unmount to avoid leaking
+listeners and stale closures.
+
+## Related
+
+- <a href={getPath('/apis/on')}>on</a> / <a href={getPath('/apis/off')}>off</a> — the API reference
+- <a href={getPath('/general/actions')}>Actions</a> — what the glass-action events come from
+- <a href={getPath('/react/use-window')}>useWindow hook</a> — reach `on`/`off` from any React component

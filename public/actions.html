@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <link rel="stylesheet" href="iframe-theme.css" />
+    <script src="iframe-theme.js"></script>
+    <script type="module">
+      import {
+        BinaryWindow,
+        DEFAULT_GLASS_ACTIONS,
+      } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      let count = 2;
+
+      const splitAction = {
+        label: 'Split',
+        placement: 'menu',
+        onClick: (event, binaryWindow) => {
+          const paneEl = event.target.closest('bw-pane');
+          const sashId = paneEl.getAttribute('sash-id');
+          count += 1;
+          binaryWindow.addPane(sashId, {
+            position: 'bottom',
+            size: '50%',
+            title: `Pane ${count}`,
+            content: `Pane ${count}`,
+          });
+        },
+      };
+
+      const bwin = new BinaryWindow({
+        fitContainer: true,
+        actions: [...DEFAULT_GLASS_ACTIONS, splitAction],
+        children: [
+          { position: 'left', id: 'pane-1', title: 'Pane 1', content: 'Pane 1' },
+          { position: 'right', id: 'pane-2', title: 'Pane 2', content: 'Pane 2' },
+        ],
+      });
+
+      bwin.mount(document.getElementById('container'));
+    </script>
+  </head>
+  <body style="margin: 0">
+    <div id="container" style="width: 400px; height: 260px"></div>
+  </body>
+</html>

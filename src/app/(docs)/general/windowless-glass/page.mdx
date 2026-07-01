@@ -1,0 +1,52 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Windowless glass - General - Binary Window',
+};
+
+# Windowless glass
+
+A **windowless glass** is a
+<a href={getPath('/general/detached-glass')}>detached glass</a> with no owning
+window: it floats on the page itself (`document.body`) instead of inside a
+`bw-window`. It renders as a `<bw-glass detached windowless>` element.
+
+## Concept
+
+Use it like a popup, popover, or modal dialog, but it keeps the floating-panel
+behavior of a detached glass — it can be **dragged** to move, **resized** from its
+edges, and stacks above other glasses when clicked.
+
+Because it isn't owned by any window instance, it's created and removed through
+**static** methods on `BinaryWindow`, so it works without mounting a window at
+all:
+
+```js
+import { BinaryWindow } from 'bwin';
+
+const glassEl = await BinaryWindow.addWindowlessGlass({
+  modal: true,
+  title: 'Dialog',
+  content: 'Floating content',
+});
+
+BinaryWindow.removeWindowlessGlass(glassEl.id);
+```
+
+Passing `modal: true` adds a backdrop behind the glass that blocks interaction
+with the page underneath.
+
+## Actions
+
+A windowless glass defaults to **close only**
+(`DEFAULT_WINDOWLESS_GLASS_ACTIONS`). The minimize and attach actions of a
+detached glass need a window to minimize into or attach to, so they don't apply
+here. Pass your own `actions` array to add more. See
+<a href={getPath('/general/actions')}>Actions</a> for details.
+
+## Reference
+
+- <a href={getPath('/apis/addWindowlessGlass')}>addWindowlessGlass</a> — all options
+- <a href={getPath('/apis/removeWindowlessGlass')}>removeWindowlessGlass</a>
+- <a href={getPath('/javascript/windowless-glass')}>JavaScript — Windowless glass</a>
+- <a href={getPath('/react/windowless-glass')}>React — Windowless glass</a>
