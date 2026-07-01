@@ -10,6 +10,7 @@ export default function Sidebar() {
           links={[
             { href: '/general/overview', title: 'Overview' },
             { href: '/general/config', title: 'Config' },
+            { href: '/general/events', title: 'Events' },
             { href: '/general/theme', title: 'Theme' },
           ]}
         />
@@ -43,6 +44,8 @@ export default function Sidebar() {
             { href: '/apis/addPane', title: 'addPane' },
             { href: '/apis/removePane', title: 'removePane' },
             { href: '/apis/setTheme', title: 'setTheme' },
+            { href: '/apis/on', title: 'on' },
+            { href: '/apis/off', title: 'off' },
           ]}
         />
       </nav>

@@ -1,0 +1,44 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'off - APIs - Binary Window',
+};
+
+# `off`
+
+## Description
+
+Remove a listener previously registered with <a href={getPath('/apis/on')}>`on`</a>.
+Pass the same function reference you registered — an inline function or a
+different reference will not match, and the listener stays registered.
+
+```js
+binaryWindow.off(eventName, listener);
+```
+
+## Parameters
+
+| Name        | Type     | Description                                          |
+| ----------- | -------- | ---------------------------------------------------- |
+| `eventName` | string   | Name of the event the listener was registered for.  |
+| `listener`  | function | The same listener reference passed to `on`.          |
+
+Removing a listener that was never registered is a no-op. See
+<a href={getPath('/general/events')}>Events</a> for the full list of events.
+
+## Returns
+
+**Type**: `void`
+
+## Examples
+
+```js
+function handleAdd(sash) {
+  console.log('pane added', sash.id);
+}
+
+binaryWindow.on('pane-add', handleAdd);
+binaryWindow.off('pane-add', handleAdd); // stop listening
+```
+
+- <a href={getPath('/general/events')}>General — Events</a>
