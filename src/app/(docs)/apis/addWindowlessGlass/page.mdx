@@ -1,0 +1,61 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'addWindowlessGlass - APIs - Binary Window',
+};
+
+# `addWindowlessGlass`
+
+## Description
+
+Add a windowless glass — a glass that floats on `document.body` instead of living
+inside a `bw-window`. This is a **static** method on `BinaryWindow`, so it works
+without a mounted window. It returns a promise that resolves to the glass element
+once the open animation finishes.
+
+```js
+BinaryWindow.addWindowlessGlass(options);
+```
+
+## Parameters
+
+### `options` details
+
+| Name                   | Type                                | Default        | Description                                                          |
+| ---------------------- | ----------------------------------- | -------------- | -------------------------------------------------------------------- |
+| `modal`                | boolean                             | `false`        | Render a backdrop behind the glass that blocks interaction underneath |
+| `closeOnBackdropClick` | boolean                             | `false`        | When `modal`, clicking the backdrop closes the glass                 |
+| `position`             | string                              | `'center'`     | Anchor: `center`, `top-left`, `top-right`, `bottom-left`, `bottom-right` |
+| `width`                | number                              | `222`          | Glass width in px                                                    |
+| `height`               | number                              | `222`          | Glass height in px                                                   |
+| `offset`               | number                              | `0`            | Distance in px from the anchored corner/edge (no effect on `center`) |
+| `offsetX` / `offsetY`  | number                              | `0`            | Per-axis override of `offset`                                        |
+| `id`                   | string                              | auto-generated | Glass id; used to remove it later                                    |
+| `actions`              | object[]                            | close only     | Action buttons                                                       |
+| `title`                | string \| DOM Node \| ReactNode[^1] | —              | Header title                                                         |
+| `content`              | string \| DOM Node \| ReactNode[^1] | —              | Glass body content                                                   |
+| `draggable`            | boolean                             | `true`         | Whether the header can be dragged to move the glass                  |
+| `resizable`            | boolean                             | `true`         | Whether resize handles appear on hover                               |
+| `animate`              | boolean                             | `true`         | Whether to play the open animation (and fade the backdrop in)        |
+
+[^1]: `DOM Node` is for vanilla Javascript, and `ReactNode` is for React.
+
+## Returns
+
+**Type**: `Promise<Element>`
+
+**Description**: Resolves to the windowless glass element once the open animation
+completes.
+
+## Examples
+
+```js
+const glassEl = await BinaryWindow.addWindowlessGlass({
+  modal: true,
+  title: 'Dialog',
+  content: 'Floating content',
+});
+```
+
+- <a href={getPath('/javascript/windowless-glass')}>JavaScript — Windowless glass</a>
+- <a href={getPath('/react/windowless-glass')}>React — Windowless glass</a>

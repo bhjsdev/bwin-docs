@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <link rel="stylesheet" href="iframe-theme.css" />
+    <script src="iframe-theme.js"></script>
+    <script type="module">
+      import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      document.getElementById('open-glass').addEventListener('click', () => {
+        BinaryWindow.addWindowlessGlass({
+          modal: true,
+          closeOnBackdropClick: true,
+          width: 240,
+          height: 140,
+          title: 'Dialog',
+          content: 'Click the backdrop or the close action to dismiss.',
+        });
+      });
+    </script>
+  </head>
+  <body style="margin: 0">
+    <button id="open-glass">Open dialog</button>
+  </body>
+</html>

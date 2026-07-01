@@ -1,0 +1,37 @@
+import IFrame from '@/components/iframe';
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Windowless glass - JavaScript - Binary Window',
+};
+
+# Windowless glass
+
+## Example
+
+Click the button to open a modal windowless glass. It floats on `document.body`, so no window needs to be mounted. Click the backdrop or the close action to dismiss it. See <a href={getPath('/apis/addWindowlessGlass')}>addWindowlessGlass</a> for all options.
+
+<br />
+<IFrame path="/windowless-glass.html" />
+<br />
+
+```html
+<button id="open-glass">Open dialog</button>
+```
+
+```js
+import { BinaryWindow } from 'bwin';
+
+document.getElementById('open-glass').addEventListener('click', () => {
+  BinaryWindow.addWindowlessGlass({
+    modal: true,
+    closeOnBackdropClick: true,
+    width: 240,
+    height: 140,
+    title: 'Dialog',
+    content: 'Click the backdrop or the close action to dismiss.',
+  });
+});
+```
+
+`addWindowlessGlass` and `removeWindowlessGlass` are static methods, so call them on the `BinaryWindow` class directly.

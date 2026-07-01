@@ -1,0 +1,50 @@
+import Client from '@/components/client';
+import Example from '@/examples/react-windowless-glass';
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'Windowless glass - React - Binary Window',
+};
+
+# Windowless glass
+
+## Example
+
+Click the button to open a modal windowless glass. Click the backdrop or the close action to dismiss it. `addWindowlessGlass` is available through the `useWindow` hook — because a windowless glass floats on `document.body`, it works from the `WindowProvider` alone, with no `Window` mounted. See <a href={getPath('/apis/addWindowlessGlass')}>addWindowlessGlass</a> for all options.
+
+<Client>
+  <Example />
+</Client>
+
+<br />
+<br />
+
+```jsx
+import { WindowProvider, useWindow } from 'react-bwin';
+import 'react-bwin/react-bwin.css';
+
+function WindowlessGlass() {
+  const { addWindowlessGlass } = useWindow();
+
+  function handleClick() {
+    addWindowlessGlass({
+      modal: true,
+      closeOnBackdropClick: true,
+      width: 240,
+      height: 140,
+      title: 'Dialog',
+      content: <em>Click the backdrop or the close action to dismiss.</em>,
+    });
+  }
+
+  return <button onClick={handleClick}>Open dialog</button>;
+}
+
+export default function Example() {
+  return (
+    <WindowProvider>
+      <WindowlessGlass />
+    </WindowProvider>
+  );
+}
+```

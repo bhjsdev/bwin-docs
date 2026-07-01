@@ -24,6 +24,7 @@ export default function Sidebar() {
             { href: '/javascript/update-pane', title: 'Update pane' },
             { href: '/javascript/remove-pane', title: 'Remove pane' },
             { href: '/javascript/actions', title: 'Customize actions' },
+            { href: '/javascript/windowless-glass', title: 'Windowless glass' },
             { href: '/javascript/theme', title: 'Theme' },
             { href: 'https://github.com/bhjsdev/bwin', title: 'Repo', external: true },
           ]}
@@ -37,6 +38,7 @@ export default function Sidebar() {
             { href: '/react/update-pane', title: 'Update pane' },
             { href: '/react/remove-pane', title: 'Remove pane' },
             { href: '/react/actions', title: 'Customize actions' },
+            { href: '/react/windowless-glass', title: 'Windowless glass' },
             { href: '/react/theme', title: 'Theme' },
             { href: '/react/use-window', title: 'useWindow hook' },
             { href: '/react/troubleshooting', title: 'Troubleshooting' },
@@ -50,6 +52,8 @@ export default function Sidebar() {
             { href: '/apis/updatePane', title: 'updatePane' },
             { href: '/apis/removePane', title: 'removePane' },
             { href: '/apis/setTheme', title: 'setTheme' },
+            { href: '/apis/addWindowlessGlass', title: 'addWindowlessGlass' },
+            { href: '/apis/removeWindowlessGlass', title: 'removeWindowlessGlass' },
             { href: '/apis/on', title: 'on' },
             { href: '/apis/off', title: 'off' },
           ]}
