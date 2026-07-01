@@ -22,12 +22,12 @@
 
 .not-found__text {
   margin: 0.5em 0 1.5em;
-  color: hsl(0 0 40);
+  color: hsl(0 0% 40%);
   max-width: 36ch;
 }
 
 [data-theme='dark'] .not-found__text {
-  color: hsl(0 0 60);
+  color: hsl(0 0% 60%);
 }
 
 .not-found__home {

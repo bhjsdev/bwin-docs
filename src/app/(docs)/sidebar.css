@@ -6,7 +6,7 @@
   max-height: calc(100vh - var(--top-nav-height) - var(--footer-height));
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: hsl(0 0 60) transparent;
+  scrollbar-color: hsl(0 0% 60%) transparent;
 }
 
 .sidenav {
@@ -40,7 +40,7 @@
   }
 
   li {
-    padding-block: 4px;
+    padding-block: 8px;
   }
 }
 
