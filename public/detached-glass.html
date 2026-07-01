@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.css" />
+    <link rel="stylesheet" href="iframe-theme.css" />
+    <script src="iframe-theme.js"></script>
+    <script type="module">
+      import { BinaryWindow } from 'https://cdn.jsdelivr.net/npm/bwin@latest/dist/bwin.min.js';
+
+      let count = 0;
+
+      const bwin = new BinaryWindow({
+        fitContainer: true,
+        children: [
+          { position: 'left', id: 'pane-1', title: 'Pane 1', content: 'Pane 1' },
+          { position: 'right', id: 'pane-2', title: 'Pane 2', content: 'Pane 2' },
+        ],
+      });
+
+      bwin.mount(document.getElementById('container'));
+
+      document.getElementById('add-detached').addEventListener('click', () => {
+        count += 1;
+        bwin.addDetachedGlass({
+          width: 160,
+          height: 120,
+          title: `Panel ${count}`,
+          content: `Floating panel ${count}`,
+        });
+      });
+    </script>
+  </head>
+  <body style="margin: 0">
+    <button id="add-detached">Add detached glass</button>
+    <div id="container" style="width: 400px; height: 260px"></div>
+  </body>
+</html>

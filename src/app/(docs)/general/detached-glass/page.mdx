@@ -15,7 +15,8 @@ pane.
 
 A detached glass is created by the **detach** action on an attached glass: the
 glass leaves its pane (the pane's sibling collapses to fill the space) and becomes
-a floating panel carrying the same title and content.
+a floating panel carrying the same title and content. You can also create one
+programmatically with <a href={getPath('/apis/addDetachedGlass')}>addDetachedGlass</a>.
 
 Once floating, it behaves like a window: **drag** its header to move it,
 **resize** it from its edges, and click it to bring it to the front of other
@@ -38,3 +39,9 @@ As with any glass, pass your own `actions` array to customize the buttons. See
 A detached glass with no owning window is a
 <a href={getPath('/general/windowless-glass')}>windowless glass</a> — the same
 floating component living on the page itself.
+
+## Reference
+
+- <a href={getPath('/apis/addDetachedGlass')}>addDetachedGlass</a> — all options
+- <a href={getPath('/apis/removeDetachedGlass')}>removeDetachedGlass</a>
+- <a href={getPath('/javascript/detached-glass')}>JavaScript — Detached glass</a>
