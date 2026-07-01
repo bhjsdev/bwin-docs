@@ -1,0 +1,55 @@
+import { getPath } from '@/utils';
+
+export const metadata = {
+  title: 'updatePane - APIs - Binary Window',
+};
+
+# `updatePane`
+
+## Description
+
+Update an existing pane in place. Change its layout (`position`, `size`,
+`minWidth`, `minHeight`) and/or its glass `title` and `content`. Only the fields
+you pass are changed; the rest are left untouched.
+
+```js
+binaryWindow.updatePane(sashId, options);
+```
+
+## Parameters
+
+### Function parameters
+
+| Name      | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| `sashId`  | string | Sash ID of the pane to update.                   |
+| `options` | object | Fields to update. e.g., `title`, `size`, etc.    |
+
+### `options` details
+
+| Name        | Type                                | Description                                                          |
+| ----------- | ----------------------------------- | -------------------------------------------------------------------- |
+| `content`   | string \| DOM Node \| ReactNode[^1] | New content of the pane's glass                                     |
+| `title`     | string \| DOM Node \| ReactNode[^1] | New title of the pane's glass                                       |
+| `position`  | string                              | New position of the pane. One of `top`, `right`, `bottom`, or `left` |
+| `size`      | number \| string                    | New size of the pane. e.g., 100, 0.5, "50%"                          |
+| `minWidth`  | number                              | Minimum width the pane can be resized to                            |
+| `minHeight` | number                              | Minimum height the pane can be resized to                           |
+
+[^1]: `DOM Node` is for vanilla Javascript, and `ReactNode` is for React.
+
+## Returns
+
+**Type**: `void`
+
+## Examples
+
+```js
+// Change only the title
+binaryWindow.updatePane('pane-1', { title: 'Renamed' });
+
+// Resize and swap content
+binaryWindow.updatePane('pane-1', { size: '60%', content: 'New content' });
+```
+
+In React, reach `updatePane` through the <a href={getPath('/react/use-window')}>useWindow hook</a>.
