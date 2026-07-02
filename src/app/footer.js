@@ -13,7 +13,23 @@ export default function Footer() {
   return (
     <footer className="footer">
       <a
-        className="footer__link"
+        
+        href="https://github.com/bhjsdev/bwin/releases"
+        target="_blank"
+        rel="noreferrer"
+      >
+        bwin@latest
+      </a>
+      <a
+        
+        href="https://github.com/bhjsdev/react-bwin/releases"
+        target="_blank"
+        rel="noreferrer"
+      >
+        react-bwin@{process.env.REACT_BWIN_VERSION}
+      </a>
+      <a
+        className="footer__link--right"
         href="https://github.com/bhjsdev/bwin-docs"
         target="_blank"
         rel="noreferrer"

@@ -67,8 +67,7 @@
   /* Middle row gets a min height of (viewport - nav - footer), so the home page's
      full-height example fills the screen; grows past it when content is taller. */
   grid-template-rows:
-    var(--top-nav-height) minmax(calc(100vh - var(--top-nav-height) - var(--footer-height)), 1fr)
-    var(--footer-height);
+    var(--top-nav-height) minmax(calc(100vh - var(--top-nav-height) - var(--footer-height)), 1fr) var(--footer-height);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -77,7 +76,6 @@
   height: var(--footer-height);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 16px;
   padding: 0 var(--clearance);
   font-size: 13px;
@@ -85,5 +83,9 @@
 }
 
 .footer__link {
-  color: inherit;
+  /* placeholder for future styling */
+}
+
+.footer__link--right {
+  margin-left: auto;
 }
