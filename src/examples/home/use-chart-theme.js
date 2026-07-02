@@ -8,7 +8,7 @@ import { useTheme } from 'next-themes';
 // The theme is a full AgChartTheme object: baseTheme picks the light/dark variant,
 // and params.fontFamily applies the app font across the whole chart.
 //
-// The background fill matches the bw-glass pane bg (hsl(0 0 16), from bwin's
+// The background fill matches the bw-glass pane bg (hsl(0 0% 16%), from bwin's
 // own dark theme in react-bwin.css) so charts blend into the window panes
 // instead of showing ag-sheets-dark's default deep-blue. Light mode is white,
 // matching the light glass pane.
@@ -23,7 +23,11 @@ export function useChartTheme() {
         baseTheme: isDark ? 'ag-sheets-dark' : 'ag-sheets',
         params: { fontFamily: "'IBM Plex Sans', system-ui" },
       },
-      background: { fill: isDark ? 'hsl(0 0 16)' : 'hsl(0 0 100)' },
+      background: { fill: isDark ? 'hsl(0 0% 16%)' : 'hsl(0 0% 100%)' },
+      // Drop the default 300px floor so charts keep filling their pane when a
+      // window is resized small.
+      minWidth: 0,
+      minHeight: 0,
     }),
     [isDark]
   );

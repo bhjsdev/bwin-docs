@@ -1,4 +1,7 @@
 import createMDX from '@next/mdx';
+import pkg from './package.json' with { type: 'json' };
+
+const REACT_BWIN_VERSION = pkg.dependencies['react-bwin'].replace(/^[^\d]*/, '');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,6 +20,7 @@ const nextConfig = {
     // Exposed to the client bundle so getPath() / process.env.BASE_PATH resolve
     // identically on server and client (IFrame is a client component now).
     BASE_PATH: process.env.BASE_PATH ?? '',
+    REACT_BWIN_VERSION,
   },
 };
 
