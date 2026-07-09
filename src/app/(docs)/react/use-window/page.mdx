@@ -67,8 +67,31 @@ function Toolbar() {
 See <a href={getPath('/react/add-pane')}>Add a pane</a>, <a href={getPath('/react/update-pane')}>Update a pane</a>,
 <a href={getPath('/react/remove-pane')}>Remove a pane</a>, <a href={getPath('/react/actions')}>Customize actions</a>,
 <a href={getPath('/react/detached-glass')}>Detached glass</a>, <a href={getPath('/react/windowless-glass')}>Windowless glass</a>,
-and <a href={getPath('/react/theme')}>Theme</a> for live examples. The hook also exposes `on`/`off` for
-<a href={getPath('/general/events')}>events</a>.
+and <a href={getPath('/react/theme')}>Theme</a> for live examples.
+
+## Subscribe to events
+
+The hook also exposes `on`/`off` for <a href={getPath('/general/events')}>events</a>.
+Subscribe in an effect and unsubscribe in its cleanup so the listener is removed
+when the component unmounts. Pass the same function reference to both `on` and
+`off`.
+
+```jsx
+function PaneLogger() {
+  const { on, off } = useWindow();
+
+  useEffect(() => {
+    const handleAdd = (sash) => console.log('pane added', sash.id);
+    on('pane-add', handleAdd);
+    return () => off('pane-add', handleAdd);
+  }, [on, off]);
+
+  return null;
+}
+```
+
+Listeners fire outside React's render cycle, so set React state yourself if a
+listener should update the UI.
 
 ## Stable references
 
