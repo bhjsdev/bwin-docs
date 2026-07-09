@@ -22,7 +22,7 @@ export default function App() {
   return (
     <WindowProvider>
       <Toolbar />
-      <Editor />
+      <Window />
     </WindowProvider>
   );
 }
@@ -67,14 +67,44 @@ function Toolbar() {
 See <a href={getPath('/react/add-pane')}>Add a pane</a>, <a href={getPath('/react/update-pane')}>Update a pane</a>,
 <a href={getPath('/react/remove-pane')}>Remove a pane</a>, <a href={getPath('/react/actions')}>Customize actions</a>,
 <a href={getPath('/react/detached-glass')}>Detached glass</a>, <a href={getPath('/react/windowless-glass')}>Windowless glass</a>,
-and <a href={getPath('/react/theme')}>Theme</a> for live examples. The hook also exposes `on`/`off` for
-<a href={getPath('/general/events')}>events</a>.
+and <a href={getPath('/react/theme')}>Theme</a> for live examples.
+
+## Subscribe to events
+
+The hook also exposes `on`/`off` for <a href={getPath('/general/events')}>events</a>.
+Subscribe in an effect and unsubscribe in its cleanup so the listener is removed
+when the component unmounts. Pass the same function reference to both `on` and
+`off`.
+
+```jsx
+function PaneLogger() {
+  const { on, off } = useWindow();
+
+  useEffect(() => {
+    const handleAdd = (sash) => console.log('pane added', sash.id);
+    on('pane-add', handleAdd);
+    return () => off('pane-add', handleAdd);
+  }, [on, off]);
+
+  return null;
+}
+```
+
+Listeners fire outside React's render cycle, so set React state yourself if a
+listener should update the UI.
+
+## Render a Window before calling the API
+
+The API is only available once a `Window` has mounted inside the provider.
+Calling a method before then throws an error. Trigger calls from user
+interactions or effects that run after mount, not during the first render.
 
 ## Stable references
 
-The methods returned by `useWindow` keep a stable identity for the lifetime of
-the component, so it's safe to list them in a dependency array without causing
-effects to re-run.
+Every method returned by `useWindow` — `on`, `off`, `setTheme`, and the rest —
+keeps a stable identity for the lifetime of the component. It's therefore safe
+to list them in an effect's dependency array (as with `[on, off]` and
+`[setTheme]` above) without the effect re-running on every render.
 
 ```jsx
 function DarkOnMount() {
@@ -85,9 +115,3 @@ function DarkOnMount() {
   }, [setTheme]); // setTheme is stable, so this runs only once
 }
 ```
-
-## Render a Window before calling the API
-
-The API is only available once a `Window` has mounted inside the provider.
-Calling a method before then throws an error. Trigger calls from user
-interactions or effects that run after mount, not during the first render.
