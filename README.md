@@ -30,4 +30,4 @@ Produces a static export. In production, `BASE_PATH` is set to `/bwin-docs` for 
 ## Related Packages
 
 - [bwin](https://github.com/bhjsdev/bwin) — core vanilla JS library
-- [react-bwin](https://github.com/bhjsdev/bwin) — React wrapper
+- [react-bwin](https://github.com/bhjsdev/react-bwin) — React wrapper
